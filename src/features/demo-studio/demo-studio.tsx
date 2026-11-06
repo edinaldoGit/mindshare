@@ -84,9 +84,7 @@ export function DemoStudio() {
         ["Solicitação recebida", state.applications.length > 1],
         [
           "Decisão administrativa",
-          state.applications.some(
-            (a) => a.id === "docente-pendente" && a.status !== "Pendente",
-          ),
+          state.applications.some((a) => a.status !== "Pendente"),
         ],
       ],
       start: "/cadastro/professor",

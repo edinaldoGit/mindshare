@@ -1,0 +1,326 @@
+{
+  "pages": [
+    {
+      "clientWidth": 345,
+      "h1": "Introdução à Animação Digital",
+      "overflow": [],
+      "page": "videoaula-publica",
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "clientWidth": 375,
+      "h1": "Introdução à Animação Digital",
+      "overflow": [],
+      "page": "videoaula-publica",
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "clientWidth": 753,
+      "h1": "Introdução à Animação Digital",
+      "overflow": [],
+      "page": "videoaula-publica",
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "clientWidth": 1009,
+      "h1": "Introdução à Animação Digital",
+      "overflow": [],
+      "page": "videoaula-publica",
+      "scrollWidth": 1009,
+      "width": 1024
+    },
+    {
+      "clientWidth": 1425,
+      "h1": "Introdução à Animação Digital",
+      "overflow": [],
+      "page": "videoaula-publica",
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "clientWidth": 1905,
+      "h1": "Introdução à Animação Digital",
+      "overflow": [],
+      "page": "videoaula-publica",
+      "scrollWidth": 1905,
+      "width": 1920
+    },
+    {
+      "clientWidth": 345,
+      "overflow": [],
+      "page": "landing-publica",
+      "scrollWidth": 345,
+      "width": 360
+    },
+    {
+      "clientWidth": 375,
+      "overflow": [],
+      "page": "landing-publica",
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "clientWidth": 753,
+      "overflow": [],
+      "page": "landing-publica",
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "clientWidth": 1009,
+      "overflow": [],
+      "page": "landing-publica",
+      "scrollWidth": 1009,
+      "width": 1024
+    },
+    {
+      "clientWidth": 1425,
+      "overflow": [],
+      "page": "landing-publica",
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "clientWidth": 1905,
+      "overflow": [],
+      "page": "landing-publica",
+      "scrollWidth": 1905,
+      "width": 1920
+    }
+  ],
+  "studio": [
+    {
+      "bottom": 888,
+      "clientWidth": 345,
+      "left": 12,
+      "mode": "expanded",
+      "right": 333,
+      "top": 43.5,
+      "width": 360
+    },
+    {
+      "bottom": 888,
+      "clientWidth": 375,
+      "left": 12,
+      "mode": "expanded",
+      "right": 363,
+      "top": 43.5,
+      "width": 390
+    },
+    {
+      "bottom": 888,
+      "clientWidth": 753,
+      "left": 376,
+      "mode": "expanded",
+      "right": 741,
+      "top": 43.5,
+      "width": 768
+    },
+    {
+      "bottom": 882,
+      "clientWidth": 1009,
+      "left": 626,
+      "mode": "expanded",
+      "right": 991,
+      "top": 37.5,
+      "width": 1024
+    },
+    {
+      "bottom": 882,
+      "clientWidth": 1425,
+      "left": 1042,
+      "mode": "expanded",
+      "right": 1407,
+      "top": 37.5,
+      "width": 1440
+    },
+    {
+      "bottom": 882,
+      "clientWidth": 1905,
+      "left": 1522,
+      "mode": "expanded",
+      "right": 1887,
+      "top": 37.5,
+      "width": 1920
+    },
+    {
+      "bottom": 888,
+      "clientWidth": 345,
+      "left": 193.015625,
+      "mode": "minimized",
+      "right": 333,
+      "top": 842.5,
+      "width": 360
+    },
+    {
+      "bottom": 888,
+      "clientWidth": 375,
+      "left": 223.015625,
+      "mode": "minimized",
+      "right": 363,
+      "top": 842.5,
+      "width": 390
+    },
+    {
+      "bottom": 888,
+      "clientWidth": 753,
+      "left": 601.015625,
+      "mode": "minimized",
+      "right": 741,
+      "top": 842.5,
+      "width": 768
+    },
+    {
+      "bottom": 882,
+      "clientWidth": 1009,
+      "left": 851.015625,
+      "mode": "minimized",
+      "right": 991,
+      "top": 836.5,
+      "width": 1024
+    },
+    {
+      "bottom": 882,
+      "clientWidth": 1425,
+      "left": 1267.015625,
+      "mode": "minimized",
+      "right": 1407,
+      "top": 836.5,
+      "width": 1440
+    },
+    {
+      "bottom": 882,
+      "clientWidth": 1905,
+      "left": 1747.015625,
+      "mode": "minimized",
+      "right": 1887,
+      "top": 836.5,
+      "width": 1920
+    }
+  ],
+  "dialogs": [
+    {
+      "bottom": 692.984375,
+      "clientWidth": 345,
+      "dialog": "video-confirmation",
+      "focused": "Sim, continuar assistindo",
+      "left": 4.5,
+      "right": 340.5,
+      "top": 207,
+      "width": 360
+    },
+    {
+      "bottom": 677,
+      "clientWidth": 375,
+      "dialog": "video-confirmation",
+      "focused": "Sim, continuar assistindo",
+      "left": 4.5,
+      "right": 370.5,
+      "top": 223,
+      "width": 390
+    },
+    {
+      "bottom": 663.796875,
+      "clientWidth": 753,
+      "dialog": "video-confirmation",
+      "focused": "Sim, continuar assistindo",
+      "left": 116.5,
+      "right": 636.5,
+      "top": 236.1875,
+      "width": 768
+    },
+    {
+      "bottom": 636.609375,
+      "clientWidth": 1009,
+      "dialog": "video-confirmation",
+      "focused": "Sim, continuar assistindo",
+      "left": 244.5,
+      "right": 764.5,
+      "top": 263.390625,
+      "width": 1024
+    },
+    {
+      "bottom": 636.609375,
+      "clientWidth": 1425,
+      "dialog": "video-confirmation",
+      "focused": "Sim, continuar assistindo",
+      "left": 452.5,
+      "right": 972.5,
+      "top": 263.390625,
+      "width": 1440
+    },
+    {
+      "bottom": 636.609375,
+      "clientWidth": 1905,
+      "dialog": "video-confirmation",
+      "focused": "Sim, continuar assistindo",
+      "left": 692.5,
+      "right": 1212.5,
+      "top": 263.390625,
+      "width": 1920
+    },
+    {
+      "bottom": 691.8125,
+      "clientWidth": 345,
+      "dialog": "restore-confirmation",
+      "focused": "Preservar alterações",
+      "left": 20,
+      "right": 325,
+      "top": 208.1875,
+      "width": 360
+    },
+    {
+      "bottom": 681.09375,
+      "clientWidth": 375,
+      "dialog": "restore-confirmation",
+      "focused": "Preservar alterações",
+      "left": 20,
+      "right": 355,
+      "top": 218.90625,
+      "width": 390
+    },
+    {
+      "bottom": 632.125,
+      "clientWidth": 753,
+      "dialog": "restore-confirmation",
+      "focused": "Preservar alterações",
+      "left": 126.5,
+      "right": 626.5,
+      "top": 267.875,
+      "width": 768
+    },
+    {
+      "bottom": 632.125,
+      "clientWidth": 1009,
+      "dialog": "restore-confirmation",
+      "focused": "Preservar alterações",
+      "left": 254.5,
+      "right": 754.5,
+      "top": 267.875,
+      "width": 1024
+    },
+    {
+      "bottom": 632.125,
+      "clientWidth": 1425,
+      "dialog": "restore-confirmation",
+      "focused": "Preservar alterações",
+      "left": 462.5,
+      "right": 962.5,
+      "top": 267.875,
+      "width": 1440
+    },
+    {
+      "bottom": 632.125,
+      "clientWidth": 1905,
+      "dialog": "restore-confirmation",
+      "focused": "Preservar alterações",
+      "left": 702.5,
+      "right": 1202.5,
+      "top": 267.875,
+      "width": 1920
+    }
+  ]
+}

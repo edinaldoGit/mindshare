@@ -1,0 +1,17 @@
+{
+  "repository": "https://github.com/edinaldoGit/mindshare",
+  "workflow": "MindShare · GitHub Pages",
+  "branch": "main",
+  "initialCommit": "643942126378dfd200575317962dcf1d5aeff00f",
+  "run": "https://github.com/edinaldoGit/mindshare/actions/runs/42163803689",
+  "conclusion": "success",
+  "jobs": {
+    "build": "success",
+    "deploy": "success"
+  },
+  "pagesUrl": "https://edinaldogit.github.io/mindshare/",
+  "pagesBuildType": "workflow",
+  "httpsEnforced": true,
+  "customDomain": null,
+  "repositoryVisibilityChanged": false
+}

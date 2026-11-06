@@ -1,0 +1,98 @@
+[
+  {
+    "path": "assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+    "status": 200,
+    "type": "font/woff2",
+    "seconds": 0.384
+  },
+  {
+    "path": "assets/demo-studio-Dfx_m-cT.js",
+    "status": 200,
+    "type": "application/javascript; charset=utf-8",
+    "seconds": 0.36
+  },
+  {
+    "path": "assets/index--DziI0sA.js",
+    "status": 200,
+    "type": "application/javascript; charset=utf-8",
+    "seconds": 0.4
+  },
+  {
+    "path": "assets/inter-cyrillic-wght-normal-DqGufNeO.woff2",
+    "status": 200,
+    "type": "font/woff2",
+    "seconds": 0.362
+  },
+  {
+    "path": "assets/inter-vietnamese-wght-normal-CBcvBZtf.woff2",
+    "status": 200,
+    "type": "font/woff2",
+    "seconds": 0.315
+  },
+  {
+    "path": "assets/inter-cyrillic-ext-wght-normal-BOeWTOD4.woff2",
+    "status": 200,
+    "type": "font/woff2",
+    "seconds": 0.326
+  },
+  {
+    "path": "assets/inter-greek-wght-normal-CkhJZR-_.woff2",
+    "status": 200,
+    "type": "font/woff2",
+    "seconds": 0.311
+  },
+  {
+    "path": "assets/manrope-vietnamese-wght-normal-usUDDRr7.woff2",
+    "status": 200,
+    "type": "font/woff2",
+    "seconds": 0.312
+  },
+  {
+    "path": "assets/inter-latin-wght-normal-Dx4kXJAl.woff2",
+    "status": 200,
+    "type": "font/woff2",
+    "seconds": 0.355
+  },
+  {
+    "path": "assets/certificate-pdf-DGuMctUh.js",
+    "status": 200,
+    "type": "application/javascript; charset=utf-8",
+    "seconds": 0.342
+  },
+  {
+    "path": "assets/manrope-greek-wght-normal-DL7QRZyv.woff2",
+    "status": 200,
+    "type": "font/woff2",
+    "seconds": 0.336
+  },
+  {
+    "path": "assets/index-DitkPVFu.css",
+    "status": 200,
+    "type": "text/css; charset=utf-8",
+    "seconds": 0.318
+  },
+  {
+    "path": "assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+    "status": 200,
+    "type": "font/woff2",
+    "seconds": 0.315
+  },
+  {
+    "path": "assets/inter-latin-ext-wght-normal-DO1Apj_S.woff2",
+    "status": 200,
+    "type": "font/woff2",
+    "seconds": 0.331
+  },
+  {
+    "path": "assets/inter-greek-ext-wght-normal-DlzME5K_.woff2",
+    "status": 200,
+    "type": "font/woff2",
+    "seconds": 0.344
+  },
+  {
+    "path": "assets/manrope-latin-ext-wght-normal-Ch3YOpNY.woff2",
+    "status": 200,
+    "type": "font/woff2",
+    "seconds": 0.335
+  }
+]

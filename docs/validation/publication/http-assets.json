@@ -1,0 +1,34 @@
+[
+  {
+    "url": "https://edinaldogit.github.io/mindshare/",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 697,
+    "sha256": "a5570047ec066a457279cd7a2598a22fe2ae2fcf7ffabb88db885a5cab22ccea",
+    "cacheControl": "max-age=600"
+  },
+  {
+    "url": "https://edinaldogit.github.io/mindshare/brand/icon.png",
+    "status": 200,
+    "type": "image/png",
+    "bytes": 40775,
+    "sha256": "1d63f2b65bb7aef5ec4f4dbcacb8e569c20030fc1d0841d363b84b2b32783713",
+    "cacheControl": "max-age=600"
+  },
+  {
+    "url": "https://edinaldogit.github.io/mindshare/brand/logo.png",
+    "status": 200,
+    "type": "image/png",
+    "bytes": 53170,
+    "sha256": "ac859f2106b73039d1a35e30273b1571df207384ffc703988aa1bb33902b511b",
+    "cacheControl": "max-age=600"
+  },
+  {
+    "url": "https://edinaldogit.github.io/mindshare/media/big-buck-bunny-excerpt.mp4",
+    "status": 200,
+    "type": "video/mp4",
+    "bytes": 4718180,
+    "sha256": "57c4fbfd9618ac685f9e7d50cb7fc64ec432670bb7e619eb31db95bc6af0a814",
+    "cacheControl": "max-age=600"
+  }
+]

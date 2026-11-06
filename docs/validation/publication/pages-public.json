@@ -1,0 +1,86 @@
+[
+  {
+    "brokenImages": 0,
+    "focused": "H1",
+    "h1": "Fila de propostas",
+    "label": "fila-vazia-sofia",
+    "route": "/curadoria/propostas"
+  },
+  {
+    "brokenImages": 0,
+    "focused": "H1",
+    "h1": "Histórico de decisões",
+    "label": "historico-curadoria",
+    "route": "/curadoria/historico"
+  },
+  {
+    "brokenImages": 0,
+    "focused": "H1",
+    "h1": "Painel administrativo",
+    "label": "dashboard-admin",
+    "route": "/administracao"
+  },
+  {
+    "brokenImages": 0,
+    "focused": "H1",
+    "h1": "Curadores e atribuições",
+    "label": "gestao-curadores",
+    "route": "/administracao/curadores"
+  },
+  {
+    "brokenImages": 0,
+    "focused": "H1",
+    "h1": "Olá, Júlia.",
+    "label": "dashboard-participante",
+    "route": "/participante"
+  },
+  {
+    "brokenImages": 0,
+    "focused": "H1",
+    "h1": "Minhas inscrições",
+    "label": "inscricoes",
+    "route": "/participante/inscricoes"
+  },
+  {
+    "brokenImages": 0,
+    "focused": "H1",
+    "h1": "Dê espaço à curiosidade.",
+    "label": "recomendacoes",
+    "route": "/participante/recomendacoes"
+  },
+  {
+    "brokenImages": 0,
+    "focused": "H1",
+    "h1": "Meus comprovantes",
+    "label": "comprovantes",
+    "route": "/participante/comprovantes"
+  },
+  {
+    "brokenImages": 0,
+    "focused": "H1",
+    "h1": "Frequência e encontros",
+    "label": "frequencia-participante",
+    "route": "/participante/atividades/6abd0f98-3f41-44ed-9f1a-65fb734c81e4/frequencia"
+  },
+  {
+    "brokenImages": 0,
+    "focused": "H1",
+    "h1": "Compartilhe o que você sabe, Alex.",
+    "label": "dashboard-instrutor",
+    "route": "/instrutor"
+  },
+  {
+    "brokenImages": 0,
+    "focused": "H1",
+    "h1": "Minhas propostas",
+    "label": "propostas",
+    "route": "/instrutor/propostas"
+  },
+  {
+    "brokenImages": 0,
+    "focused": "H1",
+    "h1": "Minhas atividades",
+    "label": "atividades",
+    "route": "/instrutor/atividades"
+  }
+]

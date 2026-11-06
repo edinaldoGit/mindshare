@@ -7,7 +7,7 @@ transforming...
 ✓ 2317 modules transformed.
 rendering chunks...
 computing gzip size...
-dist/index.html                                              0.67 kB │ gzip:   0.41 kB
+dist/index.html                                              0.69 kB │ gzip:   0.41 kB
 dist/assets/manrope-vietnamese-wght-normal-usUDDRr7.woff2    8.52 kB
 dist/assets/manrope-greek-wght-normal-DL7QRZyv.woff2         9.44 kB
 dist/assets/inter-vietnamese-wght-normal-CBcvBZtf.woff2     10.25 kB
@@ -21,8 +21,8 @@ dist/assets/inter-cyrillic-ext-wght-normal-BOeWTOD4.woff2   25.96 kB
 dist/assets/inter-latin-wght-normal-Dx4kXJAl.woff2          48.25 kB
 dist/assets/inter-latin-ext-wght-normal-DO1Apj_S.woff2      85.06 kB
 dist/assets/index-DitkPVFu.css                              93.72 kB │ gzip:  20.55 kB
-dist/assets/demo-studio-Dfx_m-cT.js                          8.26 kB │ gzip:   3.13 kB
-dist/assets/certificate-pdf-DGuMctUh.js                    422.59 kB │ gzip: 176.96 kB
-dist/assets/index--DziI0sA.js                              494.36 kB │ gzip: 146.41 kB
+dist/assets/demo-studio-DFla3rOJ.js                          8.24 kB │ gzip:   3.12 kB
+dist/assets/certificate-pdf-BG9Rc4Y7.js                    422.59 kB │ gzip: 176.96 kB
+dist/assets/index-Cabo5-eM.js                              494.36 kB │ gzip: 146.42 kB
 
-✓ built in 803ms
+✓ built in 30.32s
