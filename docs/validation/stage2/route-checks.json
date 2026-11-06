@@ -1,0 +1,17 @@
+[
+  {
+    "requested": "/atividades/id-inexistente",
+    "url": "http://127.0.0.1:4173/mindshare/#/atividades/id-inexistente",
+    "heading": "Atividade não encontrada"
+  },
+  {
+    "requested": "/atividades/proposta-interna-1",
+    "url": "http://127.0.0.1:4173/mindshare/#/atividades/proposta-interna-1",
+    "heading": "Atividade não encontrada"
+  },
+  {
+    "requested": "/participante",
+    "url": "http://127.0.0.1:4173/mindshare/#/entrar?retorno=%2Fparticipante",
+    "heading": "Entre na conversa."
+  }
+]

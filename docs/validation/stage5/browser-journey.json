@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-05",
+  "timezone": "America/Sao_Paulo",
+  "proposalId": "575556a9-7cd7-44fe-81c9-d3150e9f96f8",
+  "title": "Laboratório de leitura e prototipação inclusiva",
+  "identities": [
+    "Alex Costa",
+    "Helena Prado",
+    "Alex Costa",
+    "Helena Prado",
+    "Júlia Torres",
+    "Alex Costa",
+    "Júlia Torres"
+  ],
+  "steps": [
+    "Rascunho criado",
+    "Em análise",
+    "Ajustes solicitados com descrição obrigatória",
+    "Edição autorizada e reenvio com mesmo ID",
+    "Aprovada com histórico preservado",
+    "Encontrada no catálogo por busca e filtros",
+    "Inscrição confirmada: 10 → 9 vagas",
+    "Conclusão confirmada: 9 vagas mantidas",
+    "Histórico de Júlia: 5 horas, 1 conclusão",
+    "PDF baixado no navegador"
+  ],
+  "pdfPath": "output/pdf/mindshare-jornada-completa-etapa5.pdf",
+  "otherChecks": [
+    "Rejeição exige justificativa não vazia",
+    "Justificativa visível ao Instrutor sem edição disponível",
+    "Guards de perfil verificados nos dois sentidos",
+    "Reload preserva decisões",
+    "Filtro de histórico conserva ajustes após aprovação",
+    "Escape retorna foco ao botão de decisão",
+    "Fila vazia após decidir todas as pendências",
+    "Reset pelo Curador conserva sessão e restaura 3 pendências"
+  ]
+}

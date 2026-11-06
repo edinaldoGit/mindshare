@@ -1,0 +1,34 @@
+{
+  "completedOn": "2026-11-06",
+  "environment": "production preview /mindshare/, integrated browser",
+  "proposalId": "cda698f9-28ae-4837-9eca-edf4af59cb06",
+  "facultyApplicationId": "8e91b075-b7ef-4a92-a9a9-b399bea6d1e2",
+  "observed": [
+    "Manual faculty application approved by administrator",
+    "Assigned curator requested adjustments, received resubmission and approved same proposal",
+    "Other curator denied proposal review",
+    "Participant enrollment, attendance, activity closure, instructor completion and real PDF download",
+    "Local video playback, expired checkpoint pause, confirmation resume, persisted 99.8% progress, instructor completion and real async PDF download",
+    "Administrative transfer with reason, curator deactivation/reactivation, rejection requiring reason",
+    "Paused native seek excluded from validated progress",
+    "Required delivery fields blocked invalid save with associated errors"
+  ],
+  "responsiveCases": 144,
+  "widths": [360, 390, 768, 1024, 1440, 1920],
+  "automatedTests": {
+    "total": 143,
+    "passed": 143,
+    "failed": 0
+  },
+  "finalState": {
+    "initialFixturesRestoredThroughConfirmedUI": true,
+    "acceleratedVideoChecks": false,
+    "signedOut": true,
+    "consoleErrorsAndWarnings": []
+  },
+  "limitations": [
+    "single integrated browser",
+    "local demonstration only",
+    "no deployment"
+  ]
+}

@@ -1,0 +1,348 @@
+/* Curadoria: leitura confortável sobre o mesmo shell e tokens do Instrutor. */
+.workspace-signout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  color: var(--primary);
+  font-size: 11px;
+  text-align: left;
+}
+.curation-page {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.curation-welcome {
+  padding: 6px 0 14px;
+  align-items: center;
+}
+.curation-welcome h1 {
+  font-size: clamp(32px, 3.6vw, 45px);
+}
+.curation-hero-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 70px;
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+.curation-metric {
+  transition: border-color 0.15s ease;
+}
+.curation-metric:hover {
+  border-color: var(--primary);
+}
+.curation-section-note {
+  color: var(--muted-foreground);
+  font-size: 11px;
+  line-height: 1.7;
+  margin: 0 0 19px;
+}
+.curation-history-invite + .curation-section-note {
+  margin: 15px 0 0;
+}
+.curation-proposal-card {
+  position: relative;
+}
+.curation-proposal-card.is-first {
+  border-left: 3px solid var(--brand-mist);
+}
+.curation-proposal-card .proposal-card-summary {
+  max-width: 65ch;
+}
+.curation-card-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+  padding-block: 17px;
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+.curation-card-facts > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.curation-card-facts svg {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+.curation-proposal-card > a {
+  min-height: 44px;
+  font-size: 11px;
+}
+.curation-queue-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 0;
+  margin: -7px 0 20px;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+.curation-queue-bar > span:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--foreground);
+}
+.curation-history-invite {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.curation-history-invite > svg {
+  flex-shrink: 0;
+  color: var(--primary);
+}
+.curation-history-invite h2 {
+  font-size: 19px;
+  margin-bottom: 7px;
+}
+.curation-history-invite p {
+  color: var(--muted-foreground);
+  font-size: 11px;
+  line-height: 1.7;
+}
+.curation-history-invite > a {
+  flex-shrink: 0;
+  font-size: 11px;
+}
+.curation-history-author {
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--muted-foreground);
+  line-height: 1.7;
+}
+.curation-decision-excerpt {
+  margin-top: 14px;
+  padding-left: 14px;
+  border-left: 2px solid var(--border);
+  font-size: 12px;
+  line-height: 1.8;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.curation-history-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+}
+.curation-history-footer > span {
+  color: var(--muted-foreground);
+  font-size: 10px;
+}
+.curation-history-footer .proposal-card-link {
+  margin: 0;
+}
+.curation-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--primary);
+  margin-bottom: 24px;
+  font-size: 11px;
+}
+.curation-review-heading h1 {
+  font-size: clamp(29px, 3.5vw, 42px);
+  line-height: 1.25;
+}
+.curation-review-byline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+.curation-review-byline > span:first-child {
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+.curation-review-grid {
+  grid-template-columns: minmax(0, 1fr) 275px;
+}
+.curation-syllabus > p:last-child {
+  max-width: 65ch;
+  font-size: 14px;
+  line-height: 1.95;
+  color: var(--foreground);
+}
+.curation-decision-panel {
+  border-top: 3px solid var(--brand-mist);
+}
+.curation-decision-panel h2 {
+  font-size: 21px;
+}
+.curation-actions {
+  display: grid;
+  gap: 10px;
+  margin-block: 20px;
+}
+.curation-actions > button {
+  width: 100%;
+  font-size: 12px;
+}
+.curation-reject-action {
+  color: var(--destructive);
+}
+.curation-recorded-decision {
+  display: grid;
+  gap: 12px;
+  margin-block: 18px;
+}
+.curation-recorded-decision .instructor-status {
+  justify-self: start;
+}
+.curation-recorded-decision > time {
+  font-size: 10px;
+  color: var(--muted-foreground);
+}
+.curation-recorded-decision > p {
+  font-size: 12px;
+  line-height: 1.8;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.curation-timeline {
+  display: grid;
+  gap: 23px;
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+.curation-timeline > li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.curation-timeline strong,
+.curation-timeline time {
+  display: block;
+}
+.curation-timeline strong {
+  font-size: 12px;
+}
+.curation-timeline time {
+  margin-top: 5px;
+  font-size: 10px;
+  color: var(--muted-foreground);
+}
+.curation-timeline p {
+  margin-top: 10px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  line-height: 1.7;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.curation-history-note {
+  margin-top: 24px;
+  padding-top: 15px;
+  border-top: 1px solid var(--border);
+  font-size: 10px !important;
+}
+.curation-result {
+  margin-bottom: 24px;
+  border-radius: 8px;
+}
+.curation-decision-dialog {
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+  overflow-wrap: anywhere;
+}
+.curation-decision-dialog form > h2 {
+  font-size: 27px;
+  line-height: 1.25;
+  margin-block: 8px 14px;
+}
+.curation-decision-dialog .decision-proposal-title {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--foreground);
+  line-height: 1.6;
+}
+.curation-decision-dialog form > p:not(.eyebrow):not(.decision-proposal-title) {
+  margin-top: 10px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  line-height: 1.8;
+}
+.curation-decision-dialog .instructor-field {
+  margin-top: 20px;
+}
+.curation-decision-dialog .feedback-message {
+  margin-top: 18px;
+}
+.curation-decision-dialog .decision-reject {
+  background: var(--destructive);
+  color: var(--destructive-foreground);
+}
+.curation-decision-dialog .decision-reject:hover {
+  filter: brightness(0.9);
+}
+@media (max-width: 1100px) {
+  .curation-review-grid {
+    grid-template-columns: 1fr;
+  }
+  .curation-decision-panel {
+    position: static;
+  }
+  .curation-history-invite {
+    flex-wrap: wrap;
+  }
+  .curation-history-invite > div {
+    flex: 1;
+    min-width: 0;
+  }
+  .curation-history-invite > a {
+    margin-left: 47px;
+  }
+}
+@media (max-width: 700px) {
+  .curation-hero-icon {
+    display: none;
+  }
+  .curation-welcome h1 {
+    font-size: 33px;
+  }
+  .curation-card-facts {
+    display: grid;
+    gap: 12px;
+  }
+  .curation-queue-bar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .curation-history-invite {
+    gap: 14px;
+    padding: 19px;
+  }
+  .curation-history-invite > a {
+    margin-left: 0;
+    width: 100%;
+  }
+  .curation-history-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .curation-review-heading h1 {
+    font-size: 30px;
+  }
+  .curation-decision-dialog form > h2 {
+    font-size: 25px;
+  }
+  .curation-review-grid .proposal-facts {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,28 @@
+
+> mindshare@0.3.0 build
+> tsc -b && vite build
+
+vite v8.3.5 building client environment for production...
+transforming...
+✓ 2317 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                              0.64 kB │ gzip:   0.40 kB
+dist/assets/manrope-vietnamese-wght-normal-usUDDRr7.woff2    8.52 kB
+dist/assets/manrope-greek-wght-normal-DL7QRZyv.woff2         9.44 kB
+dist/assets/inter-vietnamese-wght-normal-CBcvBZtf.woff2     10.25 kB
+dist/assets/inter-greek-ext-wght-normal-DlzME5K_.woff2      11.23 kB
+dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2     14.50 kB
+dist/assets/manrope-latin-ext-wght-normal-Ch3YOpNY.woff2    15.12 kB
+dist/assets/inter-cyrillic-wght-normal-DqGufNeO.woff2       18.74 kB
+dist/assets/inter-greek-wght-normal-CkhJZR-_.woff2          18.99 kB
+dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2        24.83 kB
+dist/assets/inter-cyrillic-ext-wght-normal-BOeWTOD4.woff2   25.96 kB
+dist/assets/inter-latin-wght-normal-Dx4kXJAl.woff2          48.25 kB
+dist/assets/inter-latin-ext-wght-normal-DO1Apj_S.woff2      85.06 kB
+dist/assets/index-BWStLp5h.css                              93.50 kB │ gzip:  20.53 kB
+dist/assets/demo-studio-6xPLPaaR.js                          8.26 kB │ gzip:   3.14 kB
+dist/assets/certificate-pdf-BCSB4pbV.js                    422.59 kB │ gzip: 176.96 kB
+dist/assets/index-DXaZfX8r.js                              494.31 kB │ gzip: 146.39 kB
+
+✓ built in 756ms

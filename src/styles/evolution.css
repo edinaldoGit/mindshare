@@ -1,0 +1,301 @@
+.learning-page {
+  min-width: 0;
+}
+.learning-page > h1 {
+  font: 700 clamp(1.7rem, 3vw, 2.5rem)/1.2
+    var(--font-heading, Manrope, sans-serif);
+  margin: 1rem 0;
+}
+.learning-card,
+.video-player-card {
+  min-width: 0;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 1.1rem;
+  padding: clamp(1rem, 2.5vw, 1.7rem);
+  margin: 1.1rem 0;
+  overflow-wrap: anywhere;
+}
+.learning-card h2,
+.video-player-card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.8rem;
+}
+.learning-card p {
+  margin: 0.65rem 0;
+  line-height: 1.65;
+}
+.learning-card a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+.learning-actions {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin: 0.7rem 0;
+}
+.meeting-editor {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  gap: 0.75rem;
+  align-items: end;
+  border-bottom: 1px solid var(--border);
+  padding: 0.8rem 0;
+}
+.meeting-card,
+.attendance-person {
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+}
+.attendance-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--border);
+  padding: 0.65rem 0;
+}
+.video-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2.1fr) minmax(240px, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+.video-player-card video {
+  width: 100%;
+  display: block;
+  border-radius: 0.6rem;
+  background: #101d29;
+  aspect-ratio: 16/9;
+}
+.video-progress-bar {
+  margin: 1rem 0;
+  font-size: 0.85rem;
+}
+progress {
+  width: 100%;
+  height: 0.65rem;
+  accent-color: var(--brand-mist);
+}
+.lesson-choice {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+  padding: 1rem;
+  margin: 0.7rem 0;
+  font-weight: 600;
+  cursor: pointer;
+}
+.lesson-choice[aria-current="true"] {
+  border-color: var(--brand-blue);
+}
+.lesson-choice small {
+  display: block;
+  font-weight: 400;
+  margin-top: 0.4rem;
+}
+.media-attribution {
+  font-size: 0.8rem;
+  color: var(--muted-foreground);
+  line-height: 1.65;
+}
+.attention-dialog {
+  max-width: min(520px, calc(100vw - 24px));
+  width: 100%;
+  max-height: calc(100dvh - 32px);
+  overflow: auto;
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+  padding: 1.5rem;
+  color: var(--foreground);
+  box-shadow: 0 20px 100px #15273a44;
+}
+.attention-dialog::backdrop {
+  background: #122d3b99;
+}
+.attention-dialog h2 {
+  font:
+    700 1.6rem/1.25 Manrope,
+    sans-serif;
+  margin: 0.6rem 0;
+}
+.attention-dialog p {
+  line-height: 1.65;
+  margin: 1rem 0;
+}
+.studio-speed-note {
+  background: #edf5ff;
+  color: #244876;
+  padding: 0.6rem;
+  font-size: 0.8rem;
+  border-radius: 0.5rem;
+}
+.demo-studio {
+  position: fixed;
+  z-index: 90;
+  right: 18px;
+  bottom: 18px;
+  width: 365px;
+  max-width: calc(100vw - 24px);
+  max-height: calc(100dvh - 32px);
+  border: 1px solid #4c5372;
+  border-radius: 16px;
+  background: #171b30;
+  color: #edf1ff;
+  box-shadow: 0 12px 60px #0b0d1a55;
+  font:
+    13px/1.5 Inter,
+    sans-serif;
+  overflow: hidden;
+}
+.demo-studio header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  border-bottom: 1px solid #3d435f;
+}
+.demo-studio header > div {
+  flex: 1;
+}
+.demo-studio header small {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: #afbee3;
+}
+.demo-studio h2 {
+  font-size: 16px;
+  font-weight: 700;
+}
+.demo-studio h3 {
+  font-size: 13px;
+  font-weight: 700;
+  margin: 12px 0 8px;
+}
+.demo-studio button {
+  background: #29334f;
+  color: #edf1ff;
+  border: 1px solid #546386;
+  border-radius: 7px;
+  padding: 8px 10px;
+  cursor: pointer;
+  text-align: left;
+}
+.demo-studio button:focus-visible,
+.demo-studio select:focus-visible {
+  outline: 3px solid #98d9ff;
+  outline-offset: 2px;
+}
+.studio-body {
+  padding: 14px;
+  max-height: calc(100dvh - 130px);
+  overflow: auto;
+}
+.studio-body p {
+  margin: 8px 0;
+  color: #c6d0e8;
+  font-size: 11px;
+}
+.studio-body label {
+  display: block;
+  font-size: 11px;
+  margin: 9px 0;
+}
+.studio-body select {
+  width: 100%;
+  background: #242c46;
+  color: #fff;
+  border: 1px solid #546386;
+  padding: 8px;
+  border-radius: 7px;
+  margin-top: 4px;
+  min-width: 0;
+}
+.studio-links {
+  display: grid;
+  gap: 5px;
+  margin: 8px 0;
+}
+.studio-body section {
+  border-top: 1px solid #3e4967;
+  margin-top: 15px;
+}
+.studio-body ol {
+  padding-left: 15px;
+  font-size: 11px;
+  margin: 10px 0;
+}
+.studio-checkbox {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+}
+.demo-studio.minimized {
+  width: auto;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.studio-launch {
+  border-radius: 99px !important;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: #171b30 !important;
+  padding: 12px 16px !important;
+}
+.instructor-demo-tools {
+  display: none;
+}
+.field-hint {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 900px) {
+  .video-layout {
+    grid-template-columns: 1fr;
+  }
+  .meeting-editor {
+    grid-template-columns: 1fr;
+  }
+  .demo-studio {
+    right: 12px;
+    bottom: 12px;
+  }
+  .learning-actions button {
+    max-width: 100%;
+  }
+  .attention-dialog .learning-actions {
+    flex-direction: column;
+  }
+  .learning-card input,
+  .learning-card select,
+  .meeting-editor input {
+    max-width: 100%;
+    min-width: 0;
+  }
+  .attendance-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .demo-studio * {
+    animation: none;
+    transition: none;
+  }
+}
+
+.participant-demo-tools {
+  display: none;
+}
+.demo-studio {
+  max-width: calc(100% - 24px);
+}
+.attention-dialog {
+  margin: auto;
+}

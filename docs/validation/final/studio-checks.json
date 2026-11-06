@@ -1,0 +1,125 @@
+{
+  "normalUrlStudioCount": 0,
+  "checks": [
+    {
+      "mode": "expanded",
+      "bottom": 888,
+      "height": 900,
+      "left": 12,
+      "right": 333,
+      "scroll": 345,
+      "top": 45.125,
+      "width": 360
+    },
+    {
+      "mode": "expanded",
+      "bottom": 888,
+      "height": 900,
+      "left": 12,
+      "right": 363,
+      "scroll": 375,
+      "top": 61.625,
+      "width": 390
+    },
+    {
+      "mode": "expanded",
+      "bottom": 888,
+      "height": 900,
+      "left": 376,
+      "right": 741,
+      "scroll": 753,
+      "top": 61.625,
+      "width": 768
+    },
+    {
+      "mode": "expanded",
+      "bottom": 882,
+      "height": 900,
+      "left": 626,
+      "right": 991,
+      "scroll": 1009,
+      "top": 55.625,
+      "width": 1024
+    },
+    {
+      "mode": "expanded",
+      "bottom": 882,
+      "height": 900,
+      "left": 1042,
+      "right": 1407,
+      "scroll": 1425,
+      "top": 55.625,
+      "width": 1440
+    },
+    {
+      "mode": "expanded",
+      "bottom": 882,
+      "height": 900,
+      "left": 1522,
+      "right": 1887,
+      "scroll": 1905,
+      "top": 55.625,
+      "width": 1920
+    },
+    {
+      "mode": "minimized",
+      "bottom": 888,
+      "height": 900,
+      "left": 193.015625,
+      "right": 333,
+      "scroll": 345,
+      "top": 842.5,
+      "width": 360
+    },
+    {
+      "mode": "minimized",
+      "bottom": 888,
+      "height": 900,
+      "left": 223.015625,
+      "right": 363,
+      "scroll": 375,
+      "top": 842.5,
+      "width": 390
+    },
+    {
+      "mode": "minimized",
+      "bottom": 888,
+      "height": 900,
+      "left": 601.015625,
+      "right": 741,
+      "scroll": 753,
+      "top": 842.5,
+      "width": 768
+    },
+    {
+      "mode": "minimized",
+      "bottom": 882,
+      "height": 900,
+      "left": 851.015625,
+      "right": 991,
+      "scroll": 1009,
+      "top": 836.5,
+      "width": 1024
+    },
+    {
+      "mode": "minimized",
+      "bottom": 882,
+      "height": 900,
+      "left": 1267.015625,
+      "right": 1407,
+      "scroll": 1425,
+      "top": 836.5,
+      "width": 1440
+    },
+    {
+      "mode": "minimized",
+      "bottom": 882,
+      "height": 900,
+      "left": 1747.015625,
+      "right": 1887,
+      "scroll": 1905,
+      "top": 836.5,
+      "width": 1920
+    }
+  ]
+}

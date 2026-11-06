@@ -1,0 +1,29 @@
+{
+  "julia": {
+    "duration": 180,
+    "width": 320,
+    "height": 180,
+    "validatedSeconds": 179.6058349609375,
+    "percent": 99.78102111816406,
+    "checkpoints": 1,
+    "reloaded": true,
+    "completedByInstructor": true
+  },
+  "timeout": {
+    "timeBefore": 90.191548,
+    "timeAfter": 90.191548,
+    "paused": true
+  },
+  "alexSeek": {
+    "before": {
+      "paused": true,
+      "time": 15.692006
+    },
+    "after": {
+      "paused": true,
+      "time": 17.492
+    },
+    "progressBefore": "15.408492",
+    "progressAfter": "15.408492"
+  }
+}

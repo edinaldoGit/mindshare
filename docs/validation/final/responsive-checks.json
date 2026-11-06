@@ -1,0 +1,1202 @@
+[
+  {
+    "label": "videoaula",
+    "route": "/participante/atividades/animacao-digital/aulas",
+    "requestedWidth": 360,
+    "clientWidth": 345,
+    "h1": "Introdução à Animação Digital",
+    "overflow": [],
+    "scroll": 345,
+    "width": 360
+  },
+  {
+    "label": "videoaula",
+    "route": "/participante/atividades/animacao-digital/aulas",
+    "requestedWidth": 390,
+    "clientWidth": 375,
+    "h1": "Introdução à Animação Digital",
+    "overflow": [],
+    "scroll": 375,
+    "width": 390
+  },
+  {
+    "label": "videoaula",
+    "route": "/participante/atividades/animacao-digital/aulas",
+    "requestedWidth": 768,
+    "clientWidth": 753,
+    "h1": "Introdução à Animação Digital",
+    "overflow": [],
+    "scroll": 753,
+    "width": 768
+  },
+  {
+    "label": "videoaula",
+    "route": "/participante/atividades/animacao-digital/aulas",
+    "requestedWidth": 1024,
+    "clientWidth": 1009,
+    "h1": "Introdução à Animação Digital",
+    "overflow": [],
+    "scroll": 1009,
+    "width": 1024
+  },
+  {
+    "label": "videoaula",
+    "route": "/participante/atividades/animacao-digital/aulas",
+    "requestedWidth": 1440,
+    "clientWidth": 1425,
+    "h1": "Introdução à Animação Digital",
+    "overflow": [],
+    "scroll": 1425,
+    "width": 1440
+  },
+  {
+    "label": "videoaula",
+    "route": "/participante/atividades/animacao-digital/aulas",
+    "requestedWidth": 1920,
+    "clientWidth": 1905,
+    "h1": "Introdução à Animação Digital",
+    "overflow": [],
+    "scroll": 1905,
+    "width": 1920
+  },
+  {
+    "label": "frequencia-participante",
+    "route": "/participante/atividades/cda698f9-28ae-4837-9eca-edf4af59cb06/frequencia",
+    "requestedWidth": 360,
+    "clientWidth": 345,
+    "h1": "Frequência e encontros",
+    "overflow": [],
+    "scroll": 345,
+    "width": 360
+  },
+  {
+    "label": "frequencia-participante",
+    "route": "/participante/atividades/cda698f9-28ae-4837-9eca-edf4af59cb06/frequencia",
+    "requestedWidth": 390,
+    "clientWidth": 375,
+    "h1": "Frequência e encontros",
+    "overflow": [],
+    "scroll": 375,
+    "width": 390
+  },
+  {
+    "label": "frequencia-participante",
+    "route": "/participante/atividades/cda698f9-28ae-4837-9eca-edf4af59cb06/frequencia",
+    "requestedWidth": 768,
+    "clientWidth": 753,
+    "h1": "Frequência e encontros",
+    "overflow": [],
+    "scroll": 753,
+    "width": 768
+  },
+  {
+    "label": "frequencia-participante",
+    "route": "/participante/atividades/cda698f9-28ae-4837-9eca-edf4af59cb06/frequencia",
+    "requestedWidth": 1024,
+    "clientWidth": 1009,
+    "h1": "Frequência e encontros",
+    "overflow": [],
+    "scroll": 1009,
+    "width": 1024
+  },
+  {
+    "label": "frequencia-participante",
+    "route": "/participante/atividades/cda698f9-28ae-4837-9eca-edf4af59cb06/frequencia",
+    "requestedWidth": 1440,
+    "clientWidth": 1425,
+    "h1": "Frequência e encontros",
+    "overflow": [],
+    "scroll": 1425,
+    "width": 1440
+  },
+  {
+    "label": "frequencia-participante",
+    "route": "/participante/atividades/cda698f9-28ae-4837-9eca-edf4af59cb06/frequencia",
+    "requestedWidth": 1920,
+    "clientWidth": 1905,
+    "h1": "Frequência e encontros",
+    "overflow": [],
+    "scroll": 1905,
+    "width": 1920
+  },
+  {
+    "label": "historico-integrado",
+    "route": "/participante/historico",
+    "requestedWidth": 360,
+    "clientWidth": 345,
+    "h1": "Seu tempo, em conhecimento.",
+    "overflow": [],
+    "scroll": 345,
+    "width": 360
+  },
+  {
+    "label": "historico-integrado",
+    "route": "/participante/historico",
+    "requestedWidth": 390,
+    "clientWidth": 375,
+    "h1": "Seu tempo, em conhecimento.",
+    "overflow": [],
+    "scroll": 375,
+    "width": 390
+  },
+  {
+    "label": "historico-integrado",
+    "route": "/participante/historico",
+    "requestedWidth": 768,
+    "clientWidth": 753,
+    "h1": "Seu tempo, em conhecimento.",
+    "overflow": [],
+    "scroll": 753,
+    "width": 768
+  },
+  {
+    "label": "historico-integrado",
+    "route": "/participante/historico",
+    "requestedWidth": 1024,
+    "clientWidth": 1009,
+    "h1": "Seu tempo, em conhecimento.",
+    "overflow": [],
+    "scroll": 1009,
+    "width": 1024
+  },
+  {
+    "label": "historico-integrado",
+    "route": "/participante/historico",
+    "requestedWidth": 1440,
+    "clientWidth": 1425,
+    "h1": "Seu tempo, em conhecimento.",
+    "overflow": [],
+    "scroll": 1425,
+    "width": 1440
+  },
+  {
+    "label": "historico-integrado",
+    "route": "/participante/historico",
+    "requestedWidth": 1920,
+    "clientWidth": 1905,
+    "h1": "Seu tempo, em conhecimento.",
+    "overflow": [],
+    "scroll": 1905,
+    "width": 1920
+  },
+  {
+    "label": "formulario-presencial",
+    "route": "/instrutor/propostas/nova",
+    "requestedWidth": 360,
+    "clientWidth": 345,
+    "h1": "Criar uma proposta",
+    "overflow": [],
+    "scroll": 345,
+    "width": 360
+  },
+  {
+    "label": "formulario-presencial",
+    "route": "/instrutor/propostas/nova",
+    "requestedWidth": 390,
+    "clientWidth": 375,
+    "h1": "Criar uma proposta",
+    "overflow": [],
+    "scroll": 375,
+    "width": 390
+  },
+  {
+    "label": "formulario-presencial",
+    "route": "/instrutor/propostas/nova",
+    "requestedWidth": 768,
+    "clientWidth": 753,
+    "h1": "Criar uma proposta",
+    "overflow": [],
+    "scroll": 753,
+    "width": 768
+  },
+  {
+    "label": "formulario-presencial",
+    "route": "/instrutor/propostas/nova",
+    "requestedWidth": 1024,
+    "clientWidth": 1009,
+    "h1": "Criar uma proposta",
+    "overflow": [],
+    "scroll": 1009,
+    "width": 1024
+  },
+  {
+    "label": "formulario-presencial",
+    "route": "/instrutor/propostas/nova",
+    "requestedWidth": 1440,
+    "clientWidth": 1425,
+    "h1": "Criar uma proposta",
+    "overflow": [],
+    "scroll": 1425,
+    "width": 1440
+  },
+  {
+    "label": "formulario-presencial",
+    "route": "/instrutor/propostas/nova",
+    "requestedWidth": 1920,
+    "clientWidth": 1905,
+    "h1": "Criar uma proposta",
+    "overflow": [],
+    "scroll": 1905,
+    "width": 1920
+  },
+  {
+    "label": "formulario-sincrono",
+    "route": "/instrutor/propostas/nova",
+    "requestedWidth": 360,
+    "clientWidth": 345,
+    "h1": "Criar uma proposta",
+    "overflow": [],
+    "scroll": 345,
+    "width": 360
+  },
+  {
+    "label": "formulario-sincrono",
+    "route": "/instrutor/propostas/nova",
+    "requestedWidth": 390,
+    "clientWidth": 375,
+    "h1": "Criar uma proposta",
+    "overflow": [],
+    "scroll": 375,
+    "width": 390
+  },
+  {
+    "label": "formulario-sincrono",
+    "route": "/instrutor/propostas/nova",
+    "requestedWidth": 768,
+    "clientWidth": 753,
+    "h1": "Criar uma proposta",
+    "overflow": [],
+    "scroll": 753,
+    "width": 768
+  },
+  {
+    "label": "formulario-sincrono",
+    "route": "/instrutor/propostas/nova",
+    "requestedWidth": 1024,
+    "clientWidth": 1009,
+    "h1": "Criar uma proposta",
+    "overflow": [],
+    "scroll": 1009,
+    "width": 1024
+  },
+  {
+    "label": "formulario-sincrono",
+    "route": "/instrutor/propostas/nova",
+    "requestedWidth": 1440,
+    "clientWidth": 1425,
+    "h1": "Criar uma proposta",
+    "overflow": [],
+    "scroll": 1425,
+    "width": 1440
+  },
+  {
+    "label": "formulario-sincrono",
+    "route": "/instrutor/propostas/nova",
+    "requestedWidth": 1920,
+    "clientWidth": 1905,
+    "h1": "Criar uma proposta",
+    "overflow": [],
+    "scroll": 1905,
+    "width": 1920
+  },
+  {
+    "label": "formulario-assincrono",
+    "route": "/instrutor/propostas/nova",
+    "requestedWidth": 360,
+    "clientWidth": 345,
+    "h1": "Criar uma proposta",
+    "overflow": [],
+    "scroll": 345,
+    "width": 360
+  },
+  {
+    "label": "formulario-assincrono",
+    "route": "/instrutor/propostas/nova",
+    "requestedWidth": 390,
+    "clientWidth": 375,
+    "h1": "Criar uma proposta",
+    "overflow": [],
+    "scroll": 375,
+    "width": 390
+  },
+  {
+    "label": "formulario-assincrono",
+    "route": "/instrutor/propostas/nova",
+    "requestedWidth": 768,
+    "clientWidth": 753,
+    "h1": "Criar uma proposta",
+    "overflow": [],
+    "scroll": 753,
+    "width": 768
+  },
+  {
+    "label": "formulario-assincrono",
+    "route": "/instrutor/propostas/nova",
+    "requestedWidth": 1024,
+    "clientWidth": 1009,
+    "h1": "Criar uma proposta",
+    "overflow": [],
+    "scroll": 1009,
+    "width": 1024
+  },
+  {
+    "label": "formulario-assincrono",
+    "route": "/instrutor/propostas/nova",
+    "requestedWidth": 1440,
+    "clientWidth": 1425,
+    "h1": "Criar uma proposta",
+    "overflow": [],
+    "scroll": 1425,
+    "width": 1440
+  },
+  {
+    "label": "formulario-assincrono",
+    "route": "/instrutor/propostas/nova",
+    "requestedWidth": 1920,
+    "clientWidth": 1905,
+    "h1": "Criar uma proposta",
+    "overflow": [],
+    "scroll": 1905,
+    "width": 1920
+  },
+  {
+    "label": "frequencia-instrutor-vazia",
+    "route": "/instrutor/atividades/oficina-presencial/frequencia",
+    "requestedWidth": 360,
+    "clientWidth": 345,
+    "h1": "Frequência e encontros",
+    "overflow": [],
+    "scroll": 345,
+    "width": 360
+  },
+  {
+    "label": "frequencia-instrutor-vazia",
+    "route": "/instrutor/atividades/oficina-presencial/frequencia",
+    "requestedWidth": 390,
+    "clientWidth": 375,
+    "h1": "Frequência e encontros",
+    "overflow": [],
+    "scroll": 375,
+    "width": 390
+  },
+  {
+    "label": "frequencia-instrutor-vazia",
+    "route": "/instrutor/atividades/oficina-presencial/frequencia",
+    "requestedWidth": 768,
+    "clientWidth": 753,
+    "h1": "Frequência e encontros",
+    "overflow": [],
+    "scroll": 753,
+    "width": 768
+  },
+  {
+    "label": "frequencia-instrutor-vazia",
+    "route": "/instrutor/atividades/oficina-presencial/frequencia",
+    "requestedWidth": 1024,
+    "clientWidth": 1009,
+    "h1": "Frequência e encontros",
+    "overflow": [],
+    "scroll": 1009,
+    "width": 1024
+  },
+  {
+    "label": "frequencia-instrutor-vazia",
+    "route": "/instrutor/atividades/oficina-presencial/frequencia",
+    "requestedWidth": 1440,
+    "clientWidth": 1425,
+    "h1": "Frequência e encontros",
+    "overflow": [],
+    "scroll": 1425,
+    "width": 1440
+  },
+  {
+    "label": "frequencia-instrutor-vazia",
+    "route": "/instrutor/atividades/oficina-presencial/frequencia",
+    "requestedWidth": 1920,
+    "clientWidth": 1905,
+    "h1": "Frequência e encontros",
+    "overflow": [],
+    "scroll": 1905,
+    "width": 1920
+  },
+  {
+    "label": "frequencia-instrutor-lancada",
+    "route": "/instrutor/atividades/cda698f9-28ae-4837-9eca-edf4af59cb06/frequencia",
+    "requestedWidth": 360,
+    "clientWidth": 345,
+    "h1": "Frequência e encontros",
+    "overflow": [],
+    "scroll": 345,
+    "width": 360
+  },
+  {
+    "label": "frequencia-instrutor-lancada",
+    "route": "/instrutor/atividades/cda698f9-28ae-4837-9eca-edf4af59cb06/frequencia",
+    "requestedWidth": 390,
+    "clientWidth": 375,
+    "h1": "Frequência e encontros",
+    "overflow": [],
+    "scroll": 375,
+    "width": 390
+  },
+  {
+    "label": "frequencia-instrutor-lancada",
+    "route": "/instrutor/atividades/cda698f9-28ae-4837-9eca-edf4af59cb06/frequencia",
+    "requestedWidth": 768,
+    "clientWidth": 753,
+    "h1": "Frequência e encontros",
+    "overflow": [],
+    "scroll": 753,
+    "width": 768
+  },
+  {
+    "label": "frequencia-instrutor-lancada",
+    "route": "/instrutor/atividades/cda698f9-28ae-4837-9eca-edf4af59cb06/frequencia",
+    "requestedWidth": 1024,
+    "clientWidth": 1009,
+    "h1": "Frequência e encontros",
+    "overflow": [],
+    "scroll": 1009,
+    "width": 1024
+  },
+  {
+    "label": "frequencia-instrutor-lancada",
+    "route": "/instrutor/atividades/cda698f9-28ae-4837-9eca-edf4af59cb06/frequencia",
+    "requestedWidth": 1440,
+    "clientWidth": 1425,
+    "h1": "Frequência e encontros",
+    "overflow": [],
+    "scroll": 1425,
+    "width": 1440
+  },
+  {
+    "label": "frequencia-instrutor-lancada",
+    "route": "/instrutor/atividades/cda698f9-28ae-4837-9eca-edf4af59cb06/frequencia",
+    "requestedWidth": 1920,
+    "clientWidth": 1905,
+    "h1": "Frequência e encontros",
+    "overflow": [],
+    "scroll": 1905,
+    "width": 1920
+  },
+  {
+    "label": "progresso-instrutor",
+    "route": "/instrutor/atividades/animacao-digital/frequencia",
+    "requestedWidth": 360,
+    "clientWidth": 345,
+    "h1": "Progresso dos participantes",
+    "overflow": [],
+    "scroll": 345,
+    "width": 360
+  },
+  {
+    "label": "progresso-instrutor",
+    "route": "/instrutor/atividades/animacao-digital/frequencia",
+    "requestedWidth": 390,
+    "clientWidth": 375,
+    "h1": "Progresso dos participantes",
+    "overflow": [],
+    "scroll": 375,
+    "width": 390
+  },
+  {
+    "label": "progresso-instrutor",
+    "route": "/instrutor/atividades/animacao-digital/frequencia",
+    "requestedWidth": 768,
+    "clientWidth": 753,
+    "h1": "Progresso dos participantes",
+    "overflow": [],
+    "scroll": 753,
+    "width": 768
+  },
+  {
+    "label": "progresso-instrutor",
+    "route": "/instrutor/atividades/animacao-digital/frequencia",
+    "requestedWidth": 1024,
+    "clientWidth": 1009,
+    "h1": "Progresso dos participantes",
+    "overflow": [],
+    "scroll": 1009,
+    "width": 1024
+  },
+  {
+    "label": "progresso-instrutor",
+    "route": "/instrutor/atividades/animacao-digital/frequencia",
+    "requestedWidth": 1440,
+    "clientWidth": 1425,
+    "h1": "Progresso dos participantes",
+    "overflow": [],
+    "scroll": 1425,
+    "width": 1440
+  },
+  {
+    "label": "progresso-instrutor",
+    "route": "/instrutor/atividades/animacao-digital/frequencia",
+    "requestedWidth": 1920,
+    "clientWidth": 1905,
+    "h1": "Progresso dos participantes",
+    "overflow": [],
+    "scroll": 1905,
+    "width": 1920
+  },
+  {
+    "label": "conclusao-com-criterios",
+    "route": "/instrutor/atividades/animacao-digital/participantes",
+    "requestedWidth": 360,
+    "clientWidth": 345,
+    "h1": "Introdução à Animação Digital",
+    "overflow": [],
+    "scroll": 345,
+    "width": 360
+  },
+  {
+    "label": "conclusao-com-criterios",
+    "route": "/instrutor/atividades/animacao-digital/participantes",
+    "requestedWidth": 390,
+    "clientWidth": 375,
+    "h1": "Introdução à Animação Digital",
+    "overflow": [],
+    "scroll": 375,
+    "width": 390
+  },
+  {
+    "label": "conclusao-com-criterios",
+    "route": "/instrutor/atividades/animacao-digital/participantes",
+    "requestedWidth": 768,
+    "clientWidth": 753,
+    "h1": "Introdução à Animação Digital",
+    "overflow": [],
+    "scroll": 753,
+    "width": 768
+  },
+  {
+    "label": "conclusao-com-criterios",
+    "route": "/instrutor/atividades/animacao-digital/participantes",
+    "requestedWidth": 1024,
+    "clientWidth": 1009,
+    "h1": "Introdução à Animação Digital",
+    "overflow": [],
+    "scroll": 1009,
+    "width": 1024
+  },
+  {
+    "label": "conclusao-com-criterios",
+    "route": "/instrutor/atividades/animacao-digital/participantes",
+    "requestedWidth": 1440,
+    "clientWidth": 1425,
+    "h1": "Introdução à Animação Digital",
+    "overflow": [],
+    "scroll": 1425,
+    "width": 1440
+  },
+  {
+    "label": "conclusao-com-criterios",
+    "route": "/instrutor/atividades/animacao-digital/participantes",
+    "requestedWidth": 1920,
+    "clientWidth": 1905,
+    "h1": "Introdução à Animação Digital",
+    "overflow": [],
+    "scroll": 1905,
+    "width": 1920
+  },
+  {
+    "label": "administracao-dashboard",
+    "route": "/administracao",
+    "requestedWidth": 360,
+    "clientWidth": 345,
+    "h1": "Painel administrativo",
+    "overflow": [],
+    "scroll": 345,
+    "width": 360
+  },
+  {
+    "label": "administracao-dashboard",
+    "route": "/administracao",
+    "requestedWidth": 390,
+    "clientWidth": 375,
+    "h1": "Painel administrativo",
+    "overflow": [],
+    "scroll": 375,
+    "width": 390
+  },
+  {
+    "label": "administracao-dashboard",
+    "route": "/administracao",
+    "requestedWidth": 768,
+    "clientWidth": 753,
+    "h1": "Painel administrativo",
+    "overflow": [],
+    "scroll": 753,
+    "width": 768
+  },
+  {
+    "label": "administracao-dashboard",
+    "route": "/administracao",
+    "requestedWidth": 1024,
+    "clientWidth": 1009,
+    "h1": "Painel administrativo",
+    "overflow": [],
+    "scroll": 1009,
+    "width": 1024
+  },
+  {
+    "label": "administracao-dashboard",
+    "route": "/administracao",
+    "requestedWidth": 1440,
+    "clientWidth": 1425,
+    "h1": "Painel administrativo",
+    "overflow": [],
+    "scroll": 1425,
+    "width": 1440
+  },
+  {
+    "label": "administracao-dashboard",
+    "route": "/administracao",
+    "requestedWidth": 1920,
+    "clientWidth": 1905,
+    "h1": "Painel administrativo",
+    "overflow": [],
+    "scroll": 1905,
+    "width": 1920
+  },
+  {
+    "label": "administracao-lista",
+    "route": "/administracao/docentes",
+    "requestedWidth": 360,
+    "clientWidth": 345,
+    "h1": "Solicitações docentes",
+    "overflow": [],
+    "scroll": 345,
+    "width": 360
+  },
+  {
+    "label": "administracao-lista",
+    "route": "/administracao/docentes",
+    "requestedWidth": 390,
+    "clientWidth": 375,
+    "h1": "Solicitações docentes",
+    "overflow": [],
+    "scroll": 375,
+    "width": 390
+  },
+  {
+    "label": "administracao-lista",
+    "route": "/administracao/docentes",
+    "requestedWidth": 768,
+    "clientWidth": 753,
+    "h1": "Solicitações docentes",
+    "overflow": [],
+    "scroll": 753,
+    "width": 768
+  },
+  {
+    "label": "administracao-lista",
+    "route": "/administracao/docentes",
+    "requestedWidth": 1024,
+    "clientWidth": 1009,
+    "h1": "Solicitações docentes",
+    "overflow": [],
+    "scroll": 1009,
+    "width": 1024
+  },
+  {
+    "label": "administracao-lista",
+    "route": "/administracao/docentes",
+    "requestedWidth": 1440,
+    "clientWidth": 1425,
+    "h1": "Solicitações docentes",
+    "overflow": [],
+    "scroll": 1425,
+    "width": 1440
+  },
+  {
+    "label": "administracao-lista",
+    "route": "/administracao/docentes",
+    "requestedWidth": 1920,
+    "clientWidth": 1905,
+    "h1": "Solicitações docentes",
+    "overflow": [],
+    "scroll": 1905,
+    "width": 1920
+  },
+  {
+    "label": "administracao-curadores",
+    "route": "/administracao/curadores",
+    "requestedWidth": 360,
+    "clientWidth": 345,
+    "h1": "Curadores e atribuições",
+    "overflow": [],
+    "scroll": 345,
+    "width": 360
+  },
+  {
+    "label": "administracao-curadores",
+    "route": "/administracao/curadores",
+    "requestedWidth": 390,
+    "clientWidth": 375,
+    "h1": "Curadores e atribuições",
+    "overflow": [],
+    "scroll": 375,
+    "width": 390
+  },
+  {
+    "label": "administracao-curadores",
+    "route": "/administracao/curadores",
+    "requestedWidth": 768,
+    "clientWidth": 753,
+    "h1": "Curadores e atribuições",
+    "overflow": [],
+    "scroll": 753,
+    "width": 768
+  },
+  {
+    "label": "administracao-curadores",
+    "route": "/administracao/curadores",
+    "requestedWidth": 1024,
+    "clientWidth": 1009,
+    "h1": "Curadores e atribuições",
+    "overflow": [],
+    "scroll": 1009,
+    "width": 1024
+  },
+  {
+    "label": "administracao-curadores",
+    "route": "/administracao/curadores",
+    "requestedWidth": 1440,
+    "clientWidth": 1425,
+    "h1": "Curadores e atribuições",
+    "overflow": [],
+    "scroll": 1425,
+    "width": 1440
+  },
+  {
+    "label": "administracao-curadores",
+    "route": "/administracao/curadores",
+    "requestedWidth": 1920,
+    "clientWidth": 1905,
+    "h1": "Curadores e atribuições",
+    "overflow": [],
+    "scroll": 1905,
+    "width": 1920
+  },
+  {
+    "label": "administracao-detalhe",
+    "route": "/administracao/docentes/docente-pendente",
+    "requestedWidth": 360,
+    "clientWidth": 345,
+    "h1": "Renata Barros",
+    "overflow": [],
+    "scroll": 345,
+    "width": 360
+  },
+  {
+    "label": "administracao-detalhe",
+    "route": "/administracao/docentes/docente-pendente",
+    "requestedWidth": 390,
+    "clientWidth": 375,
+    "h1": "Renata Barros",
+    "overflow": [],
+    "scroll": 375,
+    "width": 390
+  },
+  {
+    "label": "administracao-detalhe",
+    "route": "/administracao/docentes/docente-pendente",
+    "requestedWidth": 768,
+    "clientWidth": 753,
+    "h1": "Renata Barros",
+    "overflow": [],
+    "scroll": 753,
+    "width": 768
+  },
+  {
+    "label": "administracao-detalhe",
+    "route": "/administracao/docentes/docente-pendente",
+    "requestedWidth": 1024,
+    "clientWidth": 1009,
+    "h1": "Renata Barros",
+    "overflow": [],
+    "scroll": 1009,
+    "width": 1024
+  },
+  {
+    "label": "administracao-detalhe",
+    "route": "/administracao/docentes/docente-pendente",
+    "requestedWidth": 1440,
+    "clientWidth": 1425,
+    "h1": "Renata Barros",
+    "overflow": [],
+    "scroll": 1425,
+    "width": 1440
+  },
+  {
+    "label": "administracao-detalhe",
+    "route": "/administracao/docentes/docente-pendente",
+    "requestedWidth": 1920,
+    "clientWidth": 1905,
+    "h1": "Renata Barros",
+    "overflow": [],
+    "scroll": 1905,
+    "width": 1920
+  },
+  {
+    "label": "cadastro-docente",
+    "route": "/cadastro/professor",
+    "requestedWidth": 360,
+    "clientWidth": 345,
+    "h1": "Faça parte da curadoria.",
+    "overflow": [],
+    "scroll": 345,
+    "width": 360
+  },
+  {
+    "label": "cadastro-docente",
+    "route": "/cadastro/professor",
+    "requestedWidth": 390,
+    "clientWidth": 375,
+    "h1": "Faça parte da curadoria.",
+    "overflow": [],
+    "scroll": 375,
+    "width": 390
+  },
+  {
+    "label": "cadastro-docente",
+    "route": "/cadastro/professor",
+    "requestedWidth": 768,
+    "clientWidth": 753,
+    "h1": "Faça parte da curadoria.",
+    "overflow": [],
+    "scroll": 753,
+    "width": 768
+  },
+  {
+    "label": "cadastro-docente",
+    "route": "/cadastro/professor",
+    "requestedWidth": 1024,
+    "clientWidth": 1009,
+    "h1": "Faça parte da curadoria.",
+    "overflow": [],
+    "scroll": 1009,
+    "width": 1024
+  },
+  {
+    "label": "cadastro-docente",
+    "route": "/cadastro/professor",
+    "requestedWidth": 1440,
+    "clientWidth": 1425,
+    "h1": "Faça parte da curadoria.",
+    "overflow": [],
+    "scroll": 1425,
+    "width": 1440
+  },
+  {
+    "label": "cadastro-docente",
+    "route": "/cadastro/professor",
+    "requestedWidth": 1920,
+    "clientWidth": 1905,
+    "h1": "Faça parte da curadoria.",
+    "overflow": [],
+    "scroll": 1905,
+    "width": 1920
+  },
+  {
+    "label": "curadoria-dashboard",
+    "route": "/curadoria",
+    "requestedWidth": 360,
+    "clientWidth": 345,
+    "h1": "Painel de curadoria",
+    "overflow": [],
+    "scroll": 345,
+    "width": 360
+  },
+  {
+    "label": "curadoria-dashboard",
+    "route": "/curadoria",
+    "requestedWidth": 390,
+    "clientWidth": 375,
+    "h1": "Painel de curadoria",
+    "overflow": [],
+    "scroll": 375,
+    "width": 390
+  },
+  {
+    "label": "curadoria-dashboard",
+    "route": "/curadoria",
+    "requestedWidth": 768,
+    "clientWidth": 753,
+    "h1": "Painel de curadoria",
+    "overflow": [],
+    "scroll": 753,
+    "width": 768
+  },
+  {
+    "label": "curadoria-dashboard",
+    "route": "/curadoria",
+    "requestedWidth": 1024,
+    "clientWidth": 1009,
+    "h1": "Painel de curadoria",
+    "overflow": [],
+    "scroll": 1009,
+    "width": 1024
+  },
+  {
+    "label": "curadoria-dashboard",
+    "route": "/curadoria",
+    "requestedWidth": 1440,
+    "clientWidth": 1425,
+    "h1": "Painel de curadoria",
+    "overflow": [],
+    "scroll": 1425,
+    "width": 1440
+  },
+  {
+    "label": "curadoria-dashboard",
+    "route": "/curadoria",
+    "requestedWidth": 1920,
+    "clientWidth": 1905,
+    "h1": "Painel de curadoria",
+    "overflow": [],
+    "scroll": 1905,
+    "width": 1920
+  },
+  {
+    "label": "curadoria-fila",
+    "route": "/curadoria/propostas",
+    "requestedWidth": 360,
+    "clientWidth": 345,
+    "h1": "Fila de propostas",
+    "overflow": [],
+    "scroll": 345,
+    "width": 360
+  },
+  {
+    "label": "curadoria-fila",
+    "route": "/curadoria/propostas",
+    "requestedWidth": 390,
+    "clientWidth": 375,
+    "h1": "Fila de propostas",
+    "overflow": [],
+    "scroll": 375,
+    "width": 390
+  },
+  {
+    "label": "curadoria-fila",
+    "route": "/curadoria/propostas",
+    "requestedWidth": 768,
+    "clientWidth": 753,
+    "h1": "Fila de propostas",
+    "overflow": [],
+    "scroll": 753,
+    "width": 768
+  },
+  {
+    "label": "curadoria-fila",
+    "route": "/curadoria/propostas",
+    "requestedWidth": 1024,
+    "clientWidth": 1009,
+    "h1": "Fila de propostas",
+    "overflow": [],
+    "scroll": 1009,
+    "width": 1024
+  },
+  {
+    "label": "curadoria-fila",
+    "route": "/curadoria/propostas",
+    "requestedWidth": 1440,
+    "clientWidth": 1425,
+    "h1": "Fila de propostas",
+    "overflow": [],
+    "scroll": 1425,
+    "width": 1440
+  },
+  {
+    "label": "curadoria-fila",
+    "route": "/curadoria/propostas",
+    "requestedWidth": 1920,
+    "clientWidth": 1905,
+    "h1": "Fila de propostas",
+    "overflow": [],
+    "scroll": 1905,
+    "width": 1920
+  },
+  {
+    "label": "curadoria-detalhe",
+    "route": "/curadoria/propostas/proposta-alex-analise",
+    "requestedWidth": 360,
+    "clientWidth": 345,
+    "h1": "Narrativas para projetos científicos",
+    "overflow": [],
+    "scroll": 345,
+    "width": 360
+  },
+  {
+    "label": "curadoria-detalhe",
+    "route": "/curadoria/propostas/proposta-alex-analise",
+    "requestedWidth": 390,
+    "clientWidth": 375,
+    "h1": "Narrativas para projetos científicos",
+    "overflow": [],
+    "scroll": 375,
+    "width": 390
+  },
+  {
+    "label": "curadoria-detalhe",
+    "route": "/curadoria/propostas/proposta-alex-analise",
+    "requestedWidth": 768,
+    "clientWidth": 753,
+    "h1": "Narrativas para projetos científicos",
+    "overflow": [],
+    "scroll": 753,
+    "width": 768
+  },
+  {
+    "label": "curadoria-detalhe",
+    "route": "/curadoria/propostas/proposta-alex-analise",
+    "requestedWidth": 1024,
+    "clientWidth": 1009,
+    "h1": "Narrativas para projetos científicos",
+    "overflow": [],
+    "scroll": 1009,
+    "width": 1024
+  },
+  {
+    "label": "curadoria-detalhe",
+    "route": "/curadoria/propostas/proposta-alex-analise",
+    "requestedWidth": 1440,
+    "clientWidth": 1425,
+    "h1": "Narrativas para projetos científicos",
+    "overflow": [],
+    "scroll": 1425,
+    "width": 1440
+  },
+  {
+    "label": "curadoria-detalhe",
+    "route": "/curadoria/propostas/proposta-alex-analise",
+    "requestedWidth": 1920,
+    "clientWidth": 1905,
+    "h1": "Narrativas para projetos científicos",
+    "overflow": [],
+    "scroll": 1905,
+    "width": 1920
+  },
+  {
+    "label": "curadoria-historico",
+    "route": "/curadoria/historico",
+    "requestedWidth": 360,
+    "clientWidth": 345,
+    "h1": "Histórico de decisões",
+    "overflow": [],
+    "scroll": 345,
+    "width": 360
+  },
+  {
+    "label": "curadoria-historico",
+    "route": "/curadoria/historico",
+    "requestedWidth": 390,
+    "clientWidth": 375,
+    "h1": "Histórico de decisões",
+    "overflow": [],
+    "scroll": 375,
+    "width": 390
+  },
+  {
+    "label": "curadoria-historico",
+    "route": "/curadoria/historico",
+    "requestedWidth": 768,
+    "clientWidth": 753,
+    "h1": "Histórico de decisões",
+    "overflow": [],
+    "scroll": 753,
+    "width": 768
+  },
+  {
+    "label": "curadoria-historico",
+    "route": "/curadoria/historico",
+    "requestedWidth": 1024,
+    "clientWidth": 1009,
+    "h1": "Histórico de decisões",
+    "overflow": [],
+    "scroll": 1009,
+    "width": 1024
+  },
+  {
+    "label": "curadoria-historico",
+    "route": "/curadoria/historico",
+    "requestedWidth": 1440,
+    "clientWidth": 1425,
+    "h1": "Histórico de decisões",
+    "overflow": [],
+    "scroll": 1425,
+    "width": 1440
+  },
+  {
+    "label": "curadoria-historico",
+    "route": "/curadoria/historico",
+    "requestedWidth": 1920,
+    "clientWidth": 1905,
+    "h1": "Histórico de decisões",
+    "overflow": [],
+    "scroll": 1905,
+    "width": 1920
+  },
+  {
+    "label": "validacao-realizacao-obrigatoria",
+    "route": "/instrutor/propostas/nova",
+    "requestedWidth": 360,
+    "clientWidth": 345,
+    "h1": "Criar uma proposta",
+    "overflow": [],
+    "scroll": 345,
+    "width": 360
+  },
+  {
+    "label": "validacao-realizacao-obrigatoria",
+    "route": "/instrutor/propostas/nova",
+    "requestedWidth": 390,
+    "clientWidth": 375,
+    "h1": "Criar uma proposta",
+    "overflow": [],
+    "scroll": 375,
+    "width": 390
+  },
+  {
+    "label": "validacao-realizacao-obrigatoria",
+    "route": "/instrutor/propostas/nova",
+    "requestedWidth": 768,
+    "clientWidth": 753,
+    "h1": "Criar uma proposta",
+    "overflow": [],
+    "scroll": 753,
+    "width": 768
+  },
+  {
+    "label": "validacao-realizacao-obrigatoria",
+    "route": "/instrutor/propostas/nova",
+    "requestedWidth": 1024,
+    "clientWidth": 1009,
+    "h1": "Criar uma proposta",
+    "overflow": [],
+    "scroll": 1009,
+    "width": 1024
+  },
+  {
+    "label": "validacao-realizacao-obrigatoria",
+    "route": "/instrutor/propostas/nova",
+    "requestedWidth": 1440,
+    "clientWidth": 1425,
+    "h1": "Criar uma proposta",
+    "overflow": [],
+    "scroll": 1425,
+    "width": 1440
+  },
+  {
+    "label": "validacao-realizacao-obrigatoria",
+    "route": "/instrutor/propostas/nova",
+    "requestedWidth": 1920,
+    "clientWidth": 1905,
+    "h1": "Criar uma proposta",
+    "overflow": [],
+    "scroll": 1905,
+    "width": 1920
+  }
+]

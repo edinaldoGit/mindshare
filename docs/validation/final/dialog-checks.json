@@ -1,0 +1,114 @@
+{
+  "completion": [
+    {
+      "bottom": 670.375,
+      "focused": "Voltar à lista",
+      "height": 900,
+      "left": 20,
+      "right": 325,
+      "top": 229.625,
+      "width": 360
+    },
+    {
+      "bottom": 654.125,
+      "focused": "Voltar à lista",
+      "height": 900,
+      "left": 20,
+      "right": 355,
+      "top": 245.875,
+      "width": 390
+    },
+    {
+      "bottom": 621.40625,
+      "focused": "Voltar à lista",
+      "height": 900,
+      "left": 126.5,
+      "right": 626.5,
+      "top": 278.59375,
+      "width": 768
+    },
+    {
+      "bottom": 621.40625,
+      "focused": "Voltar à lista",
+      "height": 900,
+      "left": 254.5,
+      "right": 754.5,
+      "top": 278.59375,
+      "width": 1024
+    },
+    {
+      "bottom": 621.40625,
+      "focused": "Voltar à lista",
+      "height": 900,
+      "left": 462.5,
+      "right": 962.5,
+      "top": 278.59375,
+      "width": 1440
+    },
+    {
+      "bottom": 621.40625,
+      "focused": "Voltar à lista",
+      "height": 900,
+      "left": 702.5,
+      "right": 1202.5,
+      "top": 278.59375,
+      "width": 1920
+    }
+  ],
+  "attention": [
+    {
+      "bottom": 692.984375,
+      "focused": "Sim, continuar assistindo",
+      "height": 900,
+      "left": 4.5,
+      "right": 340.5,
+      "top": 207,
+      "width": 360
+    },
+    {
+      "bottom": 677,
+      "focused": "Sim, continuar assistindo",
+      "height": 900,
+      "left": 4.5,
+      "right": 370.5,
+      "top": 223,
+      "width": 390
+    },
+    {
+      "bottom": 650.609375,
+      "focused": "Sim, continuar assistindo",
+      "height": 900,
+      "left": 116.5,
+      "right": 636.5,
+      "top": 249.390625,
+      "width": 768
+    },
+    {
+      "bottom": 623.40625,
+      "focused": "Sim, continuar assistindo",
+      "height": 900,
+      "left": 244.5,
+      "right": 764.5,
+      "top": 276.578125,
+      "width": 1024
+    },
+    {
+      "bottom": 623.40625,
+      "focused": "Sim, continuar assistindo",
+      "height": 900,
+      "left": 452.5,
+      "right": 972.5,
+      "top": 276.578125,
+      "width": 1440
+    },
+    {
+      "bottom": 623.40625,
+      "focused": "Sim, continuar assistindo",
+      "height": 900,
+      "left": 692.5,
+      "right": 1212.5,
+      "top": 276.578125,
+      "width": 1920
+    }
+  ]
+}

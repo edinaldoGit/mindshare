@@ -1,0 +1,494 @@
+[
+  {
+    "path": "/curadoria",
+    "requestedWidth": 360,
+    "h1": "Painel de curadoria",
+    "overflowElements": [],
+    "scrollWidth": 345,
+    "width": 360,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas",
+    "requestedWidth": 360,
+    "h1": "Fila de propostas",
+    "overflowElements": [],
+    "scrollWidth": 345,
+    "width": 360,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/proposta-interna-1",
+    "requestedWidth": 360,
+    "h1": "Proposta interna Em análise",
+    "overflowElements": [],
+    "scrollWidth": 345,
+    "width": 360,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/575556a9-7cd7-44fe-81c9-d3150e9f96f8",
+    "requestedWidth": 360,
+    "h1": "Laboratório de leitura e prototipação inclusiva",
+    "overflowElements": [],
+    "scrollWidth": 345,
+    "width": 360,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/proposta-alex-analise",
+    "requestedWidth": 360,
+    "h1": "Narrativas para projetos científicos",
+    "overflowElements": [],
+    "scrollWidth": 345,
+    "width": 360,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/proposta-alex-ajustes",
+    "requestedWidth": 360,
+    "h1": "Design acessível em equipes",
+    "overflowElements": [],
+    "scrollWidth": 345,
+    "width": 360,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/historico",
+    "requestedWidth": 360,
+    "h1": "Histórico de decisões",
+    "overflowElements": [],
+    "scrollWidth": 345,
+    "width": 360,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/endereco-inexistente",
+    "requestedWidth": 360,
+    "h1": "Proposta indisponível",
+    "overflowElements": [],
+    "scrollWidth": 345,
+    "width": 360,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria",
+    "requestedWidth": 390,
+    "h1": "Painel de curadoria",
+    "overflowElements": [],
+    "scrollWidth": 375,
+    "width": 390,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas",
+    "requestedWidth": 390,
+    "h1": "Fila de propostas",
+    "overflowElements": [],
+    "scrollWidth": 375,
+    "width": 390,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/proposta-interna-1",
+    "requestedWidth": 390,
+    "h1": "Proposta interna Em análise",
+    "overflowElements": [],
+    "scrollWidth": 375,
+    "width": 390,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/575556a9-7cd7-44fe-81c9-d3150e9f96f8",
+    "requestedWidth": 390,
+    "h1": "Laboratório de leitura e prototipação inclusiva",
+    "overflowElements": [],
+    "scrollWidth": 375,
+    "width": 390,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/proposta-alex-analise",
+    "requestedWidth": 390,
+    "h1": "Narrativas para projetos científicos",
+    "overflowElements": [],
+    "scrollWidth": 375,
+    "width": 390,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/proposta-alex-ajustes",
+    "requestedWidth": 390,
+    "h1": "Design acessível em equipes",
+    "overflowElements": [],
+    "scrollWidth": 375,
+    "width": 390,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/historico",
+    "requestedWidth": 390,
+    "h1": "Histórico de decisões",
+    "overflowElements": [],
+    "scrollWidth": 375,
+    "width": 390,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/endereco-inexistente",
+    "requestedWidth": 390,
+    "h1": "Proposta indisponível",
+    "overflowElements": [],
+    "scrollWidth": 375,
+    "width": 390,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria",
+    "requestedWidth": 768,
+    "h1": "Painel de curadoria",
+    "overflowElements": [],
+    "scrollWidth": 753,
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas",
+    "requestedWidth": 768,
+    "h1": "Fila de propostas",
+    "overflowElements": [],
+    "scrollWidth": 753,
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/proposta-interna-1",
+    "requestedWidth": 768,
+    "h1": "Proposta interna Em análise",
+    "overflowElements": [],
+    "scrollWidth": 753,
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/575556a9-7cd7-44fe-81c9-d3150e9f96f8",
+    "requestedWidth": 768,
+    "h1": "Laboratório de leitura e prototipação inclusiva",
+    "overflowElements": [],
+    "scrollWidth": 753,
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/proposta-alex-analise",
+    "requestedWidth": 768,
+    "h1": "Narrativas para projetos científicos",
+    "overflowElements": [],
+    "scrollWidth": 753,
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/proposta-alex-ajustes",
+    "requestedWidth": 768,
+    "h1": "Design acessível em equipes",
+    "overflowElements": [],
+    "scrollWidth": 753,
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/historico",
+    "requestedWidth": 768,
+    "h1": "Histórico de decisões",
+    "overflowElements": [],
+    "scrollWidth": 753,
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/endereco-inexistente",
+    "requestedWidth": 768,
+    "h1": "Proposta indisponível",
+    "overflowElements": [],
+    "scrollWidth": 753,
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria",
+    "requestedWidth": 1024,
+    "h1": "Painel de curadoria",
+    "overflowElements": [],
+    "scrollWidth": 1009,
+    "width": 1024,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas",
+    "requestedWidth": 1024,
+    "h1": "Fila de propostas",
+    "overflowElements": [],
+    "scrollWidth": 1009,
+    "width": 1024,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/proposta-interna-1",
+    "requestedWidth": 1024,
+    "h1": "Proposta interna Em análise",
+    "overflowElements": [],
+    "scrollWidth": 1009,
+    "width": 1024,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/575556a9-7cd7-44fe-81c9-d3150e9f96f8",
+    "requestedWidth": 1024,
+    "h1": "Laboratório de leitura e prototipação inclusiva",
+    "overflowElements": [],
+    "scrollWidth": 1009,
+    "width": 1024,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/proposta-alex-analise",
+    "requestedWidth": 1024,
+    "h1": "Narrativas para projetos científicos",
+    "overflowElements": [],
+    "scrollWidth": 1009,
+    "width": 1024,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/proposta-alex-ajustes",
+    "requestedWidth": 1024,
+    "h1": "Design acessível em equipes",
+    "overflowElements": [],
+    "scrollWidth": 1009,
+    "width": 1024,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/historico",
+    "requestedWidth": 1024,
+    "h1": "Histórico de decisões",
+    "overflowElements": [],
+    "scrollWidth": 1009,
+    "width": 1024,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/endereco-inexistente",
+    "requestedWidth": 1024,
+    "h1": "Proposta indisponível",
+    "overflowElements": [],
+    "scrollWidth": 1009,
+    "width": 1024,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria",
+    "requestedWidth": 1440,
+    "h1": "Painel de curadoria",
+    "overflowElements": [],
+    "scrollWidth": 1425,
+    "width": 1440,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas",
+    "requestedWidth": 1440,
+    "h1": "Fila de propostas",
+    "overflowElements": [],
+    "scrollWidth": 1425,
+    "width": 1440,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/proposta-interna-1",
+    "requestedWidth": 1440,
+    "h1": "Proposta interna Em análise",
+    "overflowElements": [],
+    "scrollWidth": 1425,
+    "width": 1440,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/575556a9-7cd7-44fe-81c9-d3150e9f96f8",
+    "requestedWidth": 1440,
+    "h1": "Laboratório de leitura e prototipação inclusiva",
+    "overflowElements": [],
+    "scrollWidth": 1425,
+    "width": 1440,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/proposta-alex-analise",
+    "requestedWidth": 1440,
+    "h1": "Narrativas para projetos científicos",
+    "overflowElements": [],
+    "scrollWidth": 1425,
+    "width": 1440,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/proposta-alex-ajustes",
+    "requestedWidth": 1440,
+    "h1": "Design acessível em equipes",
+    "overflowElements": [],
+    "scrollWidth": 1425,
+    "width": 1440,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/historico",
+    "requestedWidth": 1440,
+    "h1": "Histórico de decisões",
+    "overflowElements": [],
+    "scrollWidth": 1425,
+    "width": 1440,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/endereco-inexistente",
+    "requestedWidth": 1440,
+    "h1": "Proposta indisponível",
+    "overflowElements": [],
+    "scrollWidth": 1425,
+    "width": 1440,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria",
+    "requestedWidth": 1920,
+    "h1": "Painel de curadoria",
+    "overflowElements": [],
+    "scrollWidth": 1905,
+    "width": 1920,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas",
+    "requestedWidth": 1920,
+    "h1": "Fila de propostas",
+    "overflowElements": [],
+    "scrollWidth": 1905,
+    "width": 1920,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/proposta-interna-1",
+    "requestedWidth": 1920,
+    "h1": "Proposta interna Em análise",
+    "overflowElements": [],
+    "scrollWidth": 1905,
+    "width": 1920,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/575556a9-7cd7-44fe-81c9-d3150e9f96f8",
+    "requestedWidth": 1920,
+    "h1": "Laboratório de leitura e prototipação inclusiva",
+    "overflowElements": [],
+    "scrollWidth": 1905,
+    "width": 1920,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/proposta-alex-analise",
+    "requestedWidth": 1920,
+    "h1": "Narrativas para projetos científicos",
+    "overflowElements": [],
+    "scrollWidth": 1905,
+    "width": 1920,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/proposta-alex-ajustes",
+    "requestedWidth": 1920,
+    "h1": "Design acessível em equipes",
+    "overflowElements": [],
+    "scrollWidth": 1905,
+    "width": 1920,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/historico",
+    "requestedWidth": 1920,
+    "h1": "Histórico de decisões",
+    "overflowElements": [],
+    "scrollWidth": 1905,
+    "width": 1920,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas/endereco-inexistente",
+    "requestedWidth": 1920,
+    "h1": "Proposta indisponível",
+    "overflowElements": [],
+    "scrollWidth": 1905,
+    "width": 1920,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas (fila vazia)",
+    "requestedWidth": 360,
+    "empty": "Nenhuma proposta aguardando análise.",
+    "h1": "Fila de propostas",
+    "overflowElements": [],
+    "scrollWidth": 345,
+    "width": 360,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas (fila vazia)",
+    "requestedWidth": 390,
+    "empty": "Nenhuma proposta aguardando análise.",
+    "h1": "Fila de propostas",
+    "overflowElements": [],
+    "scrollWidth": 375,
+    "width": 390,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas (fila vazia)",
+    "requestedWidth": 768,
+    "empty": "Nenhuma proposta aguardando análise.",
+    "h1": "Fila de propostas",
+    "overflowElements": [],
+    "scrollWidth": 753,
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas (fila vazia)",
+    "requestedWidth": 1024,
+    "empty": "Nenhuma proposta aguardando análise.",
+    "h1": "Fila de propostas",
+    "overflowElements": [],
+    "scrollWidth": 1009,
+    "width": 1024,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas (fila vazia)",
+    "requestedWidth": 1440,
+    "empty": "Nenhuma proposta aguardando análise.",
+    "h1": "Fila de propostas",
+    "overflowElements": [],
+    "scrollWidth": 1425,
+    "width": 1440,
+    "overflow": false
+  },
+  {
+    "path": "/curadoria/propostas (fila vazia)",
+    "requestedWidth": 1920,
+    "empty": "Nenhuma proposta aguardando análise.",
+    "h1": "Fila de propostas",
+    "overflowElements": [],
+    "scrollWidth": 1905,
+    "width": 1920,
+    "overflow": false
+  }
+]
