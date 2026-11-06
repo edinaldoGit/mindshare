@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-06",
+  "environment": "GitHub Pages HTTPS, integrated browser",
+  "appUrl": "https://edinaldogit.github.io/mindshare/",
+  "studioUrl": "https://edinaldogit.github.io/mindshare/?demo=1#/",
+  "proposalId": "6abd0f98-3f41-44ed-9f1a-65fb734c81e4",
+  "facultyApplicationId": "9efd1655-eb3d-4f1b-aaf9-9b49cd66d704",
+  "video": {
+    "src": "https://edinaldogit.github.io/mindshare/media/big-buck-bunny-excerpt.mp4",
+    "duration": 180,
+    "ended": true,
+    "validatedSeconds": 179.343942,
+    "displayedPercent": 99.6,
+    "confirmations": 1,
+    "checkpointBeforeExpiry": {
+      "time": 90.225376,
+      "paused": true
+    },
+    "checkpointAfterExpiry": {
+      "time": 90.225376,
+      "paused": true
+    },
+    "resumedAfterConfirmation": true,
+    "muteAndUnmuteOperated": true,
+    "seekAfterReload": {
+      "before": 179.9,
+      "after": 178.1,
+      "paused": true,
+      "validatedSecondsUnchanged": 179.343942
+    },
+    "persistedAfterReload": true,
+    "alexInitialProgress": 0,
+    "studioEnabledPlaybackAndAcceleratedDialogObserved": true
+  },
+  "pdf": {
+    "downloadedThroughPublicUI": true,
+    "evidence": "public-certificate.pdf",
+    "participant": "Júlia Torres",
+    "instructor": "Alex Costa",
+    "hours": 0.5,
+    "visuallyInspected": true
+  },
+  "journeys": [
+    "Júlia enrolled in asynchronous activity; Alex confirmed eligible completion; Júlia downloaded PDF",
+    "Alex created/submitted physical workshop assigned to Marcos; Marcos approved; Helena denied direct review URL",
+    "Júlia enrolled in workshop; Alex recorded realized meeting and presence, closed and confirmed eligible completion",
+    "Sofia requested faculty role; Clara approved; reload preserved decision; Sofia logged in through normal form"
+  ],
+  "newResponsiveCases": 48,
+  "existingResponsiveCasesNotRepeated": 144,
+  "limits": [
+    "single integrated browser",
+    "no Lighthouse or full WCAG audit",
+    "private session behavior not exercised",
+    "static local demonstration, no institutional identity validation"
+  ],
+  "finalState": {
+    "restoredThroughConfirmedUI": true,
+    "initialAccounts": 6,
+    "createdFacultyRemoved": true,
+    "acceleratedVideoChecks": false,
+    "signedOut": true,
+    "viewportOverrideRemoved": true,
+    "consoleErrorsAndWarnings": [],
+    "mobileMenuAndBackNavigationOperated": true
+  }
+}

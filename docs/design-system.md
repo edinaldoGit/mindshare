@@ -29,7 +29,7 @@ Campos têm label associado, instruções e erro próximo, com `aria-invalid` e 
 
 ## Layouts internos e responsividade
 
-Participante mantém o layout próprio. Instrutor e Professor Curador compartilham `WorkspaceFrame`: identidade, sidebar, navegação, saída e reset confirmado no desktop; seletor nativo rotulado no mobile. Os destinos variam por perfil. A mudança de contexto do Discente mantém sua identidade; troca de persona usa o login demonstrativo.
+Participante mantém o layout próprio. Instrutor e Professor Curador compartilham `WorkspaceFrame`: identidade, sidebar, navegação e saída no desktop; seletor nativo rotulado no mobile. A restauração confirmada fica exclusivamente no Demo Studio. Os destinos variam por perfil. A mudança de contexto do Discente mantém sua identidade; troca de persona usa o login demonstrativo.
 
 Métricas derivadas do estado usam grade de quatro colunas, reduzida para duas. Listas são cartões adaptativos, sem tabelas que precisem de rolagem horizontal. O corpo principal usa `min-width: 0`, quebra de textos longos e organização vertical em telas pequenas. As amostras verificadas em 360, 390, 768, 1024, 1440 e 1920 px estão em `validation.md`.
 
@@ -41,7 +41,7 @@ Na análise, ementa e informações ocupam a coluna principal; o painel lateral 
 
 `DecisionDialog` reutiliza o estilo do diálogo compartilhado, com ícone coerente com a ação, título da proposta e consequência. Aprovação exige confirmação; rejeição/ajustes acrescentam textarea obrigatória. Rejeição usa o token destrutivo apenas na confirmação final. O diálogo tem altura máxima relativa a `100dvh`, rolagem interna e botões empilhados em smartphones. Escape/cancelamento fecha antes de desmontar e devolve foco ao acionador; sucesso foca a mensagem de resultado.
 
-A timeline é compartilhada com o Instrutor e apresenta somente eventos derivados do estado, preservando as decisões anteriores. `prefers-reduced-motion` continua respeitado pelas regras existentes do shell. As revisões feitas não constituem certificação WCAG; auditoria completa e matriz de navegadores ficam registradas para a Etapa 6.
+A timeline é compartilhada com o Instrutor e apresenta somente eventos derivados do estado, preservando as decisões anteriores. `prefers-reduced-motion` continua respeitado pelas regras existentes do shell. As revisões feitas não constituem certificação WCAG; a revisão proporcional da etapa 6 está em `publicacao.md`; auditoria integral e matriz de navegadores permanecem fora do escopo demonstrado.
 
 ## Evolução final: Administração, frequência, vídeo e Demo Studio
 

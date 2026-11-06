@@ -53,3 +53,13 @@ Nesta etapa foram executadas **48 verificações adicionais** nas larguras 360, 
 Também foi reproduzido o vídeo com Studio ativado: Alex começou com zero progresso, separado dos 99,6% de Júlia, e a opção explícita de 15 s abriu confirmação com o vídeo pausado. A versão normal permaneceu usando o intervalo proporcional de 90 s.
 
 A revisão pública encontrou um indicador do cenário A limitado à solicitação inicial Renata. O predicado foi corrigido para reconhecer qualquer solicitação decidida. Nenhuma decisão acadêmica ou administrativa foi alterada pelo painel. Após a correção, os 143 testes, lint, typecheck e build passaram novamente. Resultado publicado da correção registrado no encerramento abaixo.
+
+## Encerramento
+
+Correção publicada no commit `2bad811b5e930914dfecb547a53f2f120b062a80`, execução [42165186022](https://github.com/edinaldoGit/mindshare/actions/runs/42165186022), build e deploy bem-sucedidos. Recarregamento público mostrou **✓ Solicitação recebida / ✓ Decisão administrativa** para a nova solicitação aprovada, preservando os dados anteriores. Os cinco cenários foram selecionados e suas orientações consultadas na interface pública; registro em `scenarios-public.json`.
+
+Restauração pública confirmada pela interface: retornaram as seis contas iniciais, Sofia desapareceu e os indicadores do cenário A voltaram ao início. Antes do reset, cancelar a confirmação havia conservado os ensaios. Verificações aceleradas desativadas. Sessão encerrada; menu móvel operado até catálogo e navegação de retorno; viewport de teste removida. Console consultado ao terminar: zero erros/avisos. Evidências preservam a jornada anterior ao reset; os dados de apresentação são próprios do navegador utilizado.
+
+Não há pendência de acesso, configuração, build ou publicação. A documentação final é enviada em commit posterior, sem alteração do aplicativo validado. Relatório, README, matriz, arquitetura, design system, Demo Studio, plano e validação foram alinhados ao estado público. SRS não foi reescrito; fonte/PDF v1.3 e versões anteriores preservados. `apresentacao.md` orienta uma apresentação de 12–15 minutos e restauração segura dos exemplos.
+
+Limitações restantes são de escopo: protótipo local sem backend/identidade institucional, auditoria completa de acessibilidade, testes privados/cross-browser e ensaios de carga não executados. Não constituem configuração pendente do Pages e não são apresentados como verificações concluídas.

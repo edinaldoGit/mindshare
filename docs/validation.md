@@ -242,3 +242,17 @@ Studio ausente na URL normal e presente somente com `?demo=1` antes do hash. Sel
 Teste em navegador integrado; não constitui matriz de Chrome/Firefox/Edge/Safari, auditoria WCAG integral, ensaio de carga, teste simultâneo com cinco discentes ou verificação de retenção por cinco anos. Identidade, vínculo docente, decisões e documentos são demonstrativos. Armazenamento local e guards de interface não substituem backend, autenticação e autorização de servidor, nem sincronizam dispositivos.
 
 Build estático com base relativa, HashRouter, mídia local e Demo Studio por query compatível com subdiretório. Vídeo carregou no preview de produção sob `/mindshare/`. Nenhum serviço local é exigido pelo aplicativo publicado; o servidor de preview serve apenas para validação. Não houve deploy. Restam revisão final do repositório, configuração da publicação no GitHub Pages, publicação e teste da URL pública.
+
+# Entrega pública — etapa 6
+
+Publicado em 06/11/2026 no repositório existente `edinaldoGit/mindshare`, sem mudança de visibilidade. Relatório vigente com URLs, execução, resultados e limites: [publicacao.md](publicacao.md). Roteiro: [apresentacao.md](apresentacao.md).
+
+Instalação limpa por lockfile, 143/143 testes, lint, typecheck e build aprovados localmente e no primeiro workflow público. Auditoria npm retornou zero vulnerabilidades conhecidas. Revisão pré-publicação não encontrou segredos nos arquivos; nenhum documento docente real ou senha institucional foi incluído.
+
+Os fluxos públicos efetivamente operados incluem cadastro/aprovação docente, login dos quatro papéis, criação/submissão/aprovação de proposta atribuída, bloqueio de outro Curador, inscrição, frequência/encerramento/conclusão, reprodução integral do MP4 público, confirmação expirada com pausa e retomada, persistência e download real de PDF. Júlia atingiu 99,6% de progresso validado no Pages; Alex começou com progresso próprio zerado. Resultados independentes das métricas locais anteriores.
+
+Foram feitas 48 verificações adicionais nas seis larguras usuais: login/cadastro locais alterados; landing e videoaula públicas; Studio aberto/minimizado e diálogos públicos de vídeo/restauração. Sem transbordamento nos resultados finais. Evidências em `validation/publication/`. As 144 verificações anteriores permanecem como histórico, sem alegação de repetição integral.
+
+Na revisão pública, o indicador do cenário docente não reconheceu a nova solicitação decidida porque acompanhava apenas a amostra inicial; o predicado foi corrigido e todas as verificações de código passaram novamente. Nenhuma funcionalidade acadêmica foi alterada.
+
+A validação continua restrita ao navegador integrado, sem matriz completa, auditoria WCAG integral, Lighthouse, teste concorrente ou serviço institucional real. Snapshot local não sincroniza dispositivos. O relatório de publicação distingue configuração, deploy bem-sucedido e verificações efetivamente operadas.
