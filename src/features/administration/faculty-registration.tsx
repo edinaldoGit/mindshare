@@ -46,7 +46,7 @@ export function FacultyRegistration() {
     );
   }
   return (
-    <AuthLayout>
+    <AuthLayout register>
       <p className="eyebrow">DOCÊNCIA QUE CONECTA</p>
       <h1>Faça parte da curadoria.</h1>
       <p className="auth-intro">

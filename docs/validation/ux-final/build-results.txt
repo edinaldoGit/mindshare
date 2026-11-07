@@ -21,9 +21,9 @@ dist/assets/inter-cyrillic-ext-wght-normal-BOeWTOD4.woff2   25.96 kB
 dist/assets/inter-latin-wght-normal-Dx4kXJAl.woff2          48.25 kB
 dist/assets/inter-latin-ext-wght-normal-DO1Apj_S.woff2      85.06 kB
 dist/assets/index-BvrkHLNc.css                              95.56 kB │ gzip:  20.94 kB
-dist/assets/demo-studio-CsYVHbiz.js                          3.06 kB │ gzip:   1.47 kB
-dist/assets/video-page-CiizTmjt.js                           9.71 kB │ gzip:   3.79 kB
-dist/assets/certificate-pdf-CJI_SfpK.js                    422.59 kB │ gzip: 176.96 kB
-dist/assets/index-DjPpGIQ_.js                              495.06 kB │ gzip: 146.32 kB
+dist/assets/demo-studio-CvpZthrQ.js                          3.06 kB │ gzip:   1.47 kB
+dist/assets/video-page-BLId-NMJ.js                           9.71 kB │ gzip:   3.79 kB
+dist/assets/certificate-pdf-DNGv7Mmd.js                    422.59 kB │ gzip: 176.96 kB
+dist/assets/index-DiVTvkkh.js                              495.07 kB │ gzip: 146.32 kB
 
-✓ built in 962ms
+✓ built in 1.13s
