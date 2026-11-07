@@ -1,6 +1,6 @@
-import { useState, type ReactNode } from "react";
-import { Link } from "react-router-dom";
-import { brand } from "@/lib/brand";
+import type { ReactNode } from "react";
+import { BookOpen, Users, ArrowUpRight } from "lucide-react";
+
 export function AuthLayout({
   children,
   register = false,
@@ -8,56 +8,44 @@ export function AuthLayout({
   children: ReactNode;
   register?: boolean;
 }) {
-  const [imageUnavailable, setImageUnavailable] = useState(false);
   return (
     <div className={`auth-layout ${register ? "auth-register" : ""}`}>
       <aside className="auth-story">
-        <Link to="/" className="auth-logo">
-          <img
-            src={brand.logo}
-            alt="MindShare, início"
-            width="1029"
-            height="222"
-          />
-        </Link>
-        <div>
-          <p className="eyebrow">CONEXÕES QUE ENSINAM</p>
-          <p className="auth-story-title">
-            {register ? (
-              <>
-                Seu conhecimento.
-                <br />
-                Novas possibilidades.
-              </>
-            ) : (
-              <>
-                Aprender é melhor
-                <br />
-                quando a gente
-                <br /> <span>compartilha.</span>
-              </>
-            )}
-          </p>
-          <p className="auth-story-description">
-            Um espaço de troca entre estudantes, feito para transformar
-            curiosidade em conhecimento.
-          </p>
+        <p className="eyebrow">CONEXÕES QUE ENSINAM</p>
+        <p className="auth-story-title">
+          {register ? (
+            <>
+              Novas conexões.
+              <br />
+              <span>Novas possibilidades.</span>
+            </>
+          ) : (
+            <>
+              O conhecimento
+              <br />
+              cresce quando
+              <br />
+              <span>é compartilhado.</span>
+            </>
+          )}
+        </p>
+        <p className="auth-story-description">
+          Aprenda, compartilhe e descubra com a comunidade universitária.
+        </p>
+        <div className="auth-connections" aria-hidden="true">
+          <span>
+            <BookOpen size={25} strokeWidth={1.5} />
+          </span>
+          <i />
+          <span>
+            <Users size={25} strokeWidth={1.5} />
+          </span>
+          <i />
+          <span>
+            <ArrowUpRight size={25} strokeWidth={1.5} />
+          </span>
         </div>
-        {!imageUnavailable && (
-          <div className="auth-art auth-landscape" aria-hidden="true">
-            <img
-              src={
-                register ? brand.registerIllustration : brand.loginIllustration
-              }
-              alt=""
-              width="1122"
-              height="1402"
-              decoding="async"
-              onError={() => setImageUnavailable(true)}
-            />
-          </div>
-        )}
-        <p className="auth-story-foot">UFC QUIXADÁ · PROTÓTIPO ACADÊMICO</p>
+        <p className="auth-story-foot">Uma boa troca abre novos caminhos.</p>
       </aside>
       <section className="auth-form-panel">{children}</section>
     </div>
