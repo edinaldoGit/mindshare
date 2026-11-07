@@ -112,10 +112,16 @@ function VideoLessonPlayer({
   lesson: Lesson;
 }) {
   const { state, user, run } = useDemo();
+  const progress = state.progress.find(
+    (p) =>
+      p.activityId === activity.id &&
+      p.lessonId === lesson.id &&
+      p.participantId === user?.id,
+  );
   const video = useRef<HTMLVideoElement>(null),
     dialog = useRef<HTMLDialogElement>(null);
   const [phase, setPhase] = useState<"waiting" | "expired" | "later" | null>(
-      null,
+      progress?.pendingCheck ? "waiting" : null,
     ),
     [remaining, setRemaining] = useState(30),
     [deadline, setDeadline] = useState(30),
@@ -128,14 +134,8 @@ function VideoLessonPlayer({
       new URLSearchParams(window.location.search).get("demo") === "1" &&
       sessionStorage.getItem("mindshare:studio:fast") === "1",
   );
-  const blocked = useRef(false),
+  const blocked = useRef(progress?.pendingCheck ?? false),
     last = useRef<{ time: number; wall: number } | null>(null);
-  const progress = state.progress.find(
-    (p) =>
-      p.activityId === activity.id &&
-      p.lessonId === lesson.id &&
-      p.participantId === user?.id,
-  );
   const initialPosition = useRef(progress?.position ?? 0);
   const seconds = validatedSeconds(progress?.intervals ?? []);
   const sinceCheck = useRef(
@@ -288,7 +288,7 @@ function VideoLessonPlayer({
   }
   function confirm() {
     const el = video.current;
-    if (!el) return;
+    if (!el || !restored.current) return;
     const position = Math.min(el.currentTime, lesson.duration);
     run((s, u) =>
       saveVideoProgress(
@@ -491,7 +491,9 @@ function VideoLessonPlayer({
             : `${remaining} segundos para responder. Você poderá retornar depois.`}
         </p>
         <div className="learning-actions">
-          <Button onClick={confirm}>Sim, continuar assistindo</Button>
+          <Button onClick={confirm} disabled={!ready}>
+            Sim, continuar assistindo
+          </Button>
           <Button
             variant="outline"
             onClick={() => {
