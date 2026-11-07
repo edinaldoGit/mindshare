@@ -529,7 +529,12 @@ function validExtensions(
       ) ||
       !Number.isFinite(r.position) ||
       Number(r.position) < 0 ||
-      Number(r.position) > l.duration + 1
+      Number(r.position) > l.duration + 1 ||
+      (r.pendingCheck !== undefined && typeof r.pendingCheck !== "boolean") ||
+      (r.watchedSinceCheck !== undefined &&
+        (!Number.isFinite(r.watchedSinceCheck) ||
+          Number(r.watchedSinceCheck) < 0 ||
+          Number(r.watchedSinceCheck) > l.duration + 2))
     )
       return false;
     let previous = -1;

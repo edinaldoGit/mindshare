@@ -139,7 +139,8 @@ function VideoLessonPlayer({
   const initialPosition = useRef(progress?.position ?? 0);
   const seconds = validatedSeconds(progress?.intervals ?? []);
   const sinceCheck = useRef(
-    Math.max(0, seconds - (progress?.confirmedSeconds ?? 0)),
+    progress?.watchedSinceCheck ??
+      Math.max(0, seconds - (progress?.confirmedSeconds ?? 0)),
   );
   const interval = accelerated
     ? 15
@@ -213,6 +214,23 @@ function VideoLessonPlayer({
     blocked.current = true;
     video.current?.pause();
     last.current = null;
+    const position = Math.min(
+      video.current?.currentTime ?? initialPosition.current,
+      lesson.duration,
+    );
+    run((s, u) =>
+      saveVideoProgress(
+        s,
+        u,
+        activity.id,
+        lesson.id,
+        position,
+        position,
+        position,
+        undefined,
+        { watchedSinceCheck: sinceCheck.current, pendingCheck: true },
+      ),
+    );
     setRemaining(deadline);
     setPhase("waiting");
   }
@@ -257,6 +275,11 @@ function VideoLessonPlayer({
           previous.time,
           Math.min(el.currentTime, lesson.duration),
           Math.min(el.currentTime, lesson.duration),
+          undefined,
+          {
+            watchedSinceCheck: sinceCheck.current + delta,
+            pendingCheck: false,
+          },
         ),
       );
       sinceCheck.current += delta;
@@ -317,7 +340,12 @@ function VideoLessonPlayer({
               video.current?.pause();
               return;
             }
-            if (blocked.current || sinceCheck.current >= interval) checkpoint();
+            if (
+              progress?.pendingCheck ||
+              blocked.current ||
+              sinceCheck.current >= interval
+            )
+              checkpoint();
             else last.current = null;
           }}
           onPause={() => {

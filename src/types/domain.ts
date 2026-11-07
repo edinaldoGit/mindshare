@@ -132,5 +132,7 @@ export type VideoProgress = {
   intervals: [number, number][];
   position: number;
   confirmedSeconds?: number;
+  watchedSinceCheck?: number;
+  pendingCheck?: boolean;
   checkpoints: number[];
 };

@@ -503,6 +503,7 @@ export function saveVideoProgress(
   end: number,
   position: number,
   checkpoint?: number,
+  tracking?: { watchedSinceCheck: number; pendingCheck: boolean },
 ): Result {
   const a = state.activities.find((a) => a.id === activityId),
     lesson = a?.delivery?.lessons.find((l) => l.id === lessonId);
@@ -537,11 +538,42 @@ export function saveVideoProgress(
       p.lessonId === lessonId &&
       p.participantId === actor.id,
   );
+  if (
+    tracking &&
+    (!Number.isFinite(tracking.watchedSinceCheck) ||
+      tracking.watchedSinceCheck < 0 ||
+      tracking.watchedSinceCheck > lesson.duration + 2 ||
+      typeof tracking.pendingCheck !== "boolean")
+  )
+    return fail(state, "Estado de acompanhamento inválido.");
+  if (
+    old?.pendingCheck &&
+    (end > start ||
+      (tracking?.pendingCheck === false && checkpoint === undefined))
+  )
+    return fail(
+      state,
+      "Confirme o acompanhamento antes de continuar a reprodução validada.",
+    );
   const progress: VideoProgress = {
     activityId,
     lessonId,
     participantId: actor.id,
     position,
+    watchedSinceCheck:
+      checkpoint !== undefined
+        ? 0
+        : (tracking?.watchedSinceCheck ??
+          old?.watchedSinceCheck ??
+          Math.max(
+            0,
+            validatedSeconds(old?.intervals ?? []) -
+              (old?.confirmedSeconds ?? 0),
+          )),
+    pendingCheck:
+      checkpoint !== undefined
+        ? false
+        : (tracking?.pendingCheck ?? old?.pendingCheck ?? false),
     confirmedSeconds:
       checkpoint !== undefined
         ? validatedSeconds(old?.intervals ?? [])

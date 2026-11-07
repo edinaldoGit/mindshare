@@ -6,6 +6,8 @@ import {
   confirmEnrollmentCompletion,
 } from "../src/lib/demo/state.ts";
 import {
+  saveVideoProgress,
+  validatedSeconds,
   saveMeetingAttendance,
   attendanceSummary,
   operateActivity,
@@ -245,5 +247,122 @@ test("Persistência: descrição de aula malformada é recusada", () => {
     (a: { id: string }) => a.id === "animacao-digital",
   );
   activity.delivery.lessons[0].description = { invalid: true };
+  assert.equal(parseDemoState(JSON.stringify(raw)), null);
+});
+
+function pendingVideo() {
+  let state = enrollInActivity(
+    createInitialState(),
+    julia,
+    "animacao-digital",
+    now,
+    "ux-video",
+  ).state;
+  for (let i = 1; i <= 90; i++)
+    state = saveVideoProgress(
+      state,
+      julia,
+      "animacao-digital",
+      "bbb-observacao",
+      0,
+      1,
+      1,
+      undefined,
+      { watchedSinceCheck: i, pendingCheck: false },
+    ).state;
+  return saveVideoProgress(
+    state,
+    julia,
+    "animacao-digital",
+    "bbb-observacao",
+    1,
+    1,
+    1,
+    undefined,
+    { watchedSinceCheck: 90, pendingCheck: true },
+  ).state;
+}
+test("Vídeo: confirmação pendente persiste mesmo após reassistir o mesmo trecho", () => {
+  const restored = parseDemoState(serializeDemoState(pendingVideo()))!;
+  const p = restored.progress.find((p) => p.participantId === julia.id)!;
+  assert.equal(p.pendingCheck, true);
+  assert.equal(p.watchedSinceCheck, 90);
+  assert.equal(validatedSeconds(p.intervals), 1);
+  assert.equal(p.position, 1);
+});
+test("Vídeo: pendência impede novo crédito antes da confirmação", () => {
+  const state = pendingVideo();
+  const r = saveVideoProgress(
+    state,
+    julia,
+    "animacao-digital",
+    "bbb-observacao",
+    1,
+    2,
+    2,
+  );
+  assert.equal(r.ok, false);
+  assert.equal(r.state, state);
+});
+test("Vídeo: confirmação limpa pendência sem conceder segundos", () => {
+  const r = saveVideoProgress(
+    pendingVideo(),
+    julia,
+    "animacao-digital",
+    "bbb-observacao",
+    1,
+    1,
+    1,
+    1,
+  );
+  assert.ok(r.ok);
+  const p = r.state.progress.find((p) => p.participantId === julia.id)!;
+  assert.equal(p.pendingCheck, false);
+  assert.equal(p.watchedSinceCheck, 0);
+  assert.equal(validatedSeconds(p.intervals), 1);
+  assert.equal(p.checkpoints.length, 1);
+});
+test("Vídeo: tentativa de limpar pendência sem confirmar é recusada", () => {
+  const state = pendingVideo();
+  const r = saveVideoProgress(
+    state,
+    julia,
+    "animacao-digital",
+    "bbb-observacao",
+    1,
+    1,
+    1,
+    undefined,
+    { watchedSinceCheck: 0, pendingCheck: false },
+  );
+  assert.equal(r.ok, false);
+  assert.equal(r.state, state);
+});
+test("Vídeo: solicitação repetida de confirmação não duplica intervalos", () => {
+  const state = pendingVideo();
+  const r = saveVideoProgress(
+    state,
+    julia,
+    "animacao-digital",
+    "bbb-observacao",
+    1,
+    1,
+    1,
+    undefined,
+    { watchedSinceCheck: 90, pendingCheck: true },
+  );
+  assert.ok(r.ok);
+  assert.equal(
+    validatedSeconds(
+      r.state.progress.find((p) => p.participantId === julia.id)!.intervals,
+    ),
+    1,
+  );
+});
+test("Vídeo: snapshot com contador de acompanhamento inválido é recusado", () => {
+  const raw = JSON.parse(serializeDemoState(pendingVideo()));
+  raw.progress.find(
+    (p: { participantId: string }) => p.participantId === julia.id,
+  ).watchedSinceCheck = -1;
   assert.equal(parseDemoState(JSON.stringify(raw)), null);
 });
