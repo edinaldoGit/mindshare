@@ -1,5 +1,4 @@
-import type { ReactNode } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { brand } from "@/lib/brand";
 export function AuthLayout({
@@ -9,6 +8,7 @@ export function AuthLayout({
   children: ReactNode;
   register?: boolean;
 }) {
+  const [imageUnavailable, setImageUnavailable] = useState(false);
   return (
     <div className={`auth-layout ${register ? "auth-register" : ""}`}>
       <aside className="auth-story">
@@ -34,8 +34,7 @@ export function AuthLayout({
                 Aprender é melhor
                 <br />
                 quando a gente
-                <br />{" "}
-                <span>compartilha.</span>
+                <br /> <span>compartilha.</span>
               </>
             )}
           </p>
@@ -44,19 +43,20 @@ export function AuthLayout({
             curiosidade em conhecimento.
           </p>
         </div>
-        <div className="auth-art" aria-hidden="true">
-          <span className="auth-circle circle-one" />
-          <span className="auth-circle circle-two" />
-          <span className="auth-art-symbol">
-            <img src={brand.icon} alt="" width="477" height="407" />
-          </span>
-          <span className="auth-art-note">
-            Ideias que encontram
-            <br />
-            <strong>outros caminhos.</strong>
-            <ArrowUpRight size={20} />
-          </span>
-        </div>
+        {!imageUnavailable && (
+          <div className="auth-art auth-landscape" aria-hidden="true">
+            <img
+              src={
+                register ? brand.registerIllustration : brand.loginIllustration
+              }
+              alt=""
+              width="1122"
+              height="1402"
+              decoding="async"
+              onError={() => setImageUnavailable(true)}
+            />
+          </div>
+        )}
         <p className="auth-story-foot">UFC QUIXADÁ · PROTÓTIPO ACADÊMICO</p>
       </aside>
       <section className="auth-form-panel">{children}</section>

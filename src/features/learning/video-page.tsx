@@ -39,7 +39,7 @@ export function VideoPage() {
       <Link to={`/participante/atividades/${a.id}`}>← Voltar à atividade</Link>
       <p className="eyebrow">REMOTA ASSÍNCRONA · APRENDA NO SEU RITMO</p>
       <h1>{a.title}</h1>
-      <p>{a.syllabus}</p>
+
       <div className="video-layout">
         <div>
           {lesson && (
@@ -53,14 +53,12 @@ export function VideoPage() {
         <aside className="learning-card">
           <p className="eyebrow">SEU PERCURSO</p>
           <h2>Videoaulas</h2>
-          <progress
-            value={progress.percent}
-            max={100}
-            aria-label="Progresso geral da atividade"
-          />
           <p>
-            {progress.percent.toFixed(1)}% acompanhado · mínimo{" "}
-            {a.delivery.minimum}%
+            <strong>Progresso do curso: {progress.percent.toFixed(1)}%</strong>
+          </p>
+          <p className="field-hint">
+            Mínimo para conclusão: {a.delivery.minimum}%. Confirmação final pelo
+            Instrutor.
           </p>
           {a.delivery.lessons.map((l, i) => {
             const p = state.progress.find(
@@ -114,6 +112,7 @@ function VideoLessonPlayer({
     [remaining, setRemaining] = useState(30),
     [deadline, setDeadline] = useState(30),
     [error, setError] = useState("");
+  const [loading, setLoading] = useState(true);
   const [accelerated, setAccelerated] = useState(
     () =>
       new URLSearchParams(window.location.search).get("demo") === "1" &&
@@ -255,42 +254,60 @@ function VideoLessonPlayer({
   return (
     <section className="video-player-card">
       <h2>{lesson.title}</h2>
-      <video
-        ref={video}
-        controls
-        playsInline
-        preload="metadata"
-        src={`${import.meta.env.BASE_URL}${lesson.src}`}
-        poster={`${import.meta.env.BASE_URL}media/big-buck-bunny-poster.jpg`}
-        aria-label={lesson.title}
-        onTimeUpdate={tick}
-        onPlay={() => {
-          if (blocked.current) checkpoint();
-          else last.current = null;
-        }}
-        onPause={() => {
-          last.current = null;
-        }}
-        onSeeking={() => {
-          last.current = null;
-        }}
-        onSeeked={() => {
-          last.current = null;
-        }}
-        onLoadedMetadata={() => {
-          if (video.current)
-            video.current.currentTime = Math.min(
-              initialPosition.current,
-              lesson.duration - 0.1,
+      <div className="video-surface" aria-busy={loading && !error}>
+        <video
+          ref={video}
+          controls
+          playsInline
+          preload="metadata"
+          src={`${import.meta.env.BASE_URL}${lesson.src}`}
+          poster={`${import.meta.env.BASE_URL}media/big-buck-bunny-poster.jpg`}
+          aria-label={lesson.title}
+          onWaiting={() => {
+            last.current = null;
+            setLoading(true);
+          }}
+          onCanPlay={() => setLoading(false)}
+          onPlaying={() => setLoading(false)}
+          onLoadedData={() => setLoading(false)}
+          onTimeUpdate={tick}
+          onPlay={() => {
+            if (blocked.current || sinceCheck.current >= interval) checkpoint();
+            else last.current = null;
+          }}
+          onPause={() => {
+            last.current = null;
+          }}
+          onSeeking={() => {
+            setLoading(true);
+            last.current = null;
+          }}
+          onSeeked={() => {
+            setLoading(false);
+            last.current = null;
+          }}
+          onLoadedMetadata={() => {
+            setLoading(false);
+            if (video.current)
+              video.current.currentTime = Math.min(
+                initialPosition.current,
+                lesson.duration - 0.1,
+              );
+          }}
+          onError={() => {
+            setLoading(false);
+            last.current = null;
+            setError(
+              "Não foi possível carregar a videoaula. Confira sua conexão e tente novamente.",
             );
-        }}
-        onError={() => {
-          last.current = null;
-          setError(
-            "Não foi possível carregar a videoaula. Confira sua conexão e tente novamente.",
-          );
-        }}
-      />
+          }}
+        />
+        {loading && !error && (
+          <span className="video-loading" role="status">
+            Carregando vídeo…
+          </span>
+        )}
+      </div>
       {error && (
         <div role="alert">
           <p>{error}</p>
@@ -298,6 +315,9 @@ function VideoLessonPlayer({
             variant="outline"
             onClick={() => {
               setError("");
+              initialPosition.current =
+                video.current?.currentTime ?? initialPosition.current;
+              setLoading(true);
               video.current?.load();
             }}
           >
@@ -305,15 +325,14 @@ function VideoLessonPlayer({
           </Button>
         </div>
       )}
+      <p>
+        {lesson.description ||
+          "Observe a cena e relacione os conceitos apresentados nesta aula."}
+      </p>
       <div className="video-progress-bar">
-        <progress
-          max={lesson.duration}
-          value={seconds}
-          aria-label="Progresso validado desta videoaula"
-        />
         <p>
-          {((seconds / lesson.duration) * 100).toFixed(1)}% validado ·{" "}
-          {Math.floor(seconds)} de {lesson.duration} segundos ·{" "}
+          Acompanhamento validado desta aula:{" "}
+          {((seconds / lesson.duration) * 100).toFixed(1)}% ·{" "}
           {progress?.checkpoints.length ?? 0} confirmação(ões)
         </p>
       </div>

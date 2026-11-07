@@ -50,3 +50,9 @@ Administração reutiliza WorkspaceFrame, cartões de proposta, métricas deriva
 Player HTML5 conserva controles nativos e proporção 16:9, ocupa a coluna principal com lista/progresso ao lado em desktop e empilha abaixo de 900 px. Barra nativa `progress` possui nome acessível. Confirmação de acompanhamento usa diálogo com altura limitada à viewport, foco, teclado, prazo ajustável e retomada sem penalidade irreversível. Erro de mídia possui texto e nova tentativa.
 
 As novas regras estão em `evolution.css`, reutilizando os tokens Ghost White, Steel Blue, Ocean Mist e componentes existentes. Apenas o Demo Studio possui aparência escura própria, identificada como ferramenta externa de apresentação, carregada sob demanda, oculta na URL normal e minimizável. Seus controles especiais substituem os botões de persona e restauração das telas normais. O aviso acadêmico permanece no rodapé e os avisos necessários permanecem no cadastro docente, player e PDF.
+
+## Ajustes de apresentação — 07/11/2026
+
+Login e cadastros usam a coleção editorial do Açude Cedro em WebP (239/263 KiB), proporção 4:5, imagens decorativas sem texto e sem logo embutida. A arte de cadastro é reutilizada no formulário docente. O layout compacto continua priorizando o formulário.
+
+Encontros e frequência usam seletor nativo, campos rotulados, grupos de rádio por participante e salvamento explícito; nenhuma tabela larga. A videoaula mantém somente a barra nativa de reprodução: progresso do curso e da aula são textos rotulados, não barras equivalentes. O estado de espera usa mensagem curta sobreposta, sem bloquear os controles. Demo Studio conserva identidade escura, agora com um seletor, sessão atual, restauração e minimizar/expandir.

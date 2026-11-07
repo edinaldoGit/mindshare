@@ -26,7 +26,7 @@ Acumulado considera somente presenças/ausências em encontros realizados. Encon
 
 Júlia se inscreve em Introdução à Animação Digital → abre `/participante/atividades/animacao-digital/aulas` → reproduz MP4 local com controles nativos → trechos efetivos são validados. Pausa, erro, busca na barra, aba oculta e espera de confirmação não avançam progresso. Reassistência não duplica. A posição e os intervalos pertencem ao participante, atividade e aula e persistem ao recarregar.
 
-Aos 90 segundos validados de reprodução do vídeo de três minutos, a reprodução pausa e abre confirmação acessível. No Demo Studio, opção explícita reduz intervalo para 15 s. Prazo padrão de 30 s pode ser ajustado; expirar mantém a pausa e permite confirmar depois. Confirmar retoma o elemento real e registra checkpoint, sem conceder segundos extras. Progresso geral considera duração dos vídeos obrigatórios; mínimo da atividade é 90%, com confirmação por vídeo. A indicação não comprova atenção ou aprendizagem.
+Aos 90 segundos validados de reprodução do vídeo de três minutos, a reprodução pausa e abre confirmação acessível. Prazo padrão de 30 s pode ser ajustado; expirar mantém a pausa e permite confirmar depois. Confirmar retoma o elemento real e registra checkpoint, sem conceder segundos extras. Progresso geral considera duração dos vídeos obrigatórios; mínimo da atividade é 90%, com confirmação por vídeo. A indicação não comprova atenção ou aprendizagem.
 
 ## Conclusão e comprovante
 
@@ -36,4 +36,4 @@ Registros legados sem critérios preservam compatibilidade explícita, sem inven
 
 ## Apresentação e restauração
 
-`?demo=1` antes do hash ativa o Demo Studio. A ferramenta preenche o formulário normal e orienta cenários; não decide, lança presença nem conclui automaticamente. Troca de conta preserva dados; navegação contextual muda com o perfil. Restaurar exige confirmação, substitui todas as entidades locais pelos exemplos determinísticos e não duplica registros. Cancelar preserva o snapshot. Detalhes e contas em `demo-studio.md`.
+`?demo=1` antes do hash ativa o Demo Studio. A seleção de conta preenche automaticamente o formulário normal; não decide, lança presença nem conclui automaticamente. Troca de conta preserva dados; a navegação é feita pelos menus do produto. Não há cenários, atalhos ou fechamento definitivo; apenas minimizar e expandir. Restaurar exige confirmação, substitui todas as entidades locais pelos exemplos determinísticos e não duplica registros. Cancelar preserva o snapshot. Detalhes e contas em `demo-studio.md`.

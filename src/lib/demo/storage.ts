@@ -447,6 +447,9 @@ function validExtensions(
           (m) =>
             !isRecord(m) ||
             typeof m.id !== "string" ||
+            (m.subject !== undefined && typeof m.subject !== "string") ||
+            (m.updatedAt !== undefined && !isIsoDate(m.updatedAt)) ||
+            (m.updatedBy !== undefined && typeof m.updatedBy !== "string") ||
             !isIsoDate(m.date) ||
             !Number.isFinite(m.duration) ||
             m.duration <= 0 ||
@@ -459,6 +462,10 @@ function validExtensions(
       if (
         d.lessons.some(
           (l) =>
+            !isRecord(l) ||
+            typeof l.title !== "string" ||
+            (l.description !== undefined &&
+              typeof l.description !== "string") ||
             l.id !== "bbb-observacao" ||
             l.src !== "media/big-buck-bunny-excerpt.mp4" ||
             l.duration !== 180 ||

@@ -529,6 +529,15 @@ function ActivityManagementCard({
           Gerenciar participantes <ArrowRight size={15} aria-hidden="true" />
         </Link>
       </Button>
+      {activity.delivery && (
+        <Button asChild variant="ghost" className="full-width">
+          <Link to={`/instrutor/atividades/${activity.id}/frequencia`}>
+            {activity.format === "Remota assíncrona"
+              ? "Progresso dos vídeos"
+              : "Encontros e frequência"}
+          </Link>
+        </Button>
+      )}
     </article>
   );
 }
@@ -644,7 +653,7 @@ export function ActivityParticipantsPage() {
         <Link to={`/instrutor/atividades/${activity.id}/frequencia`}>
           {activity.format === "Remota assíncrona"
             ? "Consultar progresso dos vídeos"
-            : "Registrar frequência e encontros"}
+            : "Encontros e frequência"}
         </Link>
       </Button>
       <section className="instructor-section">

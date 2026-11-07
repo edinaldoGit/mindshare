@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import { useDemo } from "@/app/providers/demo-context";
 import { Button } from "@/components/ui/button";
@@ -8,16 +8,25 @@ import {
   attendanceSummary,
   completionEligibility,
   operateActivity,
-  recordAttendance,
+  saveMeetingAttendance,
 } from "@/lib/demo/evolution";
-import { DeliveryInfo } from "./delivery-fields";
+import type { Activity, Meeting } from "@/types/domain";
+
+function localDateTime(value: string) {
+  const date = new Date(value);
+  return new Date(date.getTime() - date.getTimezoneOffset() * 60000)
+    .toISOString()
+    .slice(0, 16);
+}
 export function AttendancePage() {
   const { activityId } = useParams();
-  const location = useLocation();
-  const instructor = location.pathname.startsWith("/instrutor");
-  const { state, user, users, run } = useDemo();
-  const [notice, setNotice] = useState("");
+  const instructor = useLocation().pathname.startsWith("/instrutor");
+  const { state, user, run } = useDemo();
+  const [notice, setNotice] = useState<{ message: string; ok: boolean } | null>(
+    null,
+  );
   const [closing, setClosing] = useState(false);
+  const [selected, setSelected] = useState("");
   const a = state.activities.find(
     (a) =>
       a.id === activityId &&
@@ -35,13 +44,8 @@ export function AttendancePage() {
         <p>Consulte uma atividade do seu espaço.</p>
       </section>
     );
-  const participants = state.enrollments.filter(
-    (e) => e.activityId === a.id && (instructor || e.participantId === user.id),
-  );
   const d = a.delivery;
-  function result(r: { message: string }) {
-    setNotice(r.message);
-  }
+  const meeting = d?.meetings.find((m) => m.id === selected) ?? d?.meetings[0];
   return (
     <div className="instructor-page learning-page">
       <Link
@@ -57,166 +61,169 @@ export function AttendancePage() {
       <h1>
         {a.format === "Remota assíncrona"
           ? "Progresso dos participantes"
-          : "Frequência e encontros"}
+          : instructor
+            ? "Encontros e frequência"
+            : "Minha frequência"}
       </h1>
       <p>{a.title}</p>
-      <DeliveryInfo activity={a} showLink />
-      {notice && <FeedbackMessage>{notice}</FeedbackMessage>}
-      {d && a.format !== "Remota assíncrona" && (
-        <>
-          <div className="learning-card">
-            <h2>Planejamento dos encontros</h2>
-            {d.meetings.map((m, i) => (
-              <article className="meeting-card" key={m.id}>
-                <div>
-                  <h3>Encontro {i + 1}</h3>
-                  <p>
-                    {new Date(m.date).toLocaleString("pt-BR")} · {m.duration}{" "}
-                    min · <strong>{m.status}</strong>
-                  </p>
-                </div>
-                {instructor && m.status === "Planejado" && (
-                  <div className="learning-actions">
-                    <Button
-                      variant="outline"
-                      onClick={() =>
-                        result(
-                          run((s, u) =>
-                            operateActivity(s, u, a.id, m.id, "Realizado"),
-                          ),
-                        )
-                      }
-                    >
-                      Marcar encontro {i + 1} realizado
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      onClick={() =>
-                        result(
-                          run((s, u) =>
-                            operateActivity(s, u, a.id, m.id, "Cancelado"),
-                          ),
-                        )
-                      }
-                    >
-                      Cancelar encontro {i + 1}
-                    </Button>
-                  </div>
-                )}
+      {notice && (
+        <FeedbackMessage error={!notice.ok}>{notice.message}</FeedbackMessage>
+      )}
+      {!d ? (
+        <p>
+          Esta atividade preserva os critérios da versão anterior, sem
+          frequência retroativa.
+        </p>
+      ) : a.format === "Remota assíncrona" ? (
+        <section className="learning-card">
+          <h2>Acompanhamento individual</h2>
+          {state.enrollments
+            .filter((e) => e.activityId === a.id)
+            .map((e) => (
+              <article className="attendance-person" key={e.id}>
+                <h3>
+                  {state.users.find((u) => u.id === e.participantId)?.name}
+                </h3>
+                <p>{completionEligibility(state, a, e.participantId).reason}</p>
               </article>
             ))}
-            {instructor && !d.closed && (
-              <Button variant="outline" onClick={() => setClosing(true)}>
-                Encerrar atividade
-              </Button>
-            )}
-            {d.closed && (
+        </section>
+      ) : (
+        <>
+          <section className="learning-card">
+            <h2>
+              {instructor ? "Selecione o dia do encontro" : "Seus encontros"}
+            </h2>
+            <p>
+              Frequência mínima: <strong>{d.minimum}%</strong>.{" "}
+              {a.format === "Presencial"
+                ? `Local: ${d.location}`
+                : "Encontro remoto ao vivo."}
+            </p>
+            {a.format === "Remota síncrona" && d.link && (
               <p>
-                Atividade encerrada. A conclusão de cada participante depende do
-                mínimo e da confirmação do Instrutor.
+                <a href={d.link} target="_blank" rel="noopener noreferrer">
+                  Acessar reunião ↗
+                </a>
               </p>
             )}
-          </div>
+            {instructor ? (
+              <>
+                <label className="instructor-field">
+                  Encontro
+                  <select
+                    value={meeting?.id ?? ""}
+                    onChange={(e) => {
+                      setSelected(e.target.value);
+                      setNotice(null);
+                    }}
+                  >
+                    {d.meetings.map((m, i) => (
+                      <option key={m.id} value={m.id}>
+                        Encontro {i + 1} ·{" "}
+                        {new Date(m.date).toLocaleString("pt-BR")} · {m.status}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+                <p className="field-hint">
+                  Confirme o dia e o assunto, marque as presenças e salve.
+                  Duração, local, modalidade e mínimo seguem o planejamento
+                  aprovado. Novos encontros que alterem esse planejamento exigem
+                  nova curadoria.
+                </p>
+                {meeting && (
+                  <MeetingEditor
+                    key={`${a.id}:${meeting.id}:${meeting.updatedAt ?? meeting.status}`}
+                    activity={a}
+                    meeting={meeting}
+                    onResult={setNotice}
+                  />
+                )}
+                {!d.closed && (
+                  <Button variant="outline" onClick={() => setClosing(true)}>
+                    Encerrar atividade
+                  </Button>
+                )}
+                {d.closed && (
+                  <p>
+                    Atividade encerrada. Confira a elegibilidade e confirme as
+                    conclusões na gestão de participantes.
+                  </p>
+                )}
+              </>
+            ) : (
+              <>
+                <AttendanceSummary activity={a} participantId={user.id} />
+                {d.meetings.map((m, i) => {
+                  const r = state.attendance.find(
+                    (r) =>
+                      r.activityId === a.id &&
+                      r.meetingId === m.id &&
+                      r.participantId === user.id,
+                  );
+                  return (
+                    <article className="meeting-card" key={m.id}>
+                      <h3>Encontro {i + 1}</h3>
+                      <p>
+                        {new Date(m.date).toLocaleString("pt-BR")} ·{" "}
+                        {m.duration} min · {m.status}
+                      </p>
+                      <p>
+                        <strong>Assunto abordado:</strong>{" "}
+                        {m.subject ||
+                          "O instrutor ainda não informou o assunto deste encontro."}
+                      </p>
+                      <p>
+                        <strong>
+                          {m.status === "Cancelado"
+                            ? "Cancelado · não contabilizado"
+                            : m.status !== "Realizado" || !r
+                              ? "Não registrado"
+                              : r.present
+                                ? "Presente"
+                                : "Ausente"}
+                        </strong>
+                      </p>
+                      {r && (
+                        <small>
+                          Atualizado em{" "}
+                          {new Date(r.recordedAt).toLocaleString("pt-BR")}
+                        </small>
+                      )}
+                    </article>
+                  );
+                })}
+              </>
+            )}
+          </section>
+          {instructor && (
+            <section className="learning-card">
+              <h2>Frequência acumulada dos participantes</h2>
+              {state.enrollments
+                .filter((e) => e.activityId === a.id)
+                .map((e) => (
+                  <article className="attendance-person" key={e.id}>
+                    <h3>
+                      {state.users.find((u) => u.id === e.participantId)?.name}
+                    </h3>
+                    <AttendanceSummary
+                      activity={a}
+                      participantId={e.participantId}
+                    />
+                  </article>
+                ))}
+            </section>
+          )}
         </>
       )}
-      <section className="learning-card">
-        <h2>{instructor ? "Participação individual" : "Seu acompanhamento"}</h2>
-        {!participants.length && <p>Ainda não há participantes inscritos.</p>}
-        {participants.map((e) => {
-          const p = attendanceSummary(state, a, e.participantId);
-          return (
-            <article className="attendance-person" key={e.id}>
-              <h3>{users.find((u) => u.id === e.participantId)?.name}</h3>
-              <p>{completionEligibility(state, a, e.participantId).reason}</p>
-              {a.format !== "Remota assíncrona" && (
-                <>
-                  <p>
-                    {p.present} presença(s) em {p.count} encontro(s)
-                    contabilizado(s). Registros ainda não lançados não são
-                    faltas.
-                  </p>
-                  {d?.meetings.map((m, i) => {
-                    const r = state.attendance.find(
-                      (r) =>
-                        r.activityId === a.id &&
-                        r.meetingId === m.id &&
-                        r.participantId === e.participantId,
-                    );
-                    return (
-                      <div className="attendance-row" key={m.id}>
-                        <span>
-                          Encontro {i + 1} ·{" "}
-                          <strong>
-                            {r
-                              ? r.present
-                                ? "Presente"
-                                : "Ausente"
-                              : "Não registrado"}
-                          </strong>{" "}
-                          · {m.status}
-                        </span>
-                        {instructor && m.status === "Realizado" && (
-                          <div className="learning-actions">
-                            <Button
-                              variant={r?.present ? "default" : "outline"}
-                              aria-pressed={r?.present === true}
-                              onClick={() =>
-                                result(
-                                  run((s, u) =>
-                                    recordAttendance(
-                                      s,
-                                      u,
-                                      a.id,
-                                      m.id,
-                                      e.participantId,
-                                      true,
-                                      new Date().toISOString(),
-                                    ),
-                                  ),
-                                )
-                              }
-                            >
-                              Presente · {i + 1}
-                            </Button>
-                            <Button
-                              variant={
-                                r?.present === false ? "default" : "outline"
-                              }
-                              aria-pressed={r?.present === false}
-                              onClick={() =>
-                                result(
-                                  run((s, u) =>
-                                    recordAttendance(
-                                      s,
-                                      u,
-                                      a.id,
-                                      m.id,
-                                      e.participantId,
-                                      false,
-                                      new Date().toISOString(),
-                                    ),
-                                  ),
-                                )
-                              }
-                            >
-                              Ausente · {i + 1}
-                            </Button>
-                          </div>
-                        )}
-                      </div>
-                    );
-                  })}
-                </>
-              )}
-            </article>
-          );
-        })}
-      </section>
       <ConfirmationDialog
         open={closing}
         onClose={() => setClosing(false)}
         onConfirm={() => {
-          result(run((s, u) => operateActivity(s, u, a.id, null, "Encerrada")));
+          setNotice(
+            run((s, u) => operateActivity(s, u, a.id, null, "Encerrada")),
+          );
           setClosing(false);
         }}
         title="Encerrar esta atividade?"
@@ -226,5 +233,180 @@ export function AttendancePage() {
         eyebrow="ENCERRAMENTO"
       />
     </div>
+  );
+}
+function AttendanceSummary({
+  activity,
+  participantId,
+}: {
+  activity: Activity;
+  participantId: string;
+}) {
+  const { state } = useDemo();
+  const p = attendanceSummary(state, activity, participantId);
+  const future = activity.delivery?.meetings.some(
+    (m) => m.status === "Planejado",
+  );
+  const partial = !p.closed || p.pending > 0 || future;
+  return (
+    <div className="attendance-summary">
+      <p>
+        <strong>
+          Frequência acumulada:{" "}
+          {p.percent === null ? "sem dados" : `${p.percent.toFixed(1)}%`}
+        </strong>{" "}
+        · mínimo {p.minimum}%
+      </p>
+      <p>
+        {p.present} presença(s) em {p.count} encontro(s) registrado(s) ·{" "}
+        {p.count - p.present} ausência(s) · {p.pending} registro(s) pendente(s).
+      </p>
+      <p>
+        {partial
+          ? "Acompanhamento parcial. Encontros futuros e registros pendentes não contam como ausência."
+          : p.percent !== null && p.percent >= p.minimum
+            ? "Critério de frequência atendido. A confirmação final cabe ao Instrutor."
+            : "O critério de frequência ainda não foi atendido. Consulte o Instrutor."}
+      </p>
+    </div>
+  );
+}
+function MeetingEditor({
+  activity,
+  meeting,
+  onResult,
+}: {
+  activity: Activity;
+  meeting: Meeting;
+  onResult: (r: { message: string; ok: boolean }) => void;
+}) {
+  const { state, run } = useDemo();
+  const participants = state.enrollments.filter(
+    (e) => e.activityId === activity.id,
+  );
+  const [date, setDate] = useState(localDateTime(meeting.date));
+  const [subject, setSubject] = useState(meeting.subject ?? "");
+  const [records, setRecords] = useState<Record<string, boolean | null>>(() =>
+    Object.fromEntries(
+      participants.map((e) => [
+        e.participantId,
+        state.attendance.find(
+          (r) =>
+            r.activityId === activity.id &&
+            r.meetingId === meeting.id &&
+            r.participantId === e.participantId,
+        )?.present ?? null,
+      ]),
+    ),
+  );
+  const cancelled = meeting.status === "Cancelado";
+  function save(event: FormEvent) {
+    event.preventDefault();
+    onResult(
+      run((s, u) =>
+        saveMeetingAttendance(
+          s,
+          u,
+          activity.id,
+          meeting.id,
+          { date: date ? new Date(date).toISOString() : "", subject, records },
+          new Date().toISOString(),
+        ),
+      ),
+    );
+  }
+  return (
+    <form onSubmit={save} className="meeting-register">
+      <h3>
+        {meeting.status} · {meeting.duration} minutos
+      </h3>
+      <label className="instructor-field">
+        Data e horário do encontro
+        <input
+          type="datetime-local"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+          required
+          disabled={cancelled}
+        />
+      </label>
+      <label className="instructor-field">
+        Assunto abordado
+        <textarea
+          value={subject}
+          onChange={(e) => setSubject(e.target.value)}
+          rows={3}
+          required
+          disabled={cancelled}
+          placeholder="Ex.: Modelagem de casos de uso e identificação de atores."
+        />
+      </label>
+      <h3>Participantes inscritos</h3>
+      {!participants.length && (
+        <p>
+          Ainda não há participantes inscritos. Você pode registrar o assunto do
+          encontro.
+        </p>
+      )}
+      {participants.map((e) => (
+        <fieldset
+          className="attendance-person"
+          key={e.id}
+          disabled={cancelled || e.status === "Concluída"}
+        >
+          <legend>
+            {state.users.find((u) => u.id === e.participantId)?.name}
+          </legend>
+          <div className="attendance-options">
+            {(
+              [
+                ["Presente", true],
+                ["Ausente", false],
+                ["Não registrado", null],
+              ] as const
+            ).map(([label, value]) => (
+              <label key={label}>
+                <input
+                  type="radio"
+                  name={`presence-${meeting.id}-${e.participantId}`}
+                  checked={records[e.participantId] === value}
+                  onChange={() =>
+                    setRecords({ ...records, [e.participantId]: value })
+                  }
+                />{" "}
+                {label}
+              </label>
+            ))}
+          </div>
+          {e.status === "Concluída" && (
+            <p>Conclusão já confirmada; frequência preservada.</p>
+          )}
+        </fieldset>
+      ))}
+      {!cancelled && (
+        <Button type="submit">Salvar encontro e frequência</Button>
+      )}
+      {meeting.status === "Planejado" && (
+        <Button
+          type="button"
+          variant="ghost"
+          onClick={() =>
+            onResult(
+              run((s, u) =>
+                operateActivity(s, u, activity.id, meeting.id, "Cancelado"),
+              ),
+            )
+          }
+        >
+          Cancelar este encontro
+        </Button>
+      )}
+      {meeting.updatedAt && (
+        <p className="field-hint">
+          Último lançamento:{" "}
+          {new Date(meeting.updatedAt).toLocaleString("pt-BR")}
+        </p>
+      )}
+    </form>
   );
 }

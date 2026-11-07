@@ -51,3 +51,15 @@ Reset só restaura as chaves do MindShare e requer confirmação pelo Demo Studi
 Demo Studio fica em feature separada, com estado apenas de interface, ativado por `?demo=1` antes do hash e carregado sob demanda. Observa sessão/contexto; preenche credenciais no login normal, sem bypass, e só navega/orienta. Ações acadêmicas são realizadas nas telas do MindShare. Documentação em `demo-studio.md`.
 
 Vite usa base `/mindshare/` para o repositório confirmado; assets usam BASE_URL e o build funciona em `/mindshare/`. HashRouter evita necessidade de rewrites. Vídeo servido localmente; PDF e Demo Studio são chunks sob demanda. Nenhuma dependência de produção nova foi necessária. Workflow em `.github/workflows/deploy.yml`, com verificações obrigatórias e base obtida do Pages. Estado da publicação em `publicacao.md`.
+
+## Refinamento final de UX — 07/11/2026
+
+Demo Studio foi reduzido a seleção de conta, identificação da sessão, restauração confirmada e minimizar/expandir. A seleção encerra apenas a sessão e navega ao login; `LoginPageWrapper` usa a chave de navegação para renovar o preenchimento, inclusive na mesma URL. Cenários e atalhos foram retirados da interface sem remover os exemplos de domínio.
+
+`saveMeetingAttendance` reutiliza `operateActivity` e `recordAttendance` em um único comando atômico. Salva data confirmada, assunto e lançamentos sem alterar duração, modalidade, local ou mínimo aprovados. Assunto, autoria e data de atualização são campos opcionais aditivos do snapshot v3: snapshots anteriores continuam válidos sem migração destrutiva. Não registrado remove o lançamento explícito, permanecendo fora do denominador. Frequência de inscrição já concluída é preservada. Novos encontros ou mudanças de duração são estruturais e permanecem sujeitos à curadoria pelos fluxos de proposta existentes; a operação não expande silenciosamente o planejamento aprovado.
+
+A página pública assíncrona lista exclusivamente as aulas associadas, sem URLs de reprodução. A área inscrita mantém HTML5 video, confirmações e intervalos únicos. Só o player apresenta barra de reprodução; o progresso acadêmico é textual. Carregamento acompanha metadata, espera, busca e prontidão, sem reinicializar a mídia em cada atualização do estado. Uma confirmação pendente reaparece ao tentar reproduzir após recarga, antes de validar novo trecho.
+
+As ilustrações próprias ficam em `public/brand/login-acude-cedro.webp` e `register-acude-cedro.webp`, usando BASE_URL, proporção 4:5 e decoração acessível. A segunda é compartilhada pelos cadastros discente e docente. Falha opcional de imagem remove somente a arte e preserva o formulário. Em telas pequenas a composição prioriza o formulário, conforme o layout existente.
+
+Arquivos estáticos publicados, inclusive o MP4, são públicos. Bloquear a reprodução pela navegação normal para não inscritos não oferece proteção real de conteúdo: autorização e entrega privada de mídia exigiriam backend.

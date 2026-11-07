@@ -1,0 +1,166 @@
+{
+  "studioChecks": [
+    {
+      "bottom": 888,
+      "client": 345,
+      "closeButton": false,
+      "right": 333,
+      "scroll": 345,
+      "width": 360,
+      "x": 12
+    },
+    {
+      "bottom": 888,
+      "client": 375,
+      "closeButton": false,
+      "right": 363,
+      "scroll": 375,
+      "width": 390,
+      "x": 12
+    },
+    {
+      "bottom": 888,
+      "client": 753,
+      "closeButton": false,
+      "right": 741,
+      "scroll": 753,
+      "width": 768,
+      "x": 376
+    },
+    {
+      "bottom": 882,
+      "client": 1009,
+      "closeButton": false,
+      "right": 991,
+      "scroll": 1009,
+      "width": 1024,
+      "x": 626
+    },
+    {
+      "bottom": 882,
+      "client": 1425,
+      "closeButton": false,
+      "right": 1407,
+      "scroll": 1425,
+      "width": 1440,
+      "x": 1042
+    },
+    {
+      "bottom": 882,
+      "client": 1905,
+      "closeButton": false,
+      "right": 1887,
+      "scroll": 1905,
+      "width": 1920,
+      "x": 1522
+    }
+  ],
+  "minimizedChecks": [
+    {
+      "bottom": 890,
+      "client": 345,
+      "right": 335,
+      "width": 360,
+      "x": 219.15625,
+      "y": 854
+    },
+    {
+      "bottom": 890,
+      "client": 375,
+      "right": 365,
+      "width": 390,
+      "x": 249.15625,
+      "y": 854
+    },
+    {
+      "bottom": 888,
+      "client": 753,
+      "right": 741,
+      "width": 768,
+      "x": 601.015625,
+      "y": 842.5
+    },
+    {
+      "bottom": 882,
+      "client": 1009,
+      "right": 991,
+      "width": 1024,
+      "x": 851.015625,
+      "y": 836.5
+    },
+    {
+      "bottom": 882,
+      "client": 1425,
+      "right": 1407,
+      "width": 1440,
+      "x": 1267.015625,
+      "y": 836.5
+    },
+    {
+      "bottom": 882,
+      "client": 1905,
+      "right": 1887,
+      "width": 1920,
+      "x": 1747.015625,
+      "y": 836.5
+    }
+  ],
+  "resetChecks": [
+    {
+      "bottom": 681.09375,
+      "client": 345,
+      "right": 325,
+      "scroll": 345,
+      "width": 360,
+      "x": 20,
+      "y": 218.90625
+    },
+    {
+      "bottom": 681.09375,
+      "client": 375,
+      "right": 355,
+      "scroll": 375,
+      "width": 390,
+      "x": 20,
+      "y": 218.90625
+    },
+    {
+      "bottom": 621.40625,
+      "client": 753,
+      "right": 626.5,
+      "scroll": 753,
+      "width": 768,
+      "x": 126.5,
+      "y": 278.59375
+    },
+    {
+      "bottom": 621.40625,
+      "client": 1009,
+      "right": 754.5,
+      "scroll": 1009,
+      "width": 1024,
+      "x": 254.5,
+      "y": 278.59375
+    },
+    {
+      "bottom": 621.40625,
+      "client": 1425,
+      "right": 962.5,
+      "scroll": 1425,
+      "width": 1440,
+      "x": 462.5,
+      "y": 278.59375
+    },
+    {
+      "bottom": 621.40625,
+      "client": 1905,
+      "right": 1202.5,
+      "scroll": 1905,
+      "width": 1920,
+      "x": 702.5,
+      "y": 278.59375
+    }
+  ],
+  "selection": "Same-account reselection successfully logged Alex in after invalid edited email.",
+  "reset": "Confirmed; initial account session retained."
+}

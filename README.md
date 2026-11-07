@@ -21,7 +21,7 @@ Node >=22.12.0 e npm. Instale com `npm ci`, inicie com `npm run dev`. Verificaç
 
 ## Apresentação acadêmica
 
-Adicione `?demo=1` antes do hash: `http://localhost:5173/?demo=1#/`. A URL normal deixa o Demo Studio oculto. A ferramenta oferece contas fictícias, preenche o login normal, orienta cenários e restaura dados mediante confirmação. O apresentador clica Entrar e realiza as ações nas interfaces reais. Credencial pública: `demonstracao`. Consulte [Demo Studio](docs/demo-studio.md) para contas, cenários e verificação acelerada de vídeo.
+Adicione `?demo=1` antes do hash: `http://localhost:5173/mindshare/?demo=1#/`. A URL normal deixa o Demo Studio oculto. A ferramenta oferece seleção de contas fictícias que preenche automaticamente o login normal, mostra a sessão e restaura dados mediante confirmação. Pode ser minimizada e expandida; a navegação usa os menus do produto. O apresentador clica Entrar e realiza as ações nas interfaces reais. Credencial pública: `demonstracao`. Consulte [Demo Studio](docs/demo-studio.md) para contas e restauração.
 
 Alex é a mesma identidade em Participante/Instrutor; Júlia permite testar a conclusão ponta a ponta. Helena, Marcos e Beatriz são Curadores; Clara é Administradora. Solicitações docentes aprovadas ficam disponíveis no login e na escolha de responsável. Dados usam apenas `.test`, sem senha persistida ou arquivo pessoal.
 
@@ -50,3 +50,9 @@ Vídeo local: `public/media/big-buck-bunny-excerpt.mp4`, trecho de três minutos
 Vite usa `base: "/mindshare/"`, correspondente ao repositório confirmado; assets usam BASE_URL e navegação usa HashRouter. O workflow `.github/workflows/deploy.yml` executa instalação pelo lockfile, testes, lint, typecheck e build antes de publicar somente `dist`. O caminho do build automatizado é obtido da configuração do Pages, inclusive para eventual domínio personalizado. Demo Studio usa a query antes do hash. Não há dependência de serviço local no código distribuído. Logs e resultado público em [Publicação](docs/publicacao.md).
 
 Comprovantes continuam demonstrativos e não garantem reconhecimento de carga horária pela UFC. localStorage não é banco e não garante segurança, identidade, retenção institucional ou sincronização.
+
+## Refinamento final de experiência
+
+Encontros e frequência: **Minhas atividades → Encontros e frequência**. Selecione o encontro, confirme data/horário, informe o assunto, marque Presente/Ausente/Não registrado e salve. O Participante consulta **Minhas inscrições → atividade → Minha frequência**. O cálculo segue RF36 do SRS v1.3, sem transformar pendências em faltas; conclusão continua centralizada no comando existente.
+
+Atividades assíncronas exibem a playlist pública antes da inscrição. Após inscrição, a área de aulas prioriza o vídeo, com uma única barra nativa de reprodução e acompanhamento acadêmico textual. O MP4 estático é público; o bloqueio da interface não constitui proteção real de mídia. Login e cadastros usam as duas ilustrações próprias de Quixadá em `public/brand`.

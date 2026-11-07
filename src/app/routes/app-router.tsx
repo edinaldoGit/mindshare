@@ -13,7 +13,11 @@ import {
   CuratorManagement,
 } from "@/features/administration/admin-pages";
 import { AttendancePage } from "@/features/learning/attendance-page";
-import { VideoPage } from "@/features/learning/video-page";
+const VideoPage = lazy(() =>
+  import("@/features/learning/video-page").then((m) => ({
+    default: m.VideoPage,
+  })),
+);
 import {
   CurationDashboard,
   CurationQueuePage,
@@ -77,7 +81,7 @@ const curationPages: Record<string, React.ReactNode> = {
 };
 function LoginPageWrapper() {
   const location = useLocation();
-  return <LoginPage key={location.search} />;
+  return <LoginPage key={location.key} />;
 }
 export function AppRouter() {
   return (
@@ -127,7 +131,11 @@ export function AppRouter() {
                 />
                 <Route
                   path="participante/atividades/:activityId/aulas"
-                  element={<VideoPage />}
+                  element={
+                    <Suspense fallback={<p role="status">Carregando aulas…</p>}>
+                      <VideoPage />
+                    </Suspense>
+                  }
                 />
               </Route>
             </Route>

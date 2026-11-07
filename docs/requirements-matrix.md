@@ -25,3 +25,9 @@ Fonte normativa: SRS v1.3 completo (`MindShare_SRS_v1.3.md` e PDF). Os documento
 | RNF21, RNF22                             | Erro de mídia com nova tentativa; progresso preservado; vídeo e poster locais via BASE_URL; licença/atribuição acessíveis.                                                  | Decodificação completa, build no subdiretório e reprodução real.                                         | Sem promessa de streaming/CDN ou desempenho em todas as redes.                                                                                 |
 
 Demo Studio é ferramenta auxiliar, documentada em `demo-studio.md`, sem IDs RF acadêmicos artificiais. Tem regras e testes próprios de ativação, preenchimento seguro, perfis e restauração. Todas as verificações e limitações devem ser lidas junto de `validation.md`.
+
+## Rastreabilidade do refinamento de UX — 07/11/2026
+
+RF29/RF30/RF36/RF42 agora usam seleção por encontro, assunto operacional e salvamento atômico em `saveMeetingAttendance`; testes em `ux-final.test.ts`. RF31–RF33/RF43/RF44 preservam a regra de intervalos e confirmação, com apresentação textual do progresso. RF35 passa a exibir playlist pública sem reprodução direta pela interface. O SRS v1.3 não foi modificado.
+
+**Necessidade de atualização futura de rastreabilidade:** o assunto abordado e o lote atômico são detalhamentos operacionais solicitados nesta rodada; avaliar sua explicitação em futura revisão de RF29/RF42. Não foram criados novos IDs acadêmicos nem alterados os critérios aprovados. A ausência de ponderação por duração na frequência continua intencional: RF36 usa contagem de encontros; somente progresso de vídeo pondera duração.

@@ -71,7 +71,7 @@ export function ParticipantActivityPage() {
           >
             {activity.format === "Remota assíncrona"
               ? "Assistir videoaulas"
-              : "Acompanhar frequência"}
+              : "Minha frequência"}
           </Link>
         </Button>
       )}

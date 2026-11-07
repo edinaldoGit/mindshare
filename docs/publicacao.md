@@ -63,3 +63,11 @@ Restauração pública confirmada pela interface: retornaram as seis contas inic
 Não há pendência de acesso, configuração, build ou publicação. A documentação final é enviada em commit posterior, sem alteração do aplicativo validado. Relatório, README, matriz, arquitetura, design system, Demo Studio, plano e validação foram alinhados ao estado público. SRS não foi reescrito; fonte/PDF v1.3 e versões anteriores preservados. `apresentacao.md` orienta uma apresentação de 12–15 minutos e restauração segura dos exemplos.
 
 Limitações restantes são de escopo: protótipo local sem backend/identidade institucional, auditoria completa de acessibilidade, testes privados/cross-browser e ensaios de carga não executados. Não constituem configuração pendente do Pages e não são apresentados como verificações concluídas.
+
+## Revisão definitiva de UX — 07/11/2026
+
+Correções implementadas antes da publicação: Studio compacto com seleção direta ao login, frequência por encontro com assunto e salvamento atômico, playlist pública assíncrona, player com acompanhamento textual e duas ilustrações próprias integradas. Resultados locais e evidências em `validation/ux-final/` e `validation.md`. A publicação desta revisão será registrada abaixo somente após o workflow e o site público serem verificados.
+
+Repositório confirmado novamente: `https://github.com/edinaldoGit/mindshare`, público, branch padrão/main. HEAD remoto antes do trabalho: `5387a81b31d2708352a0dbc540bf2a11993ba924`, igual à base local. Acesso de push verificado sem alterar o remoto. Workflow existente mantém instalação com npm ci, testes, lint, typecheck e build antes do deploy. Documentação oficial consultada em 07/11/2026: [Vite](https://vite.dev/guide/static-deploy.html) e [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
+
+Revisão de arquivos antes do push: nenhuma ocorrência dos padrões de token GitHub/OpenAI ou chave privada procurados; nenhum `.env`, chave ou log de credenciais entre os arquivos da entrega. Somente dados fictícios e evidências acadêmicas. A fotografia de referência não é redistribuída; as artes derivadas próprias são documentadas em `media-licenses.md`. MP4 e atribuição CC BY 3.0 preservados. Arquivos estáticos públicos não oferecem proteção real de conteúdo.

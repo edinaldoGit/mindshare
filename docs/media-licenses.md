@@ -17,3 +17,7 @@
 O player exibe atribuição, links da obra e licença, descrição do conteúdo e identificação de recorte/compressão. O trecho não contém fala; os sons e a música não dão instruções verbais. A descrição textual explica a ação e o propósito de observação de composição/movimento. Não se inventaram legendas ou uma aula narrada inexistente.
 
 O vídeo é um recurso de observação de uma oficina fictícia, não uma alegação de que o filme isolado seja uma aula didática completa. Reprodução e atribuição funcionam por arquivos locais; nenhuma dependência de hotlink ou streaming externo. A obra original não foi acrescentada inteira ao repositório. FFmpeg foi usado temporariamente para recortar, comprimir e verificar decodificação; não é dependência do aplicativo.
+
+## Ilustrações próprias de autenticação
+
+`public/brand/login-acude-cedro.webp` e `register-acude-cedro.webp`: ilustrações geradas nesta conversa a pedido do usuário, com referência fotográfica fornecida por ele do Açude Cedro. A segunda usa a primeira como referência de estilo. Os arquivos distribuídos são artes editoriais próprias do protótipo, convertidas para WebP; a fotografia de referência não é redistribuída no repositório. Sem texto ou marcas oficiais incorporadas às artes. A logo MindShare original permanece como recurso separado da interface.

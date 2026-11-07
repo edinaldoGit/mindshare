@@ -12,3 +12,15 @@ export function loginPrefill(url: string, hashQuery: string, users: User[]) {
     ? (account ?? "")
     : "";
 }
+
+export function studioLoginPath(account: User) {
+  const home =
+    account.kind === "Administrador"
+      ? "/administracao"
+      : account.kind === "Professor Curador"
+        ? "/curadoria"
+        : account.id === "discente-demo"
+          ? "/instrutor"
+          : "/participante";
+  return `/entrar?conta=${encodeURIComponent(account.email)}&retorno=${encodeURIComponent(home)}`;
+}

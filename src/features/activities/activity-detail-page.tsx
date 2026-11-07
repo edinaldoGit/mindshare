@@ -82,10 +82,14 @@ export function ActivityDetailPage() {
           <ActivityCover area={activity.thematicArea} />
           <section className="detail-section">
             <p className="eyebrow">CONHECIMENTO EM PRÁTICA</p>
-            <h2>O que vamos explorar</h2>
+            <h2>
+              {activity.format === "Remota assíncrona"
+                ? "Objetivo e o que você vai aprender"
+                : "O que vamos explorar"}
+            </h2>
             <p>{activity.syllabus}</p>
           </section>
-          <DeliveryInfo activity={activity} />
+          <DeliveryInfo activity={activity} publicView />
           <section className="detail-instructor">
             <span className="avatar avatar-large" aria-hidden="true">
               {instructor?.name

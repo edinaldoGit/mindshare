@@ -299,3 +299,101 @@ progress {
 .attention-dialog {
   margin: auto;
 }
+
+/* A barra nativa pertence à reprodução; o acompanhamento acadêmico usa texto. */
+.video-surface {
+  position: relative;
+}
+.video-loading {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: #172d3be6;
+  color: white;
+  font-size: 12px;
+  pointer-events: none;
+}
+.public-playlist {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.public-playlist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+.public-playlist h3 {
+  font-size: 1rem;
+}
+.lesson-number {
+  flex: 0 0 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--accent);
+  color: var(--accent-foreground);
+  font-weight: 700;
+}
+.public-playlist small {
+  color: var(--muted-foreground);
+}
+.meeting-register {
+  margin-block: 20px;
+}
+.meeting-register .instructor-field {
+  margin-block: 16px;
+}
+.attendance-person {
+  min-width: 0;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  margin: 12px 0;
+}
+.attendance-person legend {
+  font-weight: 650;
+  padding: 0;
+}
+.attendance-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.attendance-options label {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.attendance-options label:has(input:checked) {
+  background: var(--accent);
+  border-color: var(--brand-mist);
+}
+.attendance-summary {
+  background: var(--background);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-block: 12px;
+}
+@media (max-width: 699px) {
+  .demo-studio.minimized {
+    right: 10px;
+    bottom: 10px;
+  }
+  .studio-launch {
+    padding: 8px 10px !important;
+    font-size: 11px;
+  }
+  .attendance-options {
+    flex-direction: column;
+  }
+}

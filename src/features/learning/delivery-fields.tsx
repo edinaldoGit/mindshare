@@ -1,4 +1,5 @@
 import { useId } from "react";
+import { Link } from "react-router-dom";
 import type { Activity, Delivery } from "@/types/domain";
 import { useDemo } from "@/app/providers/demo-context";
 import {
@@ -227,12 +228,77 @@ export function DeliveryFields({
 export function DeliveryInfo({
   activity,
   showLink = false,
+  publicView = false,
 }: {
   activity: Activity;
   showLink?: boolean;
+  publicView?: boolean;
 }) {
-  const { users } = useDemo();
+  const { users, user, enrollments } = useDemo();
   const d = activity.delivery;
+  if (publicView && activity.format === "Remota assíncrona" && d) {
+    const enrolled = enrollments.some(
+      (e) => e.activityId === activity.id && e.participantId === user?.id,
+    );
+    return (
+      <>
+        <section className="learning-card">
+          <p className="eyebrow">SEU APRENDIZADO</p>
+          <h2>Conteúdo das aulas</h2>
+          <ol className="public-playlist">
+            {d.lessons.map((lesson, i) => (
+              <li key={lesson.id}>
+                <span className="lesson-number" aria-hidden="true">
+                  {i + 1}
+                </span>
+                <div>
+                  <h3>{lesson.title}</h3>
+                  <p>
+                    {lesson.description ||
+                      "Explore o conteúdo desta aula e pratique os conceitos apresentados."}
+                  </p>
+                  <small>
+                    {Math.round(lesson.duration / 60)} min ·{" "}
+                    {lesson.required ? "Obrigatória" : "Opcional"} ·{" "}
+                    {enrolled
+                      ? "Disponível na sua área"
+                      : "Acesso após inscrição"}
+                  </small>
+                </div>
+              </li>
+            ))}
+          </ol>
+          {enrolled && (
+            <Link
+              className="text-link"
+              to={`/participante/atividades/${activity.id}/aulas`}
+            >
+              Acessar minhas aulas →
+            </Link>
+          )}
+        </section>
+        <section className="learning-card">
+          <h2>Como funciona</h2>
+          <p>
+            Inscreva-se para acessar as aulas, acompanhe os vídeos e conclua os
+            conteúdos obrigatórios. O instrutor confirmará a conclusão após o
+            cumprimento dos critérios.
+          </p>
+          <p>
+            <strong>Critérios de conclusão:</strong> {d.minimum}% de progresso
+            validado no conteúdo obrigatório, com as confirmações de
+            acompanhamento.
+          </p>
+          {d.instructions && (
+            <details>
+              <summary>Orientações do instrutor</summary>
+              <p>{d.instructions}</p>
+            </details>
+          )}
+        </section>
+      </>
+    );
+  }
   return (
     <section className="learning-card">
       <p className="eyebrow">COMO PARTICIPAR</p>

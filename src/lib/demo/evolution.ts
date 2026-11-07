@@ -11,6 +11,8 @@ import type {
 export const demoLesson: Lesson = {
   id: "bbb-observacao",
   title: "Observação de cena: composição e movimento",
+  description:
+    "Observe enquadramentos, composição e movimento em um trecho de animação e relacione suas escolhas visuais.",
   src: "media/big-buck-bunny-excerpt.mp4",
   duration: 180,
   required: true,
@@ -719,4 +721,128 @@ export function validPlaybackSpan(input: {
     input.delta <= 2 &&
     input.delta <= input.wall * input.rate + 0.35
   );
+}
+
+/** Registro operacional atômico; não modifica duração, mínimo ou modalidade aprovados. */
+export function saveMeetingAttendance(
+  state: DemoState,
+  actor: User | null,
+  activityId: string,
+  meetingId: string,
+  input: {
+    date: string;
+    subject: string;
+    records: Record<string, boolean | null>;
+  },
+  now: string,
+): Result {
+  const a = state.activities.find((x) => x.id === activityId);
+  const meeting = a?.delivery?.meetings.find((m) => m.id === meetingId);
+  if (
+    actor?.kind !== "Discente" ||
+    a?.instructorId !== actor.id ||
+    a.status !== "Aprovada" ||
+    a.format === "Remota assíncrona" ||
+    !meeting ||
+    meeting.status === "Cancelado"
+  )
+    return fail(
+      state,
+      "Somente o Instrutor responsável pode salvar um encontro ativo desta atividade.",
+    );
+  if (
+    !Number.isFinite(Date.parse(input.date)) ||
+    !Number.isFinite(Date.parse(now)) ||
+    !input.subject.trim()
+  )
+    return fail(
+      state,
+      "Informe data, horário e assunto abordado antes de salvar.",
+    );
+  const enrollments = state.enrollments.filter(
+    (e) => e.activityId === activityId,
+  );
+  for (const [id, present] of Object.entries(input.records)) {
+    const enrollment = enrollments.find((e) => e.participantId === id);
+    if (!enrollment || (present !== null && typeof present !== "boolean"))
+      return fail(
+        state,
+        "A frequência só pode ser registrada para participantes inscritos.",
+      );
+    const old = state.attendance.find(
+      (r) =>
+        r.activityId === activityId &&
+        r.meetingId === meetingId &&
+        r.participantId === id,
+    );
+    if (enrollment.status === "Concluída" && (old?.present ?? null) !== present)
+      return fail(
+        state,
+        "A frequência de uma conclusão confirmada não pode ser alterada.",
+      );
+  }
+  let next = operateActivity(
+    state,
+    actor,
+    activityId,
+    meetingId,
+    "Realizado",
+  ).state;
+  next = {
+    ...next,
+    activities: next.activities.map((x) =>
+      x.id === activityId
+        ? {
+            ...x,
+            delivery: {
+              ...x.delivery!,
+              meetings: x.delivery!.meetings.map((m) =>
+                m.id === meetingId
+                  ? {
+                      ...m,
+                      date: input.date,
+                      subject: input.subject.trim(),
+                      updatedAt: now,
+                      updatedBy: actor.id,
+                    }
+                  : m,
+              ),
+            },
+          }
+        : x,
+    ),
+  };
+  for (const [id, present] of Object.entries(input.records)) {
+    if (present === null)
+      next = {
+        ...next,
+        attendance: next.attendance.filter(
+          (r) =>
+            !(
+              r.activityId === activityId &&
+              r.meetingId === meetingId &&
+              r.participantId === id
+            ),
+        ),
+      };
+    else {
+      const result = recordAttendance(
+        next,
+        actor,
+        activityId,
+        meetingId,
+        id,
+        present,
+        now,
+      );
+      if (!result.ok) return fail(state, result.message);
+      next = result.state;
+    }
+  }
+  return {
+    ok: true,
+    state: next,
+    message:
+      "Encontro e frequência salvos. O acompanhamento dos participantes foi atualizado.",
+  };
 }

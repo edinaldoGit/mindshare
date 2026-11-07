@@ -256,3 +256,33 @@ Foram feitas 48 verificações adicionais nas seis larguras usuais: login/cadast
 Na revisão pública, o indicador do cenário docente não reconheceu a nova solicitação decidida porque acompanhava apenas a amostra inicial; o predicado foi corrigido e todas as verificações de código passaram novamente. Nenhuma funcionalidade acadêmica foi alterada.
 
 A validação continua restrita ao navegador integrado, sem matriz completa, auditoria WCAG integral, Lighthouse, teste concorrente ou serviço institucional real. Snapshot local não sincroniza dispositivos. O relatório de publicação distingue configuração, deploy bem-sucedido e verificações efetivamente operadas.
+
+# Refinamento definitivo de UX — 07/11/2026
+
+Esta seção é a revisão vigente e preserva os relatórios anteriores como histórico. SRS v1.3 lido e preservado, junto de arquitetura, matriz, design system, Demo Studio, configuração Vite/HashRouter e workflow existente.
+
+## Implementação e verificações locais
+
+Demo Studio reduzido a seleção, sessão, restauração confirmada e minimizar/expandir. Seleção navega diretamente ao login preenchido e minimiza o painel, sem autenticar; re-selecionar a mesma conta também restaura o preenchimento. O clique em Entrar continua obrigatório. Troca de conta conservou inscrições e frequência. Cancelar restauração por Escape fechou o diálogo e devolveu foco ao botão; confirmar manteve a sessão inicial de Alex e restaurou os exemplos.
+
+Encontros e frequência agora é acessível diretamente nos cartões de Minhas atividades e na gestão de participantes: `/instrutor/atividades/:activityId/frequencia`. Seleção por dia, data/horário confirmado, assunto e Presente/Ausente/Não registrado são salvos em um único comando atômico que reutiliza os serviços existentes. Cada participante consulta `/participante/atividades/:activityId/frequencia`. Registros pendentes não são ausência. Fórmula RF36 preservada: presenças / registros explícitos de encontros realizados × 100, sem ponderação por duração. Não há conclusão antecipada nem novo comando de conclusão. Duração, local, modalidade e mínimo permanecem protegidos pelo planejamento aprovado; novos encontros estruturais continuam sujeitos à curadoria.
+
+Jornada local operada pela interface: Júlia inscreveu-se na oficina (20→19 vagas); Alex selecionou o encontro, informou “Introdução à prototipação colaborativa” e salvou presença. Júlia consultou o assunto, 100% parcial, encontro futuro Não registrado e nenhum controle de edição. A troca de conta e recarga conservaram os registros.
+
+Página pública assíncrona mostra uma aula realmente associada, descrição, duração e indicação de acesso após inscrição. Não há elemento de vídeo nem link MP4 nesse fluxo. A área inscrita prioriza o player; progresso acadêmico é textual, sem barras adicionais. A mídia permanece Big Buck Bunny, 180 segundos, local e com atribuição CC BY 3.0. Página acadêmica de revisão conserva todas as informações e orientações do planejamento.
+
+Reprodução local efetiva: confirmação normal aos **90,220216 s**, vídeo pausado; expiração manteve exatamente o ponto e **50,0%** validado. Retomada por Enter registrou uma confirmação e voltou a reproduzir. Recarga conservou os 50,0%, a confirmação e recuperou **90,220216 s** após metadata. Mensagem de carregamento desapareceu; não existem elementos `progress` adicionais na videoaula. Diálogo e controles operados por teclado. Saltos e elegibilidade continuam cobertos pelos testes de domínio existentes.
+
+Ilustrações encontradas e integradas: `public/brand/login-acude-cedro.webp` e `register-acude-cedro.webp`; a segunda é usada nos dois cadastros. Proporção 4:5 sem corte, BASE_URL, decoração acessível e prioridade do formulário no mobile. Ausência opcional testada retirando temporariamente a primeira imagem: formulário preservado, zero imagens quebradas remanescentes e build aprovado. Arquivo restaurado antes do build final.
+
+## Evidências e qualidade
+
+`validation/ux-final/` contém comandos e resultados, métricas de responsividade, painel, diálogos e capturas. **162/162 testes aprovados**: os 143 anteriores preservados e 19 novos casos; resultados em `test-results.txt`. Lint, typecheck, build e diff foram executados novamente após os ajustes finais. O player passou a ser um chunk sob demanda para conservar o tamanho do pacote principal e evitar carregamento de código de vídeo na landing.
+
+**54 verificações de páginas**: login, cadastro discente/docente, gestão de atividades, frequência presencial/síncrona do Instrutor, Minha frequência, detalhes públicos assíncronos e videoaula; larguras 360, 390, 768, 1024, 1440 e 1920 px, altura 900 px. Títulos presentes e nenhum overflow horizontal. Autenticação foi repetida após ajustar tamanho e proporção das ilustrações. Mais seis verificações do diálogo de vídeo e seis da restauração, com todos dentro da viewport; painel expandido e minimizado também medidos nas seis larguras, somando 78 verificações locais de páginas/painel/diálogos. Esses casos não representam repetição das 144 verificações históricas.
+
+Console local consultado durante a reprodução: sem erros/avisos. A falha de imagem provocada deliberadamente gera a requisição malsucedida esperada; ela não é ocultada como se não tivesse ocorrido. Teste limitado ao navegador integrado, sem auditoria WCAG completa, matriz de navegadores, carga, estudo com usuários ou sincronização entre dispositivos.
+
+## Publicação desta revisão
+
+Resultado do novo deploy e verificações públicas serão registrados em `publicacao.md` e na continuação desta seção após a conclusão efetiva. O workflow existente foi confrontado com as documentações oficiais atuais do Vite e GitHub Pages; base `/mindshare/`, branch `main`, artefato `dist`, validações obrigatórias, Actions oficiais fixadas e permissões adequadas por job foram preservados. Nenhuma alteração de visibilidade ou force push é necessária.

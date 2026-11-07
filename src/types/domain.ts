@@ -78,12 +78,16 @@ export type Assignment = {
   reason: string;
 };
 export type Meeting = {
+  subject?: string;
+  updatedAt?: string;
+  updatedBy?: string;
   id: string;
   date: string;
   duration: number;
   status: "Planejado" | "Realizado" | "Cancelado";
 };
 export type Lesson = {
+  description?: string;
   id: string;
   title: string;
   src: string;
