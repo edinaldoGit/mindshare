@@ -32,22 +32,22 @@
       "length": "40775"
     },
     {
-      "path": "assets/video-page-BBdBw31D.js",
-      "status": 200,
-      "type": "application/javascript; charset=utf-8",
-      "length": "8730"
-    },
-    {
       "path": "assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
       "status": 200,
       "type": "font/woff2",
       "length": "24836"
     },
     {
-      "path": "assets/certificate-pdf-hacUr5DD.js",
+      "path": "assets/index-BvrkHLNc.css",
+      "status": 200,
+      "type": "text/css; charset=utf-8",
+      "length": "95569"
+    },
+    {
+      "path": "assets/index-bvzXj_Ne.js",
       "status": 200,
       "type": "application/javascript; charset=utf-8",
-      "length": "422595"
+      "length": "495076"
     },
     {
       "path": "assets/inter-cyrillic-wght-normal-DqGufNeO.woff2",
@@ -66,6 +66,12 @@
       "status": 200,
       "type": "font/woff2",
       "length": "25960"
+    },
+    {
+      "path": "assets/video-page-BPuRTzY0.js",
+      "status": 200,
+      "type": "application/javascript; charset=utf-8",
+      "length": "9786"
     },
     {
       "path": "assets/inter-greek-wght-normal-CkhJZR-_.woff2",
@@ -92,6 +98,18 @@
       "length": "9444"
     },
     {
+      "path": "assets/certificate-pdf-0RLnnv4I.js",
+      "status": 200,
+      "type": "application/javascript; charset=utf-8",
+      "length": "422595"
+    },
+    {
+      "path": "assets/demo-studio-OK0Wavi0.js",
+      "status": 200,
+      "type": "application/javascript; charset=utf-8",
+      "length": "3067"
+    },
+    {
       "path": "assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
       "status": 200,
       "type": "font/woff2",
@@ -110,28 +128,10 @@
       "length": "11232"
     },
     {
-      "path": "assets/index-BB2byQ-k.js",
-      "status": 200,
-      "type": "application/javascript; charset=utf-8",
-      "length": "494325"
-    },
-    {
-      "path": "assets/index-B3E-gshl.css",
-      "status": 200,
-      "type": "text/css; charset=utf-8",
-      "length": "95531"
-    },
-    {
       "path": "assets/manrope-latin-ext-wght-normal-Ch3YOpNY.woff2",
       "status": 200,
       "type": "font/woff2",
       "length": "15120"
-    },
-    {
-      "path": "assets/demo-studio-DNDen0Wl.js",
-      "status": 200,
-      "type": "application/javascript; charset=utf-8",
-      "length": "3067"
     },
     {
       "path": "media/big-buck-bunny-poster.jpg",

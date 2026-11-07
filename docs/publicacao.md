@@ -71,3 +71,46 @@ Correções implementadas antes da publicação: Studio compacto com seleção d
 Repositório confirmado novamente: `https://github.com/edinaldoGit/mindshare`, público, branch padrão/main. HEAD remoto antes do trabalho: `5387a81b31d2708352a0dbc540bf2a11993ba924`, igual à base local. Acesso de push verificado sem alterar o remoto. Workflow existente mantém instalação com npm ci, testes, lint, typecheck e build antes do deploy. Documentação oficial consultada em 07/11/2026: [Vite](https://vite.dev/guide/static-deploy.html) e [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 
 Revisão de arquivos antes do push: nenhuma ocorrência dos padrões de token GitHub/OpenAI ou chave privada procurados; nenhum `.env`, chave ou log de credenciais entre os arquivos da entrega. Somente dados fictícios e evidências acadêmicas. A fotografia de referência não é redistribuída; as artes derivadas próprias são documentadas em `media-licenses.md`. MP4 e atribuição CC BY 3.0 preservados. Arquivos estáticos públicos não oferecem proteção real de conteúdo.
+
+### Publicação definitiva confirmada
+
+Aplicativo publicado no commit **`0d2e797bcc69fab530626d472a1dcf57989ab0fb`**, execução **[42417403052](https://github.com/edinaldoGit/mindshare/actions/runs/42417403052)**. Build e deploy concluídos com **success** em 07/11/2026. O workflow aprovou Test, Lint, Typecheck e Build antes de publicar o artefato. Branch main e repositório público preservados, sem force push ou alteração de visibilidade. As publicações intermediárias e a correção de vídeo encontrada durante a revisão estão documentadas em `validation.md`.
+
+- Aplicação: https://edinaldogit.github.io/mindshare/
+- Demo Studio: https://edinaldogit.github.io/mindshare/?demo=1#/
+- Repositório: https://github.com/edinaldoGit/mindshare
+
+**Entrega A:** Demo Studio sem cenários, atalhos ou fechamento definitivo; seleção direta para o login preenchido, com clique real em Entrar; restauração confirmada e sessão inicial preservada. Frequência por encontro com data, assunto, Presente/Ausente/Não registrado e salvamento atômico; consulta individual e regras de conclusão preservadas. Playlist pública com uma aula real e critérios resumidos; player com única barra nativa, progresso textual, estado da aula e prontidão/retomada corrigidas. Artes próprias de login e dos dois cadastros integradas, proporção preservada e falha opcional tratada.
+
+**Entrega B:** publicação efetiva e verificações pela URL pública, sem servidor local. Os **24 arquivos do build** retornaram HTTP 200. HTML publicado corresponde exatamente ao build local final. Fontes, logo, monograma, poster, duas ilustrações, chunks e MP4 verificados. MP4: `video/mp4`, **4.718.180 bytes**, SHA256 `57c4fbfd9618ac685f9e7d50cb7fc64ec432670bb7e619eb31db95bc6af0a814`, igual ao local. Landing sem elemento de vídeo e Studio ausente na URL normal.
+
+### Fluxos operados na versão pública
+
+- Visitante consultou a playlist com um item, descrição, duração e “Acesso após inscrição”, sem elemento de vídeo ou link MP4. A tentativa de abrir a área inscrita foi direcionada ao login.
+- Júlia, Alex, Marcos, Helena e Clara entraram pelo seletor e pelo botão normal Entrar. Seleção deixou a aplicação no formulário, sem login automático. Trocas conservaram inscrições, frequência, progresso e conclusões. Re-seleção da mesma conta já havia sido conferida localmente.
+- Júlia inscreveu-se nas oficinas presencial/síncrona e na atividade assíncrona; vagas presenciais 20→19. Alex selecionou o encontro, confirmou data pelo controle nativo, salvou assunto e presença. No segundo encontro, ausência produziu **50%**, Não registrado produziu **100% parcial com uma pendência**, e presença produziu **100% com dois registros**. Ausência foi explícita, nunca padrão. Encerramento não concluiu automaticamente; confirmação na gestão atualizou o histórico.
+- Oficina síncrona: assunto, presença, encerramento e confirmação também operados. Júlia consultou os encontros, assuntos, datas, percentual e o link autorizado da reunião, sem controles de edição. Como outro Instrutor, recebeu Acompanhamento indisponível na atividade de Alex.
+- Histórico de Júlia passou a **3 horas / duas conclusões** após as duas oficinas. Comprovante presencial baixado efetivamente do site: A4, uma página, Júlia Torres, Alex Costa, título correto, duas horas, data 07/11/2026 e aviso RF23. PDF renderizado e inspecionado sem recortes/sobreposições; arquivos `comprovante-publico.pdf`, `.txt` e `.png` em `validation/ux-final/`.
+- Marcos recebeu indisponibilidade na proposta atribuída a Helena. Helena abriu a mesma proposta e confirmou aprovação pelo diálogo normal; histórico anterior preservado. Clara acessou solicitações administrativas. Cadastros discente/docente recusaram envio vazio e conservaram os avisos de dados fictícios.
+
+### Reprodução e persistência no Pages
+
+Na versão definitiva, o diálogo pendente abriu **automaticamente**, sem iniciar reprodução, em **171,135999 s**, com **93,3%** e uma confirmação preservados. A mídia permaneceu pausada, sem loading permanente. Confirmar fechou o diálogo, retomou o vídeo e registrou a segunda confirmação. A reprodução chegou a **180 s / ended=true / nenhum erro**, com **98,0% validados** e status **Aula acompanhada**. O percentual não foi artificialmente completado: saltos/lacunas não validados continuam excluídos. Recarga recuperou **179,807404 s** (última posição validada), os mesmos **98,0%** e duas confirmações, sem spinner permanente.
+
+O teste de busca retrocedeu de 90,206411 s para 79,4064 s sem alterar 50,9% de progresso. Confirmação normal, expiração com pausa, retorno e persistência foram efetivamente operados na hospedagem. O checkpoint pendente observado nesta rodada conservou 93,3% durante a espera; a inicialização foi corrigida para abrir a solicitação antes de qualquer nova reprodução. Os testes adicionais de reassistência garantem que a pendência persiste mesmo quando intervalos já acompanhados não aumentam o percentual.
+
+Alex consultou o resultado e confirmou a conclusão assíncrona pelo comando existente. Júlia passou a **3,5 horas / três conclusões**, com o botão do comprovante assíncrono habilitado. O PDF presencial já havia sido baixado, renderizado e conferido. Não se afirma um segundo download assíncrono nesta rodada.
+
+### Responsividade e estado de apresentação
+
+**84 verificações públicas**: 60 páginas (dez rotas/estados × seis larguras), 12 Studio expandido/minimizado e 12 diálogos de vídeo/restauração. Larguras **360, 390, 768, 1024, 1440 e 1920 px**, altura 900 px. Páginas: landing, login, cadastros discente/docente, detalhes públicos assíncronos, Minha frequência, histórico, videoaula e frequências presenciais/síncronas do Instrutor. Nenhum overflow horizontal, título ausente, imagem quebrada ou painel/diálogo fora da viewport nos registros. Os ajustes finais de autenticação e player foram conferidos novamente. Não se confunde esse total com as 78 verificações locais ou com as 144 históricas.
+
+Console público consultado ao terminar: **zero erros/avisos**. Restauração confirmada pela interface conservou a sessão de Júlia, retornou **seis contas únicas** e zerou as três conclusões da jornada, sem duplicar registros. Em seguida a sessão foi encerrada para deixar o Studio pronto para a apresentação. Viewport de teste removida. Evidências estruturadas e capturas em `validation/ux-final/`; `deploy.json` identifica a execução do aplicativo validado e `http-public.json` confirma identidade com o build local.
+
+Nenhuma pendência de implementação, acesso ou publicação identificada nesta rodada. A documentação final é atualizada após as verificações, sem mudar o aplicativo validado.
+
+### Qualidade, evidências e limites
+
+**168 testes aprovados** (143 anteriores + 25 novos); npm test, lint, typecheck, build e revisão do diff aprovados após o último ajuste. Comandos completos e dados de execução em `validation/ux-final/`. SRS v1.3 e seus PDFs não foram alterados. A rastreabilidade registra os detalhamentos operacionais solicitados sem criar requisitos acadêmicos artificiais.
+
+O site continua sendo protótipo acadêmico estático: dados fictícios locais, sem backend, identidade institucional, sincronização entre dispositivos ou proteção privada de mídia. O bloqueio da interface não protege arquivos estáticos públicos. Sem câmera/microfone/proctoring. Não foram realizados auditoria WCAG integral, matriz completa de navegadores, teste de carga ou estudo com cinco discentes. Esses limites não são falhas de configuração da publicação.

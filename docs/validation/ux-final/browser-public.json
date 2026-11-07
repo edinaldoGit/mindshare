@@ -1,0 +1,235 @@
+{
+  "releaseCommit": "0d2e797bcc69fab530626d472a1dcf57989ab0fb",
+  "site": {
+    "landing": {
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "studio": false,
+      "videos": 0
+    },
+    "playlistVisitor": {
+      "directMediaLinks": 0,
+      "lessons": 1,
+      "text": "1Observação de cena: composição e movimentoExplore o conteúdo desta aula e pratique os conceitos apresentados.3 min · Obrigatória · Acesso após inscrição",
+      "video": 0
+    },
+    "authenticationArtwork": {
+      "loaded": true,
+      "src": "/mindshare/brand/login-acude-cedro.webp"
+    }
+  },
+  "studio": {
+    "logins": [
+      {
+        "id": "discente-participante-demo",
+        "before": {
+          "heading": "Entre na conversa.",
+          "loginForm": true
+        },
+        "after": {
+          "heading": "Olá, Júlia.",
+          "url": "#/participante"
+        }
+      },
+      {
+        "id": "discente-demo",
+        "before": {
+          "heading": "Entre na conversa.",
+          "loginForm": true
+        },
+        "after": {
+          "heading": "Compartilhe o que você sabe, Alex.",
+          "url": "#/instrutor"
+        }
+      },
+      {
+        "id": "discente-participante-demo",
+        "before": {
+          "heading": "Entre na conversa.",
+          "loginForm": true
+        },
+        "after": {
+          "heading": "Olá, Júlia.",
+          "url": "#/participante"
+        }
+      },
+      {
+        "id": "curador-marcos",
+        "before": {
+          "heading": "Entre na conversa.",
+          "loginForm": true
+        },
+        "after": {
+          "heading": "Painel de curadoria",
+          "url": "#/curadoria"
+        }
+      },
+      {
+        "id": "curador-demo",
+        "before": {
+          "heading": "Entre na conversa.",
+          "loginForm": true
+        },
+        "after": {
+          "heading": "Painel de curadoria",
+          "url": "#/curadoria"
+        }
+      },
+      {
+        "id": "admin-demo",
+        "before": {
+          "heading": "Entre na conversa.",
+          "loginForm": true
+        },
+        "after": {
+          "heading": "Painel administrativo",
+          "url": "#/administracao"
+        }
+      },
+      {
+        "id": "discente-participante-demo",
+        "before": {
+          "heading": "Entre na conversa.",
+          "loginForm": true
+        },
+        "after": {
+          "heading": "Olá, Júlia.",
+          "url": "#/participante"
+        }
+      },
+      {
+        "id": "discente-demo",
+        "before": {
+          "heading": "Entre na conversa.",
+          "loginForm": true
+        },
+        "after": {
+          "heading": "Compartilhe o que você sabe, Alex.",
+          "url": "#/instrutor"
+        }
+      },
+      {
+        "id": "discente-participante-demo",
+        "before": {
+          "heading": "Entre na conversa.",
+          "loginForm": true
+        },
+        "after": {
+          "heading": "Olá, Júlia.",
+          "url": "#/participante"
+        }
+      },
+      {
+        "id": "discente-demo",
+        "before": {
+          "heading": "Entre na conversa.",
+          "loginForm": true
+        },
+        "after": {
+          "heading": "Compartilhe o que você sabe, Alex.",
+          "url": "#/instrutor"
+        }
+      },
+      {
+        "id": "discente-participante-demo",
+        "before": {
+          "heading": "Entre na conversa.",
+          "loginForm": true
+        },
+        "after": {
+          "heading": "Olá, Júlia.",
+          "url": "#/participante"
+        }
+      }
+    ],
+    "resetCancelled": {
+      "dialogOpen": false,
+      "focused": "Restaurar dados iniciais"
+    },
+    "resetConfirmed": {
+      "session": "Usuário atual: Júlia Torres · Participante",
+      "accounts": 6,
+      "uniqueAccounts": 6,
+      "hoursResetToZero": true,
+      "completionsResetToZero": true
+    },
+    "signedOutAfterChecks": true
+  },
+  "attendance": {
+    "absence": "Frequência acumulada: 50.0% · mínimo 75%\n\n1 presença(s) em 2 encontro(s) registrado(s) · 1 ausência(s) · 0 registro(s) pendente(s).\n\nAcompanhamento parcial. Encontros futuros e registros pendentes não contam como ausência.",
+    "pending": "Frequência acumulada: 100.0% · mínimo 75%\n\n1 presença(s) em 1 encontro(s) registrado(s) · 0 ausência(s) · 1 registro(s) pendente(s).\n\nAcompanhamento parcial. Encontros futuros e registros pendentes não contam como ausência.",
+    "participant": "MEU ESPAÇO\n\nJúlia Torres\n\nDiscente · Demonstração\nVisão geral\nMinhas inscrições\nHistórico de horas\nComprovantes\nDescobrir por interesse\n\nO conhecimento vai\nnos dois sentidos.\n\nMinha área de Instrutor\nExplorar catálogo\nSeu aprendizado, em um só lugar.\n← Voltar à atividade\n\nPresencial\n\nMinha frequência\n\nDesign colaborativo: ideias no papel\n\nSeus encontros\n\nFrequência mínima: 75%. Local: Laboratório 2 · Campus Quixadá\n\nFrequência acumulada: 100.0% · mínimo 75%\n\n2 presença(s) em 2 encontro(s) registrado(s) · 0 ausência(s) · 0 registro(s) pendente(s).\n\nCritério de frequência atendido. A confirmação final cabe ao Instrutor.\n\nEncontro 1\n\n07/11/2026, 11:30:00 · 60 min · Realizado\n\nAssunto abordado: Modelagem de ideias em equipes\n\nPresente\n\nAtualizado em 07/11/2026, 18:10:28\nEncontro 2\n\n07/11/2026, 11:00:00 · 60 min · Realizado\n\nAssunto abordado: Prototipação e revisão em duplas\n\nPresente\n\nAtualizado em 07/11/2026, 18:10:29",
+    "synchronous": {
+      "text": "MEU ESPAÇO\n\nJúlia Torres\n\nDiscente · Demonstração\nVisão geral\nMinhas inscrições\nHistórico de horas\nComprovantes\nDescobrir por interesse\n\nO conhecimento vai\nnos dois sentidos.\n\nMinha área de Instrutor\nExplorar catálogo\nSeu aprendizado, em um só lugar.\n← Voltar à atividade\n\nRemota síncrona\n\nMinha frequência\n\nNarrativas para compartilhar ciência\n\nSeus encontros\n\nFrequência mínima: 75%. Encontro remoto ao vivo.\n\nAcessar reunião ↗\n\nFrequência acumulada: 100.0% · mínimo 75%\n\n1 presença(s) em 1 encontro(s) registrado(s) · 0 ausência(s) · 0 registro(s) pendente(s).\n\nCritério de frequência atendido. A confirmação final cabe ao Instrutor.\n\nEncontro 1\n\n06/11/2026, 11:00:00 · 60 min · Realizado\n\nAssunto abordado: Comunicação de resultados científicos\n\nPresente\n\nAtualizado em 07/11/2026, 18:10:54",
+      "link": "https://meet.google.com/abc-defg-hij"
+    },
+    "otherInstructor": "Acompanhamento indisponível",
+    "cancelResetPreserved": "Frequência acumulada: 100.0% · mínimo 75%\n\n2 presença(s) em 2 encontro(s) registrado(s) · 0 ausência(s) · 0 registro(s) pendente(s).\n\nCritério de frequência atendido. A confirmação final cabe ao Instrutor."
+  },
+  "curation": {
+    "denied": "MEU ESPAÇO\n\nMarcos Azevedo\n\nProfessor Curador · Demonstração\nVisão geral\nFila de propostas\nHistórico de decisões\n\nConhecimento que merece circular.\n\nExplorar catálogo\nSair da demonstração\nUma leitura atenta abre novos caminhos.\nProposta indisponível\nNão encontramos esta proposta submetida\n\nConsulte a fila para conhecer as propostas disponíveis para avaliação.\n\nVoltar à fila",
+    "approved": "MEU ESPAÇO\n\nHelena Prado\n\nProfessor Curador · Demonstração\nVisão geral\nFila de propostas\nHistórico de decisões\n\nConhecimento que merece circular.\n\nExplorar catálogo\nSair da demonstração\nUma leitura atenta abre novos caminhos.\nFila de propostas\n\nLEITURA E DECISÃO · Design de interação\n\nNarrativas para projetos científicos\nProposta de Alex Costa\nAprovada\nProposta aprovada. A atividade já está disponível no catálogo.\n\nA IDEIA EM DETALHES\n\nEmenta da atividade\n\nUma proposta fictícia usada para demonstrar o acompanhamento e os estados de curadoria.\n\nPARA ORGANIZAR A LEITURA\n\nInformações da proposta\nInstrutor\nAlex Costa\nData da submissão mais recente\n03 de nov. de 2026\nCarga horária\n6 horas\nFormato\nPresencial\nCategoria de horas complementares\nFormação complementar — exemplo\nNúmero de vagas\n24\nÁrea temática\nDesign de interação\nTipo de atividade\nOficina\n\nCOMO PARTICIPAR\n\nOrganização e conclusão\n\nProfessor responsável pela análise: Helena Prado\n\nAtividade legada: condições preservadas da versão anterior, sem frequência retroativa inventada.\n\nTRAJETÓRIA DA PROPOSTA\n\nHistórico de análise\nProposta criada\n28 de out. de 2026\nAjustes solicitados\n02 de nov. de 2026 · Helena Prado\n\nDetalhe a prática de apresentação e os materiais que serão compartilhados com os participantes.\n\nReenviada para análise\n03 de nov. de 2026\nAprovada\n07 de nov. de 2026 · Helena Prado\n\nAs decisões anteriores são preservadas. A data de envio exibida corresponde à submissão mais recente.\n\nSUA AVALIAÇÃO\n\nDecisão registrada\n\nA atividade está disponível no catálogo e pode receber inscrições.\n\nAprovada\n07 de nov. de 2026\nVer no catálogo\nContinuar na fila"
+  },
+  "registration": {
+    "facultyRequired": {
+      "focused": "",
+      "invalid": 3
+    },
+    "studentValidation": "CONEXÕES QUE ENSINAM\n\nSeu conhecimento.\nNovas possibilidades.\n\nUm espaço de troca entre estudantes, feito para transformar curiosidade em conhecimento.\n\nUFC QUIXADÁ · PROTÓTIPO ACADÊMICO\n\nTEM ESPAÇO PARA A SUA CURIOSIDADE\n\nComece uma nova troca.\n\nExperimente como será fazer parte do MindShare.\n\nCadastro demonstrativo, sem conta real.\n\nPreencha com nome e senha fictícios. Use um e-mail terminado em @mindshare.test; esse domínio de exemplo não valida vínculo com a UFC.\n\nNome fictício\n\nInforme um nome fictício com pelo menos 2 caracteres.\n\nE-mail institucional (simulação)\n\nExemplo: estudante@mindshare.test. Domínios oficiais ainda pendentes de confirmação.\n\nUse um endereço fictício terminado em @mindshare.test.\n\nSenha de exemplo\n\nPelo menos 8 caracteres. Não use uma senha real.\n\nCrie uma senha de exemplo com pelo menos 8 caracteres.\n\nConfirmar senha\n\nAs senhas precisam ser iguais.\n\nConcordo em simular o consentimento para tratamento dos dados fictícios desta demonstração.\n\nO consentimento e sua data ficam apenas em memória. Os dados digitados não são enviados a um servidor nem salvos no navegador.\n\nMarque o consentimento para continuar a demonstração.\n\nExperimentar cadastro\n\nJá conhece a demonstração? Entrar com perfil de exemplo"
+  },
+  "video": {
+    "seekBefore": {
+      "loading": false,
+      "paused": true,
+      "progress": "Acompanhamento validado desta aula: 50.9% · 1 confirmação(ões)",
+      "time": 90.206411
+    },
+    "seekAfter": {
+      "progress": "Acompanhamento validado desta aula: 50.9% · 1 confirmação(ões)",
+      "time": 79.4064
+    },
+    "periodicCheck": {
+      "paused": true,
+      "progress": "Acompanhamento validado desta aula: 93.3% · 1 confirmação(ões)",
+      "text": "UMA PAUSA NO SEU PERCURSOVocê ainda está acompanhando esta aula?O vídeo está pausado e o progresso não avança enquanto aguardamos sua confirmação.Prazo encerrado. Confirme quando estiver pronto para retomar.Sim, continuar assistindoContinuar depois",
+      "time": 168.035582
+    },
+    "automaticPendingOnFinalRelease": {
+      "dialog": true,
+      "loading": false,
+      "paused": true,
+      "progress": "Acompanhamento validado desta aula: 93.3% · 1 confirmação(ões)",
+      "script": [
+        "https://edinaldogit.github.io/mindshare/assets/index-bvzXj_Ne.js"
+      ],
+      "time": 171.135999
+    },
+    "resumed": {
+      "dialog": false,
+      "paused": false,
+      "progress": "Acompanhamento validado desta aula: 93.3% · 2 confirmação(ões)",
+      "time": 171.153395
+    },
+    "ended": {
+      "ended": true,
+      "error": null,
+      "lessonStatus": "3 min · Obrigatória · Aula acompanhada",
+      "loading": false,
+      "paused": true,
+      "progress": "Acompanhamento validado desta aula: 98.0% · 2 confirmação(ões)",
+      "time": 180
+    },
+    "reloaded": {
+      "loading": false,
+      "paused": true,
+      "progress": "Acompanhamento validado desta aula: 98.0% · 2 confirmação(ões)",
+      "time": 179.807404
+    }
+  },
+  "completion": {
+    "eligibility": "MEU ESPAÇO\n\nAlex Costa\n\nDiscente · Instrutor\nVisão geral\nMinhas propostas\nNova proposta\nMinhas atividades\n\nEnsinar também é aprender.\n\nMudar para Participante\nExplorar catálogo\nSair da demonstração\nPropostas e atividades em um só lugar.\nMinhas atividades\n\nDesign de interação · Oficina\n\nIntrodução à Animação Digital\n\n0.5 horas · Remota assíncrona\n\nCapacidade\n30\nInscrições\n1\nConcluídas\n0\nVagas disponíveis\n29\nConsultar progresso dos vídeos\n\nPARTICIPAÇÃO NA ATIVIDADE\n\nParticipantes inscritos\nJT\nJúlia Torres\nPerfil demonstrativo · inscrição em 07 de nov. de 2026\nInscrito\n\n98.0% acompanhado · mínimo 90% · confirmação registrada\n\nConfirmar conclusão",
+    "history": "MEU ESPAÇO\n\nJúlia Torres\n\nDiscente · Demonstração\nVisão geral\nMinhas inscrições\nHistórico de horas\nComprovantes\nDescobrir por interesse\n\nO conhecimento vai\nnos dois sentidos.\n\nMinha área de Instrutor\nExplorar catálogo\nSeu aprendizado, em um só lugar.\n\nAPRENDIZADOS QUE FICAM\n\nSeu tempo, em conhecimento.\n\nConsulte as horas das atividades cuja conclusão já foi registrada.\n\nCONHECIMENTO QUE FICA\n\n3.5\nhoras acumuladas\n\n3 atividades concluídas na demonstração\n\nO registro de horas no MindShare não substitui os procedimentos oficiais da UFC para reconhecimento de atividades complementares.\n\nAs conclusões iniciais são exemplos fictícios preparados para a demonstração. Novas conclusões são confirmadas pelo Instrutor responsável pela atividade.\n\nCONCLUSÃO EM 07 de nov. de 2026\n\nIntrodução à Animação Digital\n\nCom Alex Costa\n\n0.5 horas · Design de interação\nBaixar comprovante\n\nCONCLUSÃO EM 07 de nov. de 2026\n\nNarrativas para compartilhar ciência\n\nCom Alex Costa\n\n1 horas · Design de interação\nBaixar comprovante\n\nCONCLUSÃO EM 07 de nov. de 2026\n\nDesign colaborativo: ideias no papel\n\nCom Alex Costa\n\n2 horas · Design de interação\nBaixar comprovante",
+    "asyncPdfAvailable": true
+  },
+  "console": []
+}

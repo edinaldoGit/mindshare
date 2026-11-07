@@ -300,3 +300,14 @@ Ao testar reassistência, a reconstrução de tempo desde a última confirmaçã
 Teste real da correção completa, com mídia em cache e confirmação pendente: antes de recarregar **90,233887 s / 50,0% / zero confirmações**; depois da restauração **90,233887 s**, mesmos 50,0%; ao tentar reproduzir, diálogo reapareceu, vídeo permaneceu pausado (90,237686 s, sem crédito adicional). Evidência em `checkpoint-restoration-fixed-local.json`. O cadastro docente também passou a solicitar explicitamente a composição de cadastro no AuthLayout, compartilhando a arte correta com o cadastro discente.
 
 A retomada de uma confirmação pendente também passou a abrir o diálogo automaticamente ao carregar a aula, mantendo o vídeo pausado e o botão de confirmação indisponível até recuperar a posição. Isso elimina a necessidade de começar a reproduzir para reencontrar a pendência. Teste local final: diálogo aberto sem clicar no player, **90,237686 s / 50,0% / zero confirmações**, vídeo pausado. Evidência em `automatic-pending-local.json`.
+
+
+## Encerramento público desta rodada
+
+Publicação do aplicativo no commit `0d2e797`, workflow [42417403052](https://github.com/edinaldoGit/mindshare/actions/runs/42417403052): build e deploy bem-sucedidos. 24 arquivos responderam 200, HTML idêntico ao build local, MP4 4.718.180 bytes/mesmo SHA256/video/mp4. Relato vigente e completo em `publicacao.md`.
+
+A versão publicada abriu automaticamente a confirmação pendente em 171,135999 s / 93,3%, antes de reproduzir. Confirmar retomou e a mídia chegou a 180 s / ended=true, com 98,0% validados e duas confirmações. Reload conservou ambos e recuperou 179,807404 s. Sem loading permanente ou erro. Alex confirmou a conclusão; Júlia consultou 3,5 horas/três conclusões e comprovante assíncrono habilitado. PDF presencial real baixado e renderizado sem cortes, com RF23 preservado.
+
+**84 casos públicos** (60 páginas, 12 painel e 12 diálogos) nas seis larguras solicitadas; zero overflow, imagens quebradas, títulos ausentes ou limites excedidos. Arquivos `responsive-public.json`, `studio-public.json`, `dialogs-public.json` e `public-summary.json`. Evidências detalhadas por funcionalidade em `browser-public.json`. Console final vazio.
+
+Restauração pública confirmada retornou seis contas únicas e zero conclusões de Júlia, conservando sua sessão durante o reset. Sessão encerrada ao final; dados iniciais prontos para apresentação, controle de viewport removido. SRS e PDFs normativos preservados. A atualização documental posterior não altera os arquivos do aplicativo.
