@@ -7,7 +7,7 @@ transforming...
 ✓ 2317 modules transformed.
 rendering chunks...
 computing gzip size...
-dist/index.html                                              0.69 kB │ gzip:   0.41 kB
+dist/index.html                                              0.69 kB │ gzip:   0.42 kB
 dist/assets/manrope-vietnamese-wght-normal-usUDDRr7.woff2    8.52 kB
 dist/assets/manrope-greek-wght-normal-DL7QRZyv.woff2         9.44 kB
 dist/assets/inter-vietnamese-wght-normal-CBcvBZtf.woff2     10.25 kB
@@ -20,10 +20,10 @@ dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2        24.83 kB
 dist/assets/inter-cyrillic-ext-wght-normal-BOeWTOD4.woff2   25.96 kB
 dist/assets/inter-latin-wght-normal-Dx4kXJAl.woff2          48.25 kB
 dist/assets/inter-latin-ext-wght-normal-DO1Apj_S.woff2      85.06 kB
-dist/assets/index-B3E-gshl.css                              95.53 kB │ gzip:  20.94 kB
-dist/assets/demo-studio-DNDen0Wl.js                          3.06 kB │ gzip:   1.47 kB
-dist/assets/video-page-BBdBw31D.js                           8.73 kB │ gzip:   3.49 kB
-dist/assets/certificate-pdf-hacUr5DD.js                    422.59 kB │ gzip: 176.96 kB
-dist/assets/index-BB2byQ-k.js                              494.32 kB │ gzip: 146.12 kB
+dist/assets/index-BvrkHLNc.css                              95.56 kB │ gzip:  20.94 kB
+dist/assets/demo-studio-CPzEkO2_.js                          3.06 kB │ gzip:   1.47 kB
+dist/assets/video-page-OLqbtRHv.js                           9.47 kB │ gzip:   3.73 kB
+dist/assets/certificate-pdf-D_gIUjso.js                    422.59 kB │ gzip: 176.96 kB
+dist/assets/index-BIaKgY2c.js                              494.32 kB │ gzip: 146.12 kB
 
-✓ built in 1.64s
+✓ built in 1.35s

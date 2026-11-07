@@ -286,3 +286,9 @@ Console local consultado durante a reprodução: sem erros/avisos. A falha de im
 ## Publicação desta revisão
 
 Resultado do novo deploy e verificações públicas serão registrados em `publicacao.md` e na continuação desta seção após a conclusão efetiva. O workflow existente foi confrontado com as documentações oficiais atuais do Vite e GitHub Pages; base `/mindshare/`, branch `main`, artefato `dist`, validações obrigatórias, Actions oficiais fixadas e permissões adequadas por job foram preservados. Nenhuma alteração de visibilidade ou force push é necessária.
+
+### Correção descoberta na hospedagem
+
+A primeira publicação desta rodada (`9ab4ee6`, workflow `42414298946` bem-sucedido) permitiu validar frequência presencial/síncrona, cálculos 50%/100%/pendência, encerramento, conclusão e PDF. A reprodução pública revelou uma condição de corrida: com metadata em cache ou clique muito cedo após reload, o evento inicial podia ser perdido e a confirmação abrir antes de recuperar o ponto salvo.
+
+A inicialização passou a observar os eventos reais e a prontidão já existente do elemento, restaurando a posição antes de liberar controles e validação. Não há recarga extra de mídia. Teste local com cache: antes do reload, 26,064795 s e 14,3%; após metadata, **25,865506 s** (última posição validada persistida), mesmos **14,3%**, pausado e sem loading permanente. Evidência em `video-restoration-fixed-local.json`. Todos os comandos obrigatórios foram repetidos após a correção. A playlist interna também passou a indicar Aula atual/Em andamento/Aula acompanhada, evitando repetir o mesmo percentual em três lugares.

@@ -1,0 +1,157 @@
+{
+  "base": "https://edinaldogit.github.io/mindshare/",
+  "assets": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "length": "697"
+    },
+    {
+      "path": "brand/login-acude-cedro.webp",
+      "status": 200,
+      "type": "image/webp",
+      "length": "244386"
+    },
+    {
+      "path": "brand/logo.png",
+      "status": 200,
+      "type": "image/png",
+      "length": "53170"
+    },
+    {
+      "path": "brand/register-acude-cedro.webp",
+      "status": 200,
+      "type": "image/webp",
+      "length": "268814"
+    },
+    {
+      "path": "brand/icon.png",
+      "status": 200,
+      "type": "image/png",
+      "length": "40775"
+    },
+    {
+      "path": "assets/video-page-BBdBw31D.js",
+      "status": 200,
+      "type": "application/javascript; charset=utf-8",
+      "length": "8730"
+    },
+    {
+      "path": "assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+      "status": 200,
+      "type": "font/woff2",
+      "length": "24836"
+    },
+    {
+      "path": "assets/certificate-pdf-hacUr5DD.js",
+      "status": 200,
+      "type": "application/javascript; charset=utf-8",
+      "length": "422595"
+    },
+    {
+      "path": "assets/inter-cyrillic-wght-normal-DqGufNeO.woff2",
+      "status": 200,
+      "type": "font/woff2",
+      "length": "18748"
+    },
+    {
+      "path": "assets/inter-vietnamese-wght-normal-CBcvBZtf.woff2",
+      "status": 200,
+      "type": "font/woff2",
+      "length": "10252"
+    },
+    {
+      "path": "assets/inter-cyrillic-ext-wght-normal-BOeWTOD4.woff2",
+      "status": 200,
+      "type": "font/woff2",
+      "length": "25960"
+    },
+    {
+      "path": "assets/inter-greek-wght-normal-CkhJZR-_.woff2",
+      "status": 200,
+      "type": "font/woff2",
+      "length": "18996"
+    },
+    {
+      "path": "assets/manrope-vietnamese-wght-normal-usUDDRr7.woff2",
+      "status": 200,
+      "type": "font/woff2",
+      "length": "8520"
+    },
+    {
+      "path": "assets/inter-latin-wght-normal-Dx4kXJAl.woff2",
+      "status": 200,
+      "type": "font/woff2",
+      "length": "48256"
+    },
+    {
+      "path": "assets/manrope-greek-wght-normal-DL7QRZyv.woff2",
+      "status": 200,
+      "type": "font/woff2",
+      "length": "9444"
+    },
+    {
+      "path": "assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+      "status": 200,
+      "type": "font/woff2",
+      "length": "14500"
+    },
+    {
+      "path": "assets/inter-latin-ext-wght-normal-DO1Apj_S.woff2",
+      "status": 200,
+      "type": "font/woff2",
+      "length": "85068"
+    },
+    {
+      "path": "assets/inter-greek-ext-wght-normal-DlzME5K_.woff2",
+      "status": 200,
+      "type": "font/woff2",
+      "length": "11232"
+    },
+    {
+      "path": "assets/index-BB2byQ-k.js",
+      "status": 200,
+      "type": "application/javascript; charset=utf-8",
+      "length": "494325"
+    },
+    {
+      "path": "assets/index-B3E-gshl.css",
+      "status": 200,
+      "type": "text/css; charset=utf-8",
+      "length": "95531"
+    },
+    {
+      "path": "assets/manrope-latin-ext-wght-normal-Ch3YOpNY.woff2",
+      "status": 200,
+      "type": "font/woff2",
+      "length": "15120"
+    },
+    {
+      "path": "assets/demo-studio-DNDen0Wl.js",
+      "status": 200,
+      "type": "application/javascript; charset=utf-8",
+      "length": "3067"
+    },
+    {
+      "path": "media/big-buck-bunny-poster.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "length": "12365"
+    },
+    {
+      "path": "media/big-buck-bunny-excerpt.mp4",
+      "status": 200,
+      "type": "video/mp4",
+      "length": "4718180"
+    }
+  ],
+  "video": {
+    "status": 200,
+    "type": "video/mp4",
+    "bytes": 4718180,
+    "sha256": "57c4fbfd9618ac685f9e7d50cb7fc64ec432670bb7e619eb31db95bc6af0a814"
+  },
+  "videoMatchesLocal": true,
+  "indexMatchesLocal": true
+}

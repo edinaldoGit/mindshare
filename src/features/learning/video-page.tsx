@@ -67,6 +67,18 @@ export function VideoPage() {
                 p.lessonId === l.id &&
                 p.participantId === user.id,
             );
+            const percent =
+              (validatedSeconds(p?.intervals ?? []) / l.duration) * 100;
+            const watched =
+              percent + 0.01 >= a.delivery!.minimum &&
+              (p?.checkpoints.length ?? 0) > 0;
+            const status = watched
+              ? "Aula acompanhada"
+              : selected === i
+                ? "Aula atual"
+                : percent > 0
+                  ? "Em andamento"
+                  : "Ainda não iniciada";
             return (
               <button
                 className="lesson-choice"
@@ -76,12 +88,8 @@ export function VideoPage() {
               >
                 {i + 1}. {l.title}
                 <small>
-                  {l.required ? "Obrigatória" : "Opcional"} ·{" "}
-                  {(
-                    (validatedSeconds(p?.intervals ?? []) / l.duration) *
-                    100
-                  ).toFixed(1)}
-                  %
+                  {Math.round(l.duration / 60)} min ·{" "}
+                  {l.required ? "Obrigatória" : "Opcional"} · {status}
                 </small>
               </button>
             );
@@ -113,6 +121,8 @@ function VideoLessonPlayer({
     [deadline, setDeadline] = useState(30),
     [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
+  const [ready, setReady] = useState(false);
+  const restored = useRef(false);
   const [accelerated, setAccelerated] = useState(
     () =>
       new URLSearchParams(window.location.search).get("demo") === "1" &&
@@ -134,6 +144,32 @@ function VideoLessonPlayer({
   const interval = accelerated
     ? 15
     : Math.min(300, Math.max(15, lesson.duration / 2));
+  useEffect(() => {
+    const el = video.current;
+    if (!el) return;
+    const restorePosition = () => {
+      if (el.readyState < 1 || restored.current) return;
+      const position = Math.min(initialPosition.current, lesson.duration - 0.1);
+      if (Math.abs(el.currentTime - position) > 0.1) {
+        el.currentTime = position;
+      } else if (!el.seeking) {
+        restored.current = true;
+        setReady(true);
+        setLoading(false);
+      }
+    };
+    el.addEventListener("loadedmetadata", restorePosition);
+    el.addEventListener("loadeddata", restorePosition);
+    el.addEventListener("canplay", restorePosition);
+    // A mídia em cache pode ficar pronta antes de o componente montar os listeners.
+    const frame = requestAnimationFrame(restorePosition);
+    return () => {
+      cancelAnimationFrame(frame);
+      el.removeEventListener("loadedmetadata", restorePosition);
+      el.removeEventListener("loadeddata", restorePosition);
+      el.removeEventListener("canplay", restorePosition);
+    };
+  }, [lesson.duration]);
   useEffect(() => {
     const update = () =>
       setAccelerated(
@@ -184,6 +220,7 @@ function VideoLessonPlayer({
     const el = video.current;
     if (
       !el ||
+      !restored.current ||
       el.paused ||
       el.seeking ||
       document.hidden ||
@@ -257,7 +294,7 @@ function VideoLessonPlayer({
       <div className="video-surface" aria-busy={loading && !error}>
         <video
           ref={video}
-          controls
+          controls={ready}
           playsInline
           preload="metadata"
           src={`${import.meta.env.BASE_URL}${lesson.src}`}
@@ -267,11 +304,19 @@ function VideoLessonPlayer({
             last.current = null;
             setLoading(true);
           }}
-          onCanPlay={() => setLoading(false)}
+          onCanPlay={() => {
+            if (restored.current) setLoading(false);
+          }}
           onPlaying={() => setLoading(false)}
-          onLoadedData={() => setLoading(false)}
+          onLoadedData={() => {
+            if (restored.current) setLoading(false);
+          }}
           onTimeUpdate={tick}
           onPlay={() => {
+            if (!restored.current) {
+              video.current?.pause();
+              return;
+            }
             if (blocked.current || sinceCheck.current >= interval) checkpoint();
             else last.current = null;
           }}
@@ -283,16 +328,10 @@ function VideoLessonPlayer({
             last.current = null;
           }}
           onSeeked={() => {
+            restored.current = true;
+            setReady(true);
             setLoading(false);
             last.current = null;
-          }}
-          onLoadedMetadata={() => {
-            setLoading(false);
-            if (video.current)
-              video.current.currentTime = Math.min(
-                initialPosition.current,
-                lesson.duration - 0.1,
-              );
           }}
           onError={() => {
             setLoading(false);
@@ -315,8 +354,11 @@ function VideoLessonPlayer({
             variant="outline"
             onClick={() => {
               setError("");
-              initialPosition.current =
-                video.current?.currentTime ?? initialPosition.current;
+              if (restored.current)
+                initialPosition.current =
+                  video.current?.currentTime ?? initialPosition.current;
+              restored.current = false;
+              setReady(false);
               setLoading(true);
               video.current?.load();
             }}

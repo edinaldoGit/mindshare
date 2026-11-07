@@ -397,3 +397,6 @@ progress {
     flex-direction: column;
   }
 }
+.video-player-card > p {
+  margin-top: 0.8rem;
+}
