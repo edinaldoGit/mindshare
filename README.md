@@ -1,60 +1,67 @@
-# MindShare
+# MindShare — Requisitos de Software (QXD0251)
 
-Protótipo acadêmico de aprendizagem colaborativa para a UFC Quixadá. Aplicação integrada com Participante, Instrutor, Professor Curador e Administrador, modalidades presenciais/síncronas/assíncronas, frequência, videoaula real, progresso, histórico e comprovantes PDF. Sem backend ou integração institucional real. Publicação estática por GitHub Actions; estado e evidências em [Publicação](docs/publicacao.md).
+Repositório do projeto da disciplina **Requisitos de Software (QXD0251 · Turma 02A)** da **Universidade Federal do Ceará (UFC) — Campus Quixadá**.
 
-## Acesso
+O foco deste repositório é o processo de **Engenharia de Requisitos** (visão, elicitação, análise, especificação, rastreabilidade e validação) aplicado ao **MindShare**, uma plataforma web de aprendizagem colaborativa para discentes da UFC Quixadá. Como artefato complementar de validação, o repositório inclui também um **protótipo interativo** desenvolvido por meio de prompts com IA (em substituição a um protótipo estático no Figma).
 
-- [MindShare público](https://edinaldogit.github.io/mindshare/)
-- [Demo Studio](https://edinaldogit.github.io/mindshare/?demo=1#/)
-- [Repositório](https://github.com/edinaldoGit/mindshare)
-- [Roteiro acadêmico](docs/apresentacao.md)
+## Equipe
 
-Os endereços foram retornados pela configuração do Pages. Consulte o relatório de publicação para o resultado efetivamente verificado.
+- Daniely Maia
+- Fº Edinaldo dos Santos
+- Lara Mª Gurgel
+- Mª Tatiane Dias
+- Viviane Araújo
 
-## Tecnologias
+## Sobre o sistema especificado
 
-React 19, TypeScript, Vite 8, React Router com HashRouter, Tailwind CSS 4, Lucide, fontes locais Fontsource e pdf-lib carregado sob demanda. Node.js 24 no workflow.
+O **MindShare** tem como objetivo conectar discentes participantes e instrutores na oferta de aulas, minicursos, oficinas e grupos de estudo (presenciais, remotos síncronos e remotos assíncronos), com curadoria docente, acompanhamento de frequência/progresso e emissão de comprovantes demonstrativos de carga horária.
 
-## Executar e verificar
+> [!IMPORTANT]
+> Este projeto tem caráter **estritamente acadêmico**. O protótipo não possui backend, banco de dados ou integração institucional real (SIGAA, gov.br, SIAPE) e não substitui o sistema oficial de registro de horas complementares da UFC.
 
-Node >=22.12.0 e npm. Instale com `npm ci`, inicie com `npm run dev`. Verificações: `npm test`, `npm run lint`, `npm run typecheck`, `npm run build`, `git diff --check`. Para inspecionar a produção local: `npm run preview`. O resultado estático fica em `dist/`.
+## Estrutura do repositório
 
-## Apresentação acadêmica
+O repositório está organizado segundo as etapas da Engenharia de Requisitos:
 
-Adicione `?demo=1` antes do hash: `http://localhost:5173/mindshare/?demo=1#/`. A URL normal deixa o Demo Studio oculto. A ferramenta oferece seleção de contas fictícias que preenche automaticamente o login normal, mostra a sessão e restaura dados mediante confirmação. Pode ser minimizada e expandida; a navegação usa os menus do produto. O apresentador clica Entrar e realiza as ações nas interfaces reais. Credencial pública: `demonstracao`. Consulte [Demo Studio](docs/demo-studio.md) para contas e restauração.
+```text
+mindshare/
+├── docs/
+│   ├── 01-visao/                 # Visão do produto, problema, stakeholders e escopo
+│   ├── 02-elicitacao/            # Técnicas de elicitação, personas e levantamento inicial
+│   ├── 03-analise-e-modelagem/   # Jornadas, fluxos, casos de uso / histórias e regras
+│   ├── 04-especificacao/         # SRS (ISO/IEC/IEEE 29148) e matriz de rastreabilidade
+│   └── 05-validacao/             # Validação de requisitos, evidências, roteiro e publicação
+├── prototipo/                    # Protótipo interativo (gerado via IA em vez de Figma)
+│   ├── docs/                     # Arquitetura, design system, Demo Studio e licenças
+│   ├── src/                      # Código-fonte React/TypeScript do protótipo
+│   ├── tests/                    # Testes automatizados de verificação dos requisitos
+│   └── ...
+└── .github/workflows/            # Pipeline de publicação do protótipo no GitHub Pages
+```
 
-Alex é a mesma identidade em Participante/Instrutor; Júlia permite testar a conclusão ponta a ponta. Helena, Marcos e Beatriz são Curadores; Clara é Administradora. Solicitações docentes aprovadas ficam disponíveis no login e na escolha de responsável. Dados usam apenas `.test`, sem senha persistida ou arquivo pessoal.
+## Principais artefatos
 
-## Documentação
+| Etapa | Artefato | Descrição |
+|---|---|---|
+| **01 · Visão** | [Visão e Escopo](docs/01-visao/README.md) | Espaço para o Documento de Visão (`10/09/2026`). |
+| **02 · Elicitação** | [Elicitação](docs/02-elicitacao/README.md) | Espaço para registro das técnicas de elicitação e personas. |
+| **03 · Análise** | [Jornadas integradas](docs/03-analise-e-modelagem/user-flows.md) | Fluxos ponta a ponta entre os perfis do sistema. |
+| **04 · Especificação** | [SRS v1.3 (Markdown)](docs/04-especificacao/MindShare_SRS_v1.3.md) · [PDF](docs/04-especificacao/MindShare_SRS_v1.3.pdf) | Especificação completa de RF, RNF, glossário e verificação. |
+| **04 · Rastreabilidade** | [Matriz de requisitos](docs/04-especificacao/requirements-matrix.md) | Mapeamento entre SRS v1.3, protótipo e limites acadêmicos. |
+| **05 · Validação** | [Roteiro de apresentação](docs/05-validacao/apresentacao.md) · [Verificações](docs/05-validacao/validation.md) · [Publicação](docs/05-validacao/publicacao.md) | Evidências de validação, PDFs gerados e guia de apresentação. |
+| **Protótipo** | [Documentação do protótipo](prototipo/README.md) | Instruções técnicas para executar e testar o protótipo localmente. |
 
-- [SRS completo v1.3, fonte editável](docs/MindShare_SRS_v1.3.md)
-- [SRS v1.3 PDF](docs/MindShare_SRS_v1.3.pdf)
-- [Arquitetura](docs/architecture.md)
-- [Matriz de implementação e limites](docs/requirements-matrix.md)
-- [Design system](docs/design-system.md)
-- [Jornadas](docs/user-flows.md)
-- [Marcos e publicação futura](docs/implementation-plan.md)
-- [Verificações e evidências](docs/validation.md)
-- [Licenças de mídia](docs/media-licenses.md)
+## Protótipo interativo (alternativa ao Figma)
 
-Os SRS anteriores são preservados como histórico. A logo e o monograma originais permanecem em `public/brand`.
+Para validar os fluxos especificados no SRS de forma interativa, o protótipo está publicado no GitHub Pages:
 
-## Persistência e mídia
+- **Protótipo público:** https://edinaldogit.github.io/mindshare/
+- **Modo apresentação (Demo Studio):** https://edinaldogit.github.io/mindshare/?demo=1#/
 
-Snapshot `mindshare:demo:data:v3` em localStorage, com migração de v1/v2 sem apagar o legado. Estado único para propostas, atribuições, inscrições, presenças, progresso e conclusões. Sessão conserva só ID em sessionStorage da aba. Reset confirmado restaura exemplos e não remove chaves externas. Falhas de armazenamento permitem uso em memória com aviso.
+Caso precise executar ou verificar o protótipo localmente, acesse a pasta [`prototipo/`](prototipo/README.md):
 
-Vídeo local: `public/media/big-buck-bunny-excerpt.mp4`, trecho de três minutos de Big Buck Bunny (Blender Foundation, CC BY 3.0), acompanhado de atribuição e descrição. Sem hotlink ou plataforma externa. Checkpoints pausam o elemento real, e união de intervalos evita contar saltos ou duplicar reassistência. Confirmações indicam interação, sem comprovar atenção/aprendizagem.
-
-## GitHub Pages
-
-Vite usa `base: "/mindshare/"`, correspondente ao repositório confirmado; assets usam BASE_URL e navegação usa HashRouter. O workflow `.github/workflows/deploy.yml` executa instalação pelo lockfile, testes, lint, typecheck e build antes de publicar somente `dist`. O caminho do build automatizado é obtido da configuração do Pages, inclusive para eventual domínio personalizado. Demo Studio usa a query antes do hash. Não há dependência de serviço local no código distribuído. Logs e resultado público em [Publicação](docs/publicacao.md).
-
-Comprovantes continuam demonstrativos e não garantem reconhecimento de carga horária pela UFC. localStorage não é banco e não garante segurança, identidade, retenção institucional ou sincronização.
-
-## Refinamento final de experiência
-
-Encontros e frequência: **Minhas atividades → Encontros e frequência**. Selecione o encontro, confirme data/horário, informe o assunto, marque Presente/Ausente/Não registrado e salve. O Participante consulta **Minhas inscrições → atividade → Minha frequência**. O cálculo segue RF36 do SRS v1.3, sem transformar pendências em faltas; conclusão continua centralizada no comando existente.
-
-Atividades assíncronas exibem a playlist pública antes da inscrição. Após inscrição, a área de aulas prioriza o vídeo, com uma única barra nativa de reprodução e acompanhamento acadêmico textual. O MP4 estático é público; o bloqueio da interface não constitui proteção real de mídia. Login e cadastros usam as duas ilustrações próprias de Quixadá em `public/brand`.
-
-Validação definitiva em 07/11/2026: **168 testes aprovados**, lint, typecheck, build e diff sem erros. Aplicativo publicado no commit `0d2e797`; [workflow final](https://github.com/edinaldoGit/mindshare/actions/runs/42417403052) com build e deploy bem-sucedidos. Resultados públicos e limitações estão em [Publicação](docs/publicacao.md); evidências da rodada em `docs/validation/ux-final/`.
+```bash
+cd prototipo
+npm ci
+npm run dev
+```

@@ -28,23 +28,29 @@ jobs:
         with:
           node-version: "24"
           cache: npm
+          cache-dependency-path: prototipo/package-lock.json
       - name: Configure Pages
         id: pages
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6
       - name: Install dependencies
+        working-directory: prototipo
         run: npm ci
       - name: Test
+        working-directory: prototipo
         run: npm test
       - name: Lint
+        working-directory: prototipo
         run: npm run lint
       - name: Typecheck
+        working-directory: prototipo
         run: npm run typecheck
       - name: Build
+        working-directory: prototipo
         run: npm run build -- --base "${{ steps.pages.outputs.base_path }}/"
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
         with:
-          path: dist
+          path: prototipo/dist
 
   deploy:
     needs: build
