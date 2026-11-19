@@ -26,6 +26,7 @@ O repositório está organizado segundo as etapas da Engenharia de Requisitos:
 ```text
 mindshare/
 ├── docs/
+│   ├── 00-documentos-gerais/     # Documento de Requisitos (SRS) no template oficial: editável (DOCX) e PDF
 │   ├── 01-visao/                 # Visão do produto, problema, stakeholders e escopo
 │   ├── 02-elicitacao/            # Técnicas de elicitação, personas e levantamento inicial
 │   ├── 03-analise-e-modelagem/   # Jornadas, fluxos, casos de uso / histórias e regras
@@ -43,6 +44,7 @@ mindshare/
 
 | Etapa | Artefato | Descrição |
 |---|---|---|
+| **00 · Documentos gerais** | [SRS (DOCX editável)](<docs/00-documentos-gerais/MindShare — Documento de Requisitos de Software (SRS).docx>) · [PDF](<docs/00-documentos-gerais/MindShare — Documento de Requisitos de Software (SRS).pdf>) | Documento de Requisitos no template ISO/IEC/IEEE 29148 da disciplina. Diagrama BPMN do processo principal: [draw.io editável](docs/00-documentos-gerais/MindShare_BPMN_Ofertar-Cursar-Comprovar.drawio) · [PDF](docs/00-documentos-gerais/MindShare_BPMN_Ofertar-Cursar-Comprovar.pdf). |
 | **01 · Visão** | [Visão e Escopo](docs/01-visao/README.md) | Espaço para o Documento de Visão (`10/09/2026`). |
 | **02 · Elicitação** | [Elicitação](docs/02-elicitacao/README.md) | Espaço para registro das técnicas de elicitação e personas. |
 | **03 · Análise** | [Jornadas integradas](docs/03-analise-e-modelagem/user-flows.md) | Fluxos ponta a ponta entre os perfis do sistema. |
