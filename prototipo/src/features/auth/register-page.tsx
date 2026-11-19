@@ -3,6 +3,8 @@ import { Link, useSearchParams } from "react-router-dom";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FeedbackMessage } from "@/components/feedback/feedback-message";
+import { useDemo } from "@/app/providers/demo-context";
+import { registerStudent } from "@/lib/demo/evolution";
 import {
   validateRegistration,
   safeReturnPath,
@@ -19,10 +21,13 @@ const initialValues: RegistrationValues = {
   consent: false,
 };
 export function RegisterPage() {
+  const { run } = useDemo();
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState<ReturnType<typeof validateRegistration>>(
     {},
   );
+  const [submitError, setSubmitError] = useState("");
+  const [createdEmail, setCreatedEmail] = useState("");
   const [consentedAt, setConsentedAt] = useState<string | null>(null);
   const [params] = useSearchParams();
   const destination = safeReturnPath(params.get("retorno"));
@@ -38,6 +43,7 @@ export function RegisterPage() {
   ) => setValues((previous) => ({ ...previous, [key]: value }));
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setSubmitError("");
     const nextErrors = validateRegistration(values);
     setErrors(nextErrors);
     const firstError = Object.keys(nextErrors)[0];
@@ -45,7 +51,22 @@ export function RegisterPage() {
       document.getElementById(`register-${firstError}`)?.focus();
       return;
     }
-    setConsentedAt(new Date().toISOString());
+    const now = new Date().toISOString();
+    const email = values.email.trim().toLowerCase();
+    const res = run((s) =>
+      registerStudent(
+        s,
+        { name: values.name, email },
+        now,
+        crypto.randomUUID(),
+      ),
+    );
+    if (!res.ok) {
+      setSubmitError(res.message);
+      return;
+    }
+    setCreatedEmail(email);
+    setConsentedAt(now);
     setValues(initialValues);
   }
   return (
@@ -60,15 +81,18 @@ export function RegisterPage() {
             Tudo certo na demonstração.
           </h1>
           <FeedbackMessage>
-            Cadastro de exemplo validado. Nenhuma conta real foi criada.
+            Perfil discente de demonstração criado localmente para{" "}
+            {createdEmail}. Nenhuma conta real foi criada.
           </FeedbackMessage>
           <p>
-            Seu consentimento foi simulado em{" "}
-            {new Date(consentedAt).toLocaleString("pt-BR")}, apenas nesta tela.
-            Os campos foram descartados, e nenhuma senha foi armazenada.
+            Consentimento registrado em{" "}
+            {new Date(consentedAt).toLocaleString("pt-BR")}. Nenhuma senha foi
+            armazenada.
           </p>
           <p>
-            O acesso à apresentação acontece pelo formulário normal de login.
+            Você já pode acessar pelo login normal usando{" "}
+            <strong>{createdEmail}</strong> e a senha pública de apresentação:{" "}
+            <code>demonstracao</code>.
           </p>
           <Button asChild className="full-width">
             <Link
@@ -86,6 +110,7 @@ export function RegisterPage() {
           <p className="auth-intro">
             Experimente como será fazer parte do MindShare.
           </p>
+          {submitError && <FeedbackMessage error>{submitError}</FeedbackMessage>}
           <div className="auth-demo-note">
             <strong>Cadastro demonstrativo, sem conta real.</strong>
             <p>
@@ -168,9 +193,9 @@ export function RegisterPage() {
                 </span>
               </label>
               <p id="consent-description" className="field-hint">
-                O consentimento e sua data ficam apenas em memória. Os dados
-                digitados não são enviados a um servidor nem salvos no
-                navegador.
+                Apenas o perfil fictício e a data de consentimento ficam no
+                armazenamento local da demonstração. Nenhuma senha é salva nem
+                enviada a um servidor.
               </p>
               {errors.consent && (
                 <p className="field-error" id="register-consent-error">

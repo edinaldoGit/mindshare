@@ -24,7 +24,14 @@ import {
   CurationHistoryPage,
 } from "@/features/curation/curation-pages";
 import { ProposalReviewPage } from "@/features/curation/proposal-review-page";
-import { HashRouter, Route, Routes, useLocation } from "react-router-dom";
+import {
+  HashRouter,
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+  useParams,
+} from "react-router-dom";
 import { PublicLayout } from "@/app/layouts/public-layout";
 import { WorkspaceLayout } from "@/app/layouts/workspace-layout";
 import { DemoProvider } from "@/app/providers/demo-provider";
@@ -59,15 +66,22 @@ const participantPages = {
   "/participante/atividades/:activityId": <ParticipantActivityPage />,
   "/participante/recomendacoes": <RecommendationsPage />,
 } as const;
+function ProposalParticipantsRedirect() {
+  const { id } = useParams();
+  return (
+    <Navigate
+      to={id ? `/instrutor/atividades/${id}/participantes` : "/instrutor/atividades"}
+      replace
+    />
+  );
+}
 const instructorPages: Record<string, React.ReactNode> = {
   "/instrutor": <InstructorDashboard />,
   "/instrutor/propostas": <InstructorProposalsPage />,
   "/instrutor/propostas/nova": <NewProposalPage />,
   "/instrutor/propostas/:id": <ProposalDetailPage />,
   "/instrutor/propostas/:id/editar": <EditProposalPage />,
-  "/instrutor/propostas/:id/participantes": (
-    <DevelopmentPage title="Use Minhas atividades para gerenciar participantes." />
-  ),
+  "/instrutor/propostas/:id/participantes": <ProposalParticipantsRedirect />,
   "/instrutor/atividades": <InstructorActivitiesPage />,
   "/instrutor/atividades/:activityId/participantes": (
     <ActivityParticipantsPage />

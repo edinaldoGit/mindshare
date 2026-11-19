@@ -11,7 +11,12 @@ import {
   saveMeetingAttendance,
   attendanceSummary,
   operateActivity,
+  registerStudent,
+  deliveryError,
+  demoLesson,
+  emptyDelivery,
 } from "../src/lib/demo/evolution.ts";
+import { authenticateDemo } from "../src/features/auth/auth-rules.ts";
 import { parseDemoState, serializeDemoState } from "../src/lib/demo/storage.ts";
 import {
   demoStudent as alex,
@@ -365,4 +370,92 @@ test("Vídeo: snapshot com contador de acompanhamento inválido é recusado", ()
     (p: { participantId: string }) => p.participantId === julia.id,
   ).watchedSinceCheck = -1;
   assert.equal(parseDemoState(JSON.stringify(raw)), null);
+});
+test("RF01: cadastro discente cria perfil demonstrativo utilizável no login sem salvar senha", () => {
+  const initial = createInitialState();
+  const created = registerStudent(
+    initial,
+    { name: "Lucas Lima", email: "lucas.lima@mindshare.test" },
+    now,
+    "novo-1",
+  );
+  assert.equal(created.ok, true);
+  const user = authenticateDemo(
+    "lucas.lima@mindshare.test",
+    "demonstracao",
+    created.state.users,
+  );
+  assert.equal(user?.kind, "Discente");
+  assert.equal(user?.name, "Lucas Lima");
+  assert.equal(user?.consentAt, now);
+  assert.equal("password" in (user ?? {}), false);
+  const dup = registerStudent(
+    created.state,
+    { name: "Outro", email: "lucas.lima@mindshare.test" },
+    now,
+    "novo-2",
+  );
+  assert.equal(dup.ok, false);
+  const badDomain = registerStudent(
+    initial,
+    { name: "Outro", email: "lucas@gmail.com" },
+    now,
+    "novo-3",
+  );
+  assert.equal(badDomain.ok, false);
+});
+test("RF04/RF32: atividade assíncrona valida intervalo de 5 a 10 min e aceita múltiplas aulas", () => {
+  const base = {
+    ...emptyDelivery(),
+    checkIntervalMinutes: 8,
+    lessons: [
+      demoLesson,
+      {
+        id: "aula-extra-2",
+        title: "Aula 2 — Exercício complementar",
+        description: "Aplicação prática",
+        src: demoLesson.src,
+        duration: demoLesson.duration,
+        required: false,
+      },
+    ],
+  };
+  assert.equal(
+    deliveryError({ format: "Remota assíncrona", delivery: base }),
+    null,
+  );
+  assert.notEqual(
+    deliveryError({
+      format: "Remota assíncrona",
+      delivery: { ...base, checkIntervalMinutes: 4 },
+    }),
+    null,
+  );
+  assert.notEqual(
+    deliveryError({
+      format: "Remota assíncrona",
+      delivery: { ...base, checkIntervalMinutes: 12 },
+    }),
+    null,
+  );
+  assert.notEqual(
+    deliveryError({
+      format: "Remota assíncrona",
+      delivery: {
+        ...base,
+        lessons: [{ ...demoLesson, title: "   " }],
+      },
+    }),
+    null,
+  );
+  const s = createInitialState();
+  const asyncActivity = s.activities.find((a) => a.id === "animacao-digital")!;
+  asyncActivity.delivery = base;
+  const parsed = parseDemoState(serializeDemoState(s));
+  assert.ok(parsed);
+  const roundTripped = parsed!.activities.find(
+    (a) => a.id === "animacao-digital",
+  )!;
+  assert.equal(roundTripped.delivery?.checkIntervalMinutes, 8);
+  assert.equal(roundTripped.delivery?.lessons.length, 2);
 });

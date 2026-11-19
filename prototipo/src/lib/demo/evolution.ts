@@ -19,6 +19,7 @@ export const demoLesson: Lesson = {
 };
 export const emptyDelivery = (): Delivery => ({
   minimum: 75,
+  checkIntervalMinutes: 5,
   location: "",
   link: "",
   instructions: "",
@@ -49,6 +50,13 @@ export function deliveryError(activity: Pick<Activity, "format" | "delivery">) {
   if (!Number.isFinite(d.minimum) || d.minimum < 0 || d.minimum > 100)
     return "Informe um percentual entre 0 e 100.";
   if (activity.format === "Remota assíncrona") {
+    if (
+      d.checkIntervalMinutes !== undefined &&
+      (!Number.isFinite(d.checkIntervalMinutes) ||
+        d.checkIntervalMinutes < 5 ||
+        d.checkIntervalMinutes > 10)
+    )
+      return "Informe um intervalo de confirmação entre 5 e 10 minutos.";
     if (!d.lessons.some((l) => l.required))
       return "Associe pelo menos uma videoaula obrigatória.";
     if (new Set(d.lessons.map((l) => l.id)).size !== d.lessons.length)
@@ -56,12 +64,13 @@ export function deliveryError(activity: Pick<Activity, "format" | "delivery">) {
     if (
       d.lessons.some(
         (l) =>
-          l.id !== demoLesson.id ||
+          !l.id.trim() ||
+          !l.title.trim() ||
           l.src !== demoLesson.src ||
           l.duration !== demoLesson.duration,
       )
     )
-      return "Selecione uma videoaula disponível.";
+      return "Informe título válido e utilize uma videoaula disponível.";
   } else {
     if (activity.format === "Presencial" && !d.location.trim())
       return "Informe o local de realização.";
@@ -102,6 +111,45 @@ const fail = (state: DemoState, message: string): Result => ({
   state,
   message,
 });
+export function registerStudent(
+  state: DemoState,
+  input: { name: string; email: string },
+  now: string,
+  id: string,
+): Result {
+  const name = input.name.trim();
+  const email = input.email.trim().toLowerCase();
+  if (
+    name.length < 2 ||
+    !/^([^\s@]+)@mindshare\.test$/.test(email) ||
+    !id ||
+    !Number.isFinite(Date.parse(now))
+  )
+    return fail(
+      state,
+      "Informe nome fictício válido e e-mail terminado em @mindshare.test.",
+    );
+  const userId = `discente-${id}`;
+  if (
+    state.users.some((u) => u.id === userId || u.email === email) ||
+    state.applications.some((a) => a.email === email)
+  )
+    return fail(state, "Já existe uma conta ou solicitação com este e-mail.");
+  const user: User = {
+    id: userId,
+    name,
+    email,
+    kind: "Discente",
+    consentAt: now,
+  };
+  return {
+    ok: true,
+    id: userId,
+    state: { ...state, users: [...state.users, user] },
+    message:
+      "Perfil discente de demonstração registrado localmente. Nenhuma senha foi armazenada.",
+  };
+}
 export function requestFaculty(
   state: DemoState,
   input: Pick<FacultyApplication, "name" | "email" | "department" | "method">,

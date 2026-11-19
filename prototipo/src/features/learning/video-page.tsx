@@ -142,9 +142,11 @@ function VideoLessonPlayer({
     progress?.watchedSinceCheck ??
       Math.max(0, seconds - (progress?.confirmedSeconds ?? 0)),
   );
+  const maxIntervalSeconds =
+    (activity.delivery?.checkIntervalMinutes ?? 5) * 60;
   const interval = accelerated
     ? 15
-    : Math.min(300, Math.max(15, lesson.duration / 2));
+    : Math.min(maxIntervalSeconds, Math.max(15, lesson.duration / 2));
   useEffect(() => {
     const el = video.current;
     if (!el) return;

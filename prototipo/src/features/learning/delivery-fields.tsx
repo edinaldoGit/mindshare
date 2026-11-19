@@ -96,23 +96,127 @@ export function DeliveryFields({
         />
       </label>
       {values.format === "Remota assíncrona" ? (
-        <div className="learning-card">
-          <h3>Videoaulas disponíveis</h3>
-          <label>
+        <>
+          <label className="instructor-field">
+            Intervalo de confirmação de presença (min)
             <input
-              type="checkbox"
-              checked={d.lessons.some((l) => l.id === demoLesson.id)}
+              type="number"
+              min="5"
+              max="10"
+              value={d.checkIntervalMinutes ?? 5}
               onChange={(e) =>
-                patch({ lessons: e.target.checked ? [demoLesson] : [] })
+                patch({ checkIntervalMinutes: Number(e.target.value) })
               }
-            />{" "}
-            {demoLesson.title} · 3 minutos · obrigatória
+            />
+            <span className="field-hint">
+              Referência configurável entre 5 e 10 minutos (prazo de resposta de
+              30 segundos). Vídeos curtos de demonstração ajustam a pausa
+              proporcionalmente.
+            </span>
           </label>
-          <p>
-            Trecho de Big Buck Bunny · Blender Foundation · CC BY 3.0. A mídia
-            já está disponível na biblioteca local do projeto.
-          </p>
-        </div>
+          <div className="learning-card">
+            <h3>Playlist de videoaulas</h3>
+            <p className="field-hint">
+              Adicione uma ou mais aulas (ao menos uma obrigatória). Na
+              demonstração, as aulas utilizam o vídeo local de 3 minutos (Big
+              Buck Bunny · Blender Foundation · CC BY 3.0).
+            </p>
+            {d.lessons.map((lesson, i) => (
+              <div className="meeting-editor" key={lesson.id}>
+                <label className="instructor-field">
+                  Aula {i + 1} · título
+                  <input
+                    value={lesson.title}
+                    placeholder="Ex.: Introdução ao tema"
+                    onChange={(e) =>
+                      patch({
+                        lessons: d.lessons.map((x) =>
+                          x.id === lesson.id
+                            ? { ...x, title: e.target.value }
+                            : x,
+                        ),
+                      })
+                    }
+                  />
+                </label>
+                <label className="instructor-field">
+                  Breve descrição (opcional)
+                  <input
+                    value={lesson.description ?? ""}
+                    placeholder="Resumo do conteúdo abordado na videoaula"
+                    onChange={(e) =>
+                      patch({
+                        lessons: d.lessons.map((x) =>
+                          x.id === lesson.id
+                            ? { ...x, description: e.target.value }
+                            : x,
+                        ),
+                      })
+                    }
+                  />
+                </label>
+                <label className="checkbox-field">
+                  <input
+                    type="checkbox"
+                    checked={lesson.required}
+                    onChange={(e) =>
+                      patch({
+                        lessons: d.lessons.map((x) =>
+                          x.id === lesson.id
+                            ? { ...x, required: e.target.checked }
+                            : x,
+                        ),
+                      })
+                    }
+                  />{" "}
+                  Aula obrigatória para conclusão (3 min)
+                </label>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  onClick={() =>
+                    patch({
+                      lessons: d.lessons.filter((x) => x.id !== lesson.id),
+                    })
+                  }
+                >
+                  Remover aula {i + 1}
+                </Button>
+              </div>
+            ))}
+            <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() =>
+                  patch({
+                    lessons: [
+                      ...d.lessons,
+                      {
+                        id:
+                          d.lessons.length === 0 &&
+                          !d.lessons.some((l) => l.id === demoLesson.id)
+                            ? demoLesson.id
+                            : `aula-${crypto.randomUUID().slice(0, 8)}`,
+                        title:
+                          d.lessons.length === 0
+                            ? demoLesson.title
+                            : `Aula ${d.lessons.length + 1}`,
+                        description:
+                          d.lessons.length === 0 ? demoLesson.description : "",
+                        src: demoLesson.src,
+                        duration: demoLesson.duration,
+                        required: true,
+                      },
+                    ],
+                  })
+                }
+              >
+                Adicionar videoaula
+              </Button>
+            </div>
+          </div>
+        </>
       ) : (
         <>
           {values.format === "Presencial" ? (
@@ -286,8 +390,9 @@ export function DeliveryInfo({
           </p>
           <p>
             <strong>Critérios de conclusão:</strong> {d.minimum}% de progresso
-            validado no conteúdo obrigatório, com as confirmações de
-            acompanhamento.
+            validado no conteúdo obrigatório, com confirmações periódicas de
+            acompanhamento (referência de {d.checkIntervalMinutes ?? 5} min ·
+            prazo de 30 s).
           </p>
           {d.instructions && (
             <details>
@@ -314,7 +419,7 @@ export function DeliveryInfo({
           <p>
             <strong>{activity.format}</strong> · mínimo de {d.minimum}% de{" "}
             {activity.format === "Remota assíncrona"
-              ? "progresso validado nos vídeos obrigatórios, com confirmação de acompanhamento"
+              ? `progresso validado nos vídeos obrigatórios, com confirmação de acompanhamento (referência de ${d.checkIntervalMinutes ?? 5} min · prazo de 30 s)`
               : "frequência, com todos os encontros realizados contabilizados e atividade encerrada"}
             .
           </p>

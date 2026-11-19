@@ -96,6 +96,7 @@ export type Lesson = {
 };
 export type Delivery = {
   minimum: number;
+  checkIntervalMinutes?: number;
   location: string;
   link: string;
   instructions: string;
