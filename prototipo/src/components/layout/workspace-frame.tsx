@@ -16,6 +16,7 @@ export function WorkspaceFrame({
   identity,
   navigationLabel,
   mobileLabel,
+  headerExtra,
   aside,
   footnote,
   className = "",
@@ -24,6 +25,7 @@ export function WorkspaceFrame({
   identity: string;
   navigationLabel: string;
   mobileLabel: string;
+  headerExtra?: ReactNode;
   aside: ReactNode;
   footnote: string;
   className?: string;
@@ -45,6 +47,7 @@ export function WorkspaceFrame({
             <small>{identity}</small>
           </div>
         </div>
+        {headerExtra}
         <nav aria-label={navigationLabel}>
           {links.map(({ path, label, icon: Icon }) => (
             <NavLink key={path} to={path} end>

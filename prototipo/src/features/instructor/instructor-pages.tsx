@@ -4,6 +4,7 @@ import { ProposalTimeline } from "@/features/curation/proposal-timeline";
 import { useState } from "react";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import {
+  ArrowLeft,
   ArrowRight,
   ArrowUpRight,
   BookOpen,
@@ -334,7 +335,7 @@ export function ProposalDetailPage() {
   return (
     <div className="instructor-page">
       <Link className="instructor-back-link" to="/instrutor/propostas">
-        <ArrowRight size={15} aria-hidden="true" />
+        <ArrowLeft size={15} aria-hidden="true" />
         Minhas propostas
       </Link>
       {(notice || feedback) && (
@@ -618,7 +619,7 @@ export function ActivityParticipantsPage() {
   return (
     <div className="instructor-page">
       <Link className="instructor-back-link" to="/instrutor/atividades">
-        <ArrowRight size={15} aria-hidden="true" />
+        <ArrowLeft size={15} aria-hidden="true" />
         Minhas atividades
       </Link>
       <header className="participant-management-heading">

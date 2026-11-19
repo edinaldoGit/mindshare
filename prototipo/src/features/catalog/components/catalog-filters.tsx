@@ -90,7 +90,7 @@ export function CatalogFilterPanel({
                 type="number"
                 min="0"
                 step="1"
-                placeholder="0"
+                placeholder="Mín."
                 value={filters.minHours}
                 onChange={(event) => onChange({ minHours: event.target.value })}
                 aria-invalid={invalidRange}
@@ -105,7 +105,7 @@ export function CatalogFilterPanel({
                 type="number"
                 min="0"
                 step="1"
-                placeholder="Sem limite"
+                placeholder="Máx."
                 value={filters.maxHours}
                 onChange={(event) => onChange({ maxHours: event.target.value })}
                 aria-invalid={invalidRange}

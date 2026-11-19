@@ -1,6 +1,14 @@
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { ClipboardList, ShieldCheck, Users } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowUpRight,
+  ClipboardList,
+  ShieldCheck,
+  UserCheck,
+  Users,
+  XCircle,
+} from "lucide-react";
 import { WorkspaceFrame } from "@/components/layout/workspace-frame";
 import { Button } from "@/components/ui/button";
 import { FeedbackMessage } from "@/components/feedback/feedback-message";
@@ -43,43 +51,76 @@ export function AdminLayout() {
 }
 export function AdminDashboard() {
   const { state } = useDemo();
+  const pendingCount = state.applications.filter(
+    (a) => a.status === "Pendente",
+  ).length;
   const metrics = [
-    [
-      "Solicitações pendentes",
-      state.applications.filter((a) => a.status === "Pendente").length,
-    ],
-    [
-      "Professores aprovados",
-      state.users.filter(
+    {
+      label: "Solicitações pendentes",
+      value: pendingCount,
+      icon: ClipboardList,
+      to: "/administracao/docentes",
+      highlight: pendingCount > 0,
+    },
+    {
+      label: "Professores aprovados",
+      value: state.users.filter(
         (u) => u.kind === "Professor Curador" && u.verified !== false,
       ).length,
-    ],
-    ["Professores ativos", activeCurators(state).length],
-    [
-      "Solicitações rejeitadas",
-      state.applications.filter((a) => a.status === "Rejeitada").length,
-    ],
+      icon: UserCheck,
+      to: "/administracao/curadores",
+      highlight: false,
+    },
+    {
+      label: "Professores ativos",
+      value: activeCurators(state).length,
+      icon: ShieldCheck,
+      to: "/administracao/curadores",
+      highlight: false,
+    },
+    {
+      label: "Solicitações rejeitadas",
+      value: state.applications.filter((a) => a.status === "Rejeitada").length,
+      icon: XCircle,
+      to: "/administracao/docentes",
+      highlight: false,
+    },
   ];
   return (
     <div className="instructor-page">
-      <p className="eyebrow">ACESSOS QUE VIABILIZAM TROCAS</p>
-      <h1>Painel administrativo</h1>
-      <p>
-        Valide solicitações docentes e mantenha as atribuições acadêmicas
-        organizadas.
-      </p>
-      <div className="instructor-metrics">
-        {metrics.map(([label, value]) => (
+      <header className="instructor-page-heading">
+        <div>
+          <p className="eyebrow">ACESSOS QUE VIABILIZAM TROCAS</p>
+          <h1>Painel administrativo</h1>
+          <p>
+            Valide solicitações docentes e mantenha as atribuições acadêmicas
+            organizadas.
+          </p>
+        </div>
+      </header>
+      <section
+        className="instructor-metrics"
+        aria-label="Resumo da gestão docente"
+      >
+        {metrics.map(({ label, value, icon: Icon, to, highlight }) => (
           <Link
-            className="instructor-metric"
-            to="/administracao/docentes"
+            className={`summary-card${highlight ? " admin-metric-highlight" : ""}`}
+            to={to}
             key={label}
           >
+            <span className="summary-card-top">
+              <Icon size={18} aria-hidden="true" />
+              {highlight ? (
+                <span className="admin-metric-pill">Pendente</span>
+              ) : (
+                <ArrowUpRight size={14} aria-hidden="true" />
+              )}
+            </span>
             <strong>{value}</strong>
             <span>{label}</span>
           </Link>
         ))}
-      </div>
+      </section>
       <div className="learning-card">
         <h2>Uma responsabilidade bem definida</h2>
         <p>
@@ -140,7 +181,10 @@ export function FacultyDetail() {
     );
   return (
     <div className="instructor-page">
-      <Link to="/administracao/docentes">← Solicitações</Link>
+      <Link className="back-link" to="/administracao/docentes">
+        <ArrowLeft size={15} aria-hidden="true" />
+        Solicitações docentes
+      </Link>
       <p className="eyebrow">{a.status}</p>
       <h1>{a.name}</h1>
       <section className="learning-card">
@@ -247,14 +291,19 @@ export function CuratorManagement() {
                   : "Inativo"}{" "}
                 · cadastro validado
               </p>
-              <p>
-                {
-                  state.activities.filter(
-                    (a) => a.curatorId === u.id && a.status === "Em análise",
-                  ).length
-                }{" "}
-                proposta(s) em análise
-              </p>
+              {(() => {
+                const reviewingCount = state.activities.filter(
+                  (a) => a.curatorId === u.id && a.status === "Em análise",
+                ).length;
+                return (
+                  <p>
+                    {reviewingCount}{" "}
+                    {reviewingCount === 1
+                      ? "proposta em análise"
+                      : "propostas em análise"}
+                  </p>
+                );
+              })()}
               <Button variant="outline" onClick={() => setTarget(u.id)}>
                 {u.kind === "Professor Curador" && u.active !== false
                   ? "Desativar"

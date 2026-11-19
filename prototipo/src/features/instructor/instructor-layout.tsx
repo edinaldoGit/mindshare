@@ -18,6 +18,18 @@ export function InstructorLayout() {
       identity="Discente · Instrutor"
       navigationLabel="Área do Instrutor"
       mobileLabel="Meu espaço de ensino"
+      headerExtra={
+        <div
+          className="context-switcher"
+          role="group"
+          aria-label="Alternar papel discente"
+        >
+          <Link to="/participante">Participante</Link>
+          <Link to="/instrutor" aria-current="page">
+            Instrutor
+          </Link>
+        </div>
+      }
       footnote="Propostas e atividades em um só lugar."
       aside={
         <>

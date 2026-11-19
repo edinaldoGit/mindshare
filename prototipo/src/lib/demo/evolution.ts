@@ -696,7 +696,7 @@ export function completionEligibility(
       p.pending === 0 &&
       p.count > 0 &&
       (p.percent ?? 0) >= p.minimum,
-    reason: `${p.percent === null ? "Sem dados" : p.percent.toFixed(1) + "%"} · mínimo ${p.minimum}% · ${p.pending} lançamento(s) pendente(s) · ${p.closed ? "encerrada" : "cálculo parcial"}`,
+    reason: `${p.percent === null ? "Sem dados" : p.percent.toFixed(1) + "%"} · mínimo ${p.minimum}% · ${p.pending} ${p.pending === 1 ? "lançamento pendente" : "lançamentos pendentes"} · ${p.closed ? "encerrada" : "cálculo parcial"}`,
   };
 }
 export function evolutionActivities(base: Activity[]): Activity[] {

@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
+import { ArrowLeft, Ban, CheckCircle2, Clock3, XCircle } from "lucide-react";
 import { useDemo } from "@/app/providers/demo-context";
 import { Button } from "@/components/ui/button";
 import { FeedbackMessage } from "@/components/feedback/feedback-message";
@@ -49,13 +50,15 @@ export function AttendancePage() {
   return (
     <div className="instructor-page learning-page">
       <Link
+        className="back-link"
         to={
           instructor
             ? `/instrutor/atividades/${a.id}/participantes`
             : `/participante/atividades/${a.id}`
         }
       >
-        ← Voltar à atividade
+        <ArrowLeft size={15} aria-hidden="true" />
+        Voltar à atividade
       </Link>
       <p className="eyebrow">{a.format}</p>
       <h1>
@@ -172,15 +175,27 @@ export function AttendancePage() {
                           "O instrutor ainda não informou o assunto deste encontro."}
                       </p>
                       <p>
-                        <strong>
-                          {m.status === "Cancelado"
-                            ? "Cancelado · não contabilizado"
-                            : m.status !== "Realizado" || !r
-                              ? "Não registrado"
-                              : r.present
-                                ? "Presente"
-                                : "Ausente"}
-                        </strong>
+                        {m.status === "Cancelado" ? (
+                          <span className="status-badge is-cancelled">
+                            <Ban size={13} aria-hidden="true" />
+                            Cancelado · não contabilizado
+                          </span>
+                        ) : m.status !== "Realizado" || !r ? (
+                          <span className="status-badge is-pending">
+                            <Clock3 size={13} aria-hidden="true" />
+                            Não registrado
+                          </span>
+                        ) : r.present ? (
+                          <span className="status-badge is-present">
+                            <CheckCircle2 size={13} aria-hidden="true" />
+                            Presente
+                          </span>
+                        ) : (
+                          <span className="status-badge is-absent">
+                            <XCircle size={13} aria-hidden="true" />
+                            Ausente
+                          </span>
+                        )}
                       </p>
                       {r && (
                         <small>
@@ -232,6 +247,10 @@ export function AttendancePage() {
     </div>
   );
 }
+function pluralize(count: number, singular: string, plural: string) {
+  return `${count} ${count === 1 ? singular : plural}`;
+}
+
 function AttendanceSummary({
   activity,
   participantId,
@@ -245,6 +264,9 @@ function AttendanceSummary({
     (m) => m.status === "Planejado",
   );
   const partial = !p.closed || p.pending > 0 || future;
+  const absences = p.count - p.present;
+  const barPercent = p.percent === null ? 0 : Math.min(100, Math.max(0, p.percent));
+  const metMinimum = p.percent !== null && p.percent >= p.minimum;
   return (
     <div className="attendance-summary">
       <p>
@@ -254,14 +276,38 @@ function AttendanceSummary({
         </strong>{" "}
         · mínimo {p.minimum}%
       </p>
+      <div
+        className="metric-progress-bar"
+        role="progressbar"
+        aria-label="Frequência acumulada"
+        aria-valuenow={Math.round(barPercent)}
+        aria-valuemin={0}
+        aria-valuemax={100}
+      >
+        <div className="metric-progress-track">
+          <div
+            className={`metric-progress-fill${metMinimum ? " is-met" : ""}`}
+            style={{ width: `${barPercent}%` }}
+          />
+          {p.minimum > 0 && p.minimum < 100 && (
+            <span
+              className="metric-progress-target"
+              style={{ left: `${p.minimum}%` }}
+              title={`Mínimo exigido: ${p.minimum}%`}
+            />
+          )}
+        </div>
+      </div>
       <p>
-        {p.present} presença(s) em {p.count} encontro(s) registrado(s) ·{" "}
-        {p.count - p.present} ausência(s) · {p.pending} registro(s) pendente(s).
+        {pluralize(p.present, "presença", "presenças")} em{" "}
+        {pluralize(p.count, "encontro registrado", "encontros registrados")} ·{" "}
+        {pluralize(absences, "ausência", "ausências")} ·{" "}
+        {pluralize(p.pending, "registro pendente", "registros pendentes")}.
       </p>
       <p>
         {partial
           ? "Acompanhamento parcial. Encontros futuros e registros pendentes não contam como ausência."
-          : p.percent !== null && p.percent >= p.minimum
+          : metMinimum
             ? "Critério de frequência atendido. A confirmação final cabe ao Instrutor."
             : "O critério de frequência ainda não foi atendido. Consulte o Instrutor."}
       </p>

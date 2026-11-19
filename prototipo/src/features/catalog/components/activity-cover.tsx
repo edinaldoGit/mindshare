@@ -21,9 +21,6 @@ export function ActivityCover({
       className={`activity-cover cover-${theme} ${compact ? "cover-compact" : ""}`}
       aria-hidden="true"
     >
-      <span className="cover-label">
-        MINDShare <span>EXPLORAR / CRIAR / COMPARTILHAR</span>
-      </span>
       <svg viewBox="0 0 400 190" fill="none" focusable="false">
         <path
           d="M0 155H400M0 115H400M0 75H400M0 35H400M40 0V190M80 0V190M120 0V190M160 0V190M200 0V190M240 0V190M280 0V190M320 0V190M360 0V190"
@@ -121,7 +118,6 @@ export function ActivityCover({
           </>
         )}
       </svg>
-      <span className="cover-index">APRENDER JUNTOS.</span>
     </div>
   );
 }

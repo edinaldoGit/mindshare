@@ -52,6 +52,16 @@ export function ParticipantLayout() {
             <small>Discente</small>
           </div>
         </div>
+        <div
+          className="context-switcher"
+          role="group"
+          aria-label="Alternar papel discente"
+        >
+          <Link to="/participante" aria-current="page">
+            Participante
+          </Link>
+          <Link to="/instrutor">Instrutor</Link>
+        </div>
         <nav aria-label="Área do participante">
           {navigation.map(({ path, label, icon: Icon }) => (
             <NavLink key={path} to={path} end>

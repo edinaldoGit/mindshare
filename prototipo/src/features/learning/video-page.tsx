@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { ArrowLeft, CheckCircle2, PlayCircle } from "lucide-react";
 import { useDemo } from "@/app/providers/demo-context";
 import { Button } from "@/components/ui/button";
 import {
@@ -34,9 +35,14 @@ export function VideoPage() {
     );
   const progress = videoSummary(state, a, user.id);
   const lesson = a.delivery.lessons[selected];
+  const barPercent = Math.min(100, Math.max(0, progress.percent));
+  const metMinimum = progress.percent + 0.01 >= a.delivery.minimum;
   return (
     <div className="participant-page learning-page">
-      <Link to={`/participante/atividades/${a.id}`}>← Voltar à atividade</Link>
+      <Link className="back-link" to={`/participante/atividades/${a.id}`}>
+        <ArrowLeft size={15} aria-hidden="true" />
+        Voltar à atividade
+      </Link>
       <p className="eyebrow">REMOTA ASSÍNCRONA · APRENDA NO SEU RITMO</p>
       <h1>{a.title}</h1>
 
@@ -56,6 +62,28 @@ export function VideoPage() {
           <p>
             <strong>Progresso do curso: {progress.percent.toFixed(1)}%</strong>
           </p>
+          <div
+            className="metric-progress-bar"
+            role="progressbar"
+            aria-label="Progresso do curso"
+            aria-valuenow={Math.round(barPercent)}
+            aria-valuemin={0}
+            aria-valuemax={100}
+          >
+            <div className="metric-progress-track">
+              <div
+                className={`metric-progress-fill${metMinimum ? " is-met" : ""}`}
+                style={{ width: `${barPercent}%` }}
+              />
+              {a.delivery.minimum > 0 && a.delivery.minimum < 100 && (
+                <span
+                  className="metric-progress-target"
+                  style={{ left: `${a.delivery.minimum}%` }}
+                  title={`Mínimo exigido: ${a.delivery.minimum}%`}
+                />
+              )}
+            </div>
+          </div>
           <p className="field-hint">
             Mínimo para conclusão: {a.delivery.minimum}%. Confirmação final pelo
             Instrutor.
@@ -81,12 +109,29 @@ export function VideoPage() {
                   : "Ainda não iniciada";
             return (
               <button
-                className="lesson-choice"
+                className={`lesson-choice${watched ? " is-watched" : ""}`}
                 aria-current={selected === i ? "true" : undefined}
                 key={l.id}
                 onClick={() => setSelected(i)}
               >
-                {i + 1}. {l.title}
+                <span className="lesson-choice-title">
+                  <span>
+                    {i + 1}. {l.title}
+                  </span>
+                  {watched ? (
+                    <CheckCircle2
+                      size={16}
+                      className="lesson-choice-icon"
+                      aria-hidden="true"
+                    />
+                  ) : selected === i ? (
+                    <PlayCircle
+                      size={16}
+                      className="lesson-choice-icon"
+                      aria-hidden="true"
+                    />
+                  ) : null}
+                </span>
                 <small>
                   {Math.round(l.duration / 60)} min ·{" "}
                   {l.required ? "Obrigatória" : "Opcional"} · {status}
@@ -402,11 +447,17 @@ function VideoLessonPlayer({
           "Observe a cena e relacione os conceitos apresentados nesta aula."}
       </p>
       <div className="video-progress-bar">
-        <p>
-          Acompanhamento validado desta aula:{" "}
-          {((seconds / lesson.duration) * 100).toFixed(1)}% ·{" "}
-          {progress?.checkpoints.length ?? 0} confirmação(ões)
-        </p>
+        {(() => {
+          const checkpointsCount = progress?.checkpoints.length ?? 0;
+          return (
+            <p>
+              Acompanhamento validado desta aula:{" "}
+              {((seconds / lesson.duration) * 100).toFixed(1)}% ·{" "}
+              {checkpointsCount}{" "}
+              {checkpointsCount === 1 ? "confirmação" : "confirmações"}
+            </p>
+          );
+        })()}
       </div>
       {phase === "later" && (
         <Button onClick={() => checkpoint()}>Retomar com confirmação</Button>

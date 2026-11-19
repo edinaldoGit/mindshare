@@ -36,6 +36,7 @@ export function DeliveryFields({
   }
   return (
     <section
+      id="etapa-curadoria"
       className="proposal-form-section"
       tabIndex={-1}
       aria-invalid={!!errors.delivery}
@@ -120,7 +121,7 @@ export function DeliveryFields({
               a atividade assíncrona.
             </p>
             {d.lessons.map((lesson, i) => (
-              <div className="meeting-editor" key={lesson.id}>
+              <div className="lesson-editor" key={lesson.id}>
                 <label className="instructor-field">
                   Aula {i + 1} · título
                   <input
@@ -153,36 +154,38 @@ export function DeliveryFields({
                     }
                   />
                 </label>
-                <label className="checkbox-field">
-                  <input
-                    type="checkbox"
-                    checked={lesson.required}
-                    onChange={(e) =>
+                <div className="lesson-editor-footer">
+                  <label className="checkbox-field">
+                    <input
+                      type="checkbox"
+                      checked={lesson.required}
+                      onChange={(e) =>
+                        patch({
+                          lessons: d.lessons.map((x) =>
+                            x.id === lesson.id
+                              ? { ...x, required: e.target.checked }
+                              : x,
+                          ),
+                        })
+                      }
+                    />
+                    <span>Aula obrigatória para conclusão (3 min)</span>
+                  </label>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    onClick={() =>
                       patch({
-                        lessons: d.lessons.map((x) =>
-                          x.id === lesson.id
-                            ? { ...x, required: e.target.checked }
-                            : x,
-                        ),
+                        lessons: d.lessons.filter((x) => x.id !== lesson.id),
                       })
                     }
-                  />{" "}
-                  Aula obrigatória para conclusão (3 min)
-                </label>
-                <Button
-                  type="button"
-                  variant="ghost"
-                  onClick={() =>
-                    patch({
-                      lessons: d.lessons.filter((x) => x.id !== lesson.id),
-                    })
-                  }
-                >
-                  Remover aula {i + 1}
-                </Button>
+                  >
+                    Remover aula {i + 1}
+                  </Button>
+                </div>
               </div>
             ))}
-            <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+            <div className="lesson-editor-actions">
               <Button
                 type="button"
                 variant="outline"

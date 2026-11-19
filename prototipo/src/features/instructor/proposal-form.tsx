@@ -6,7 +6,7 @@ import {
 } from "@/lib/demo/evolution";
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { ArrowLeft, ArrowRight, Save } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Save } from "lucide-react";
 import { useDemo } from "@/app/providers/demo-context";
 import { Button } from "@/components/ui/button";
 import { FeedbackMessage } from "@/components/feedback/feedback-message";
@@ -137,6 +137,16 @@ export function ProposalForm({ editing = false }: { editing?: boolean }) {
       });
   }
 
+  const step1Done =
+    values.title.trim().length > 0 &&
+    values.syllabus.trim().length > 0 &&
+    values.thematicArea.trim().length > 0;
+  const step2Done =
+    values.hours > 0 &&
+    values.capacity > 0 &&
+    values.category.trim().length > 0;
+  const step3Done = !!values.curatorId;
+
   return (
     <div className="instructor-page">
       <Link
@@ -161,6 +171,32 @@ export function ProposalForm({ editing = false }: { editing?: boolean }) {
           </p>
         </div>
       </div>
+      <ol className="proposal-steps" aria-label="Etapas do formulário">
+        <li className={step1Done ? "is-complete" : undefined}>
+          <a href="#etapa-atividade">
+            <span className="proposal-step-num" aria-hidden="true">
+              {step1Done ? <Check size={14} /> : "01"}
+            </span>
+            <span className="proposal-step-label">Informações</span>
+          </a>
+        </li>
+        <li className={step2Done ? "is-complete" : undefined}>
+          <a href="#etapa-organizacao">
+            <span className="proposal-step-num" aria-hidden="true">
+              {step2Done ? <Check size={14} /> : "02"}
+            </span>
+            <span className="proposal-step-label">Modalidade</span>
+          </a>
+        </li>
+        <li className={step3Done ? "is-complete" : undefined}>
+          <a href="#etapa-curadoria">
+            <span className="proposal-step-num" aria-hidden="true">
+              {step3Done ? <Check size={14} /> : "03"}
+            </span>
+            <span className="proposal-step-label">Curadoria</span>
+          </a>
+        </li>
+      </ol>
       {message && <FeedbackMessage error>{message}</FeedbackMessage>}
       {editing && activity && (
         <aside className="curation-feedback">
@@ -169,7 +205,7 @@ export function ProposalForm({ editing = false }: { editing?: boolean }) {
         </aside>
       )}
       <form className="proposal-form" noValidate onSubmit={save}>
-        <section className="proposal-form-section">
+        <section id="etapa-atividade" className="proposal-form-section">
           <p className="eyebrow">01 · A ATIVIDADE</p>
           <h2>O que você quer compartilhar?</h2>
           <label className="instructor-field" htmlFor="proposal-title">
@@ -254,7 +290,7 @@ export function ProposalForm({ editing = false }: { editing?: boolean }) {
             </label>
           </div>
         </section>
-        <section className="proposal-form-section">
+        <section id="etapa-organizacao" className="proposal-form-section">
           <p className="eyebrow">02 · ORGANIZAÇÃO</p>
           <h2>Como a atividade vai acontecer?</h2>
           <div className="proposal-form-grid">
