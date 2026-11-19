@@ -104,7 +104,7 @@ export function CatalogPage() {
                 ? "atividade encontrada"
                 : "atividades encontradas"}
             </p>
-            <span>Atividades demonstrativas</span>
+            <span>Atividades publicadas</span>
           </div>
           {chips.some((chip) => chip.label) && (
             <div className="active-filters" aria-label="Filtros aplicados">

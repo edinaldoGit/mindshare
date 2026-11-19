@@ -18,7 +18,7 @@ export function CurationLayout() {
     <WorkspaceFrame
       className="curation-shell"
       links={links}
-      identity="Professor Curador · Demonstração"
+      identity="Professor Curador"
       navigationLabel="Área de Curadoria"
       mobileLabel="Meu espaço de curadoria"
       footnote="Uma leitura atenta abre novos caminhos."

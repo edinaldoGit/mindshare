@@ -338,9 +338,9 @@ for (const proposal of proposalExamples) {
     title: proposal.title,
     status: proposal.status,
     instructorId: demoStudent.id,
-    summary: "Proposta demonstrativa para acompanhar a jornada de curadoria.",
+    summary: "Oficina prática sobre arquitetura de informação e fluxos de navegação.",
     syllabus:
-      "Uma proposta fictícia usada para demonstrar o acompanhamento e os estados de curadoria.",
+      "Conceitos fundamentais de organização de conteúdo, mapeamento de jornadas de usuário e boas práticas de navegação em aplicações web.",
     thematicArea: "Design de interação",
     createdAt: "2026-10-28T12:00:00.000Z",
     submittedAt: proposal.status === "Rascunho" ? undefined : proposal.date,
@@ -353,7 +353,7 @@ for (const proposal of proposalExamples) {
               outcome: proposal.status as "Ajustes solicitados" | "Rejeitada",
               reason: adjustment
                 ? "Inclua uma descrição mais clara das atividades práticas e indique como a acessibilidade será considerada."
-                : "A proposta não se alinha ao escopo demonstrativo desta chamada.",
+                : "A proposta não se alinha ao escopo temático desta chamada.",
               decidedAt: proposal.date,
             },
           ]
@@ -384,7 +384,7 @@ export const stageFourEnrollments: Enrollment[] = [
 ];
 const fixtureParticipants: User[] = Array.from({ length: 30 }, (_, index) => ({
   id: `participante-exemplo-${index}`,
-  name: `Participante fictício ${index + 1}`,
+  name: `Discente ${index + 1}`,
   email: `exemplo${index + 1}@mindshare.test`,
   kind: "Discente",
   consentAt,

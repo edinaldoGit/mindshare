@@ -680,8 +680,7 @@ export function ActivityParticipantsPage() {
                 <div className="managed-participant-info">
                   <h3>{participant.name}</h3>
                   <span>
-                    Perfil demonstrativo · inscrição em{" "}
-                    {formatDate(enrollment.enrolledAt)}
+                    Discente inscrito em {formatDate(enrollment.enrolledAt)}
                   </span>
                 </div>
                 <span
@@ -735,7 +734,7 @@ export function ActivityParticipantsPage() {
         title="Confirmar conclusão?"
         description={
           selected
-            ? `Confirmar a conclusão de ${selected.name} em “${selected.title}”? O histórico de horas e o comprovante demonstrativo serão atualizados.`
+            ? `Confirmar a conclusão de ${selected.name} em “${selected.title}”? O histórico de horas e o comprovante em PDF serão atualizados.`
             : ""
         }
         confirmLabel="Confirmar conclusão"

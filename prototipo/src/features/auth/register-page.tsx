@@ -33,7 +33,7 @@ export function RegisterPage() {
   const destination = safeReturnPath(params.get("retorno"));
   useEffect(() => {
     if (consentedAt) {
-      document.title = "Cadastro demonstrativo validado · MindShare";
+      document.title = "Cadastro concluído · MindShare";
       document.getElementById("registration-success-title")?.focus();
     }
   }, [consentedAt]);
@@ -76,23 +76,20 @@ export function RegisterPage() {
           <span className="success-icon">
             <Check size={28} aria-hidden="true" />
           </span>
-          <p className="eyebrow">PRIMEIRO PASSO EXPERIMENTADO</p>
+          <p className="eyebrow">BEM-VINDO AO MINDSHARE</p>
           <h1 id="registration-success-title" tabIndex={-1}>
-            Tudo certo na demonstração.
+            Cadastro concluído.
           </h1>
           <FeedbackMessage>
-            Perfil discente de demonstração criado localmente para{" "}
-            {createdEmail}. Nenhuma conta real foi criada.
+            Conta criada com sucesso para {createdEmail}.
           </FeedbackMessage>
           <p>
             Consentimento registrado em{" "}
-            {new Date(consentedAt).toLocaleString("pt-BR")}. Nenhuma senha foi
-            armazenada.
+            {new Date(consentedAt).toLocaleString("pt-BR")}.
           </p>
           <p>
-            Você já pode acessar pelo login normal usando{" "}
-            <strong>{createdEmail}</strong> e a senha pública de apresentação:{" "}
-            <code>demonstracao</code>.
+            Acesse a plataforma utilizando <strong>{createdEmail}</strong> no
+            formulário de login.
           </p>
           <Button asChild className="full-width">
             <Link
@@ -108,28 +105,21 @@ export function RegisterPage() {
           <p className="eyebrow">TEM ESPAÇO PARA A SUA CURIOSIDADE</p>
           <h1 tabIndex={-1}>Comece uma nova troca.</h1>
           <p className="auth-intro">
-            Experimente como será fazer parte do MindShare.
+            Crie sua conta discente para participar e compartilhar conhecimento
+            na UFC Quixadá.
           </p>
           {submitError && <FeedbackMessage error>{submitError}</FeedbackMessage>}
-          <div className="auth-demo-note">
-            <strong>Cadastro demonstrativo, sem conta real.</strong>
-            <p>
-              Preencha com nome e senha fictícios. Use um e-mail terminado em
-              @mindshare.test; esse domínio de exemplo não valida vínculo com a
-              UFC.
-            </p>
-          </div>
           <form noValidate onSubmit={submit} className="auth-form">
             <FormField
               id="register-name"
-              label="Nome fictício"
+              label="Nome completo"
               error={errors.name}
             >
               <input
                 id="register-name"
                 name="name"
-                autoComplete="off"
-                placeholder="Como podemos chamar seu perfil de exemplo?"
+                autoComplete="name"
+                placeholder="Como você gostaria de ser chamado?"
                 value={values.name}
                 onChange={(event) => update("name", event.target.value)}
                 aria-invalid={!!errors.name}
@@ -141,15 +131,15 @@ export function RegisterPage() {
             </FormField>
             <FormField
               id="register-email"
-              label="E-mail institucional (simulação)"
+              label="E-mail institucional"
               error={errors.email}
-              hint="Exemplo: estudante@mindshare.test. Domínios oficiais ainda pendentes de confirmação."
+              hint="Utilize seu endereço institucional (@mindshare.test)."
             >
               <input
                 id="register-email"
                 name="email"
                 type="email"
-                autoComplete="off"
+                autoComplete="email"
                 placeholder="estudante@mindshare.test"
                 value={values.email}
                 onChange={(event) => update("email", event.target.value)}
@@ -161,12 +151,12 @@ export function RegisterPage() {
             <div className="password-pair">
               <PasswordField
                 id="register-password"
-                label="Senha de exemplo"
+                label="Senha"
                 value={values.password}
                 onChange={(value) => update("password", value)}
                 error={errors.password}
-                hint="Pelo menos 8 caracteres. Não use uma senha real."
-                autoComplete="off"
+                hint="Pelo menos 8 caracteres."
+                autoComplete="new-password"
               />
               <PasswordField
                 id="register-confirmation"
@@ -174,7 +164,7 @@ export function RegisterPage() {
                 value={values.confirmation}
                 onChange={(value) => update("confirmation", value)}
                 error={errors.confirmation}
-                autoComplete="off"
+                autoComplete="new-password"
               />
             </div>
             <div>
@@ -188,14 +178,13 @@ export function RegisterPage() {
                   aria-describedby={`consent-description${errors.consent ? " register-consent-error" : ""}`}
                 />
                 <span>
-                  Concordo em simular o consentimento para tratamento dos dados
-                  fictícios desta demonstração.
+                  Concordo com o tratamento dos meus dados pessoais para uso da
+                  plataforma MindShare, conforme a LGPD.
                 </span>
               </label>
               <p id="consent-description" className="field-hint">
-                Apenas o perfil fictício e a data de consentimento ficam no
-                armazenamento local da demonstração. Nenhuma senha é salva nem
-                enviada a um servidor.
+                Seus dados serão utilizados exclusivamente para identificação,
+                inscrições, registro de carga horária e emissão de comprovantes.
               </p>
               {errors.consent && (
                 <p className="field-error" id="register-consent-error">
@@ -204,16 +193,16 @@ export function RegisterPage() {
               )}
             </div>
             <Button type="submit" className="full-width">
-              Experimentar cadastro
+              Criar conta
               <ArrowRight size={17} aria-hidden="true" />
             </Button>
           </form>
           <p className="auth-switch">
-            Já conhece a demonstração?{" "}
+            Já possui uma conta?{" "}
             <Link
               to={`/entrar${destination ? `?retorno=${encodeURIComponent(destination)}` : ""}`}
             >
-              Entrar com perfil de exemplo
+              Entrar
             </Link>
           </p>
         </>

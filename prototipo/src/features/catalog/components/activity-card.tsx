@@ -55,7 +55,7 @@ export function ActivityCard({ activity }: { activity: Activity }) {
               .slice(0, 2)
               .join("")}
           </span>
-          <span>{instructor?.name ?? "Instrutor de exemplo"}</span>
+          <span>{instructor?.name ?? "Discente instrutor"}</span>
           <span className={`seats-badge ${available === 0 ? "is-full" : ""}`}>
             {available
               ? `${available} ${available === 1 ? "vaga" : "vagas"}`
@@ -66,7 +66,7 @@ export function ActivityCard({ activity }: { activity: Activity }) {
           <span>
             {enrollment
               ? `Sua participação: ${enrollment.status}`
-              : "Atividade demonstrativa"}
+              : "Ver detalhes da atividade"}
           </span>
           <ArrowUpRight size={17} aria-hidden="true" />
         </div>

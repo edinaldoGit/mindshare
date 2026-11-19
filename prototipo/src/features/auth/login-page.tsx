@@ -37,9 +37,9 @@ export function LoginPage() {
     event.preventDefault();
     const nextErrors = {
       email: !isDemoEmail(email)
-        ? "Use um e-mail de exemplo terminado em @mindshare.test."
+        ? "Informe um e-mail institucional válido (@mindshare.test)."
         : undefined,
-      password: !password ? "Informe a senha de demonstração." : undefined,
+      password: !password ? "Informe sua senha." : undefined,
     };
     setErrors(nextErrors);
     setMessage("");
@@ -62,18 +62,14 @@ export function LoginPage() {
       <p className="eyebrow">QUE BOM TER VOCÊ POR AQUI</p>
       <h1 tabIndex={-1}>Entre na conversa.</h1>
       <p className="auth-intro">Novas descobertas esperam por você.</p>
-      <p className="field-hint">
-        Projeto acadêmico. Utilize somente contas fictícias e a senha pública
-        demonstracao. Não use sua senha pessoal ou institucional.
-      </p>
       {user && (
         <FeedbackMessage>
-          Você está como {user.name}.{" "}
+          Você está conectado como {user.name}.{" "}
           <Link
             to={returnAfterLogin(user, destination)}
             className="inline-link"
           >
-            Continuar na demonstração
+            Continuar para meu espaço
           </Link>
         </FeedbackMessage>
       )}
@@ -105,7 +101,7 @@ export function LoginPage() {
           <p className="field-error" role="status">
             Tente novamente em{" "}
             {Math.min(15, Math.ceil((attempts.blockedUntil - time) / 60000))}{" "}
-            min. O bloqueio é apenas demonstrativo.
+            min.
           </p>
         )}
         <Button type="submit" disabled={blocked} className="full-width">

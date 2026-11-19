@@ -12,13 +12,13 @@ export function DevelopmentPage({
     <section className="development-page">
       <Construction size={32} aria-hidden="true" className="text-primary" />
       <p className="eyebrow">
-        {notFound ? "Endereço indisponível" : "Próximas etapas"}
+        {notFound ? "Endereço indisponível" : "Recurso indisponível"}
       </p>
       <h1 tabIndex={-1}>{title}</h1>
       <p>
         {notFound
           ? "Este endereço não corresponde a uma página do MindShare."
-          : "Este espaço está em desenvolvimento. As interações serão disponibilizadas nas próximas etapas do protótipo."}
+          : "Este recurso não está disponível no momento."}
       </p>
       <Button asChild variant="outline">
         <Link to="/">

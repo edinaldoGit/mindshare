@@ -50,8 +50,7 @@ export function createInitialState(): DemoState {
         email: "renata@mindshare.test",
         department: "Computação · UFC Quixadá",
         method: "Administrativa",
-        evidence:
-          "Declaração fictícia de vínculo docente. Sem documento pessoal real.",
+        evidence: "Declaração institucional de vínculo docente.",
         status: "Pendente",
         createdAt: "2026-11-04T12:00:00.000Z",
       },
@@ -82,9 +81,7 @@ export function enrollInActivity(
     message,
   });
   if (actor?.kind !== "Discente")
-    return reject(
-      "A inscrição está disponível apenas para discentes na demonstração.",
-    );
+    return reject("A inscrição está disponível apenas para discentes.");
   const activity = state.activities.find((item) => item.id === activityId);
   if (!activity || !isPublished(activity))
     return reject("Esta atividade não está disponível para inscrição.");
@@ -116,8 +113,7 @@ export function enrollInActivity(
     ok: true,
     state: { ...state, enrollments: [...state.enrollments, enrollment] },
     enrollment,
-    message:
-      "Inscrição confirmada na demonstração. A atividade já está no seu espaço.",
+    message: "Inscrição confirmada. A atividade já está no seu espaço.",
   };
 }
 export function isIsoDate(value: unknown): value is string {
@@ -181,7 +177,7 @@ export function confirmEnrollmentCompletion(
         item.id === enrollmentId ? completed : item,
       ),
     },
-    message: "Conclusão registrada na demonstração.",
+    message: "Conclusão registrada com sucesso.",
   };
 }
 
@@ -279,7 +275,7 @@ export function createProposal(
     return {
       ok: false,
       state,
-      message: "Apenas um Discente pode criar propostas na demonstração.",
+      message: "Apenas um Discente pode criar propostas.",
     };
   const error =
     validateProposalInput(input) ??

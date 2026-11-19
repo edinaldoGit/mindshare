@@ -70,8 +70,7 @@ export function DemoProvider({ children }: { children: ReactNode }) {
     if (attempts.blockedUntil > now)
       return {
         ok: false,
-        message:
-          "Acesso demonstrativo pausado por 15 minutos após 5 tentativas inválidas.",
+        message: "Acesso bloqueado por 15 minutos após 5 tentativas inválidas.",
       };
     const nextUser = authenticateDemo(email, password, stateRef.current.users);
     if (!nextUser) {
@@ -81,8 +80,8 @@ export function DemoProvider({ children }: { children: ReactNode }) {
         ok: false,
         message:
           nextAttempts.blockedUntil > now
-            ? "Após 5 tentativas inválidas, o acesso demonstrativo foi pausado por 15 minutos."
-            : "E-mail ou senha de demonstração incorretos. Verifique os dados e tente novamente.",
+            ? "Após 5 tentativas inválidas, o acesso foi bloqueado por 15 minutos."
+            : "E-mail ou senha incorretos. Verifique os dados e tente novamente.",
       };
     }
     setAttempts({ failures: 0, blockedUntil: 0 });

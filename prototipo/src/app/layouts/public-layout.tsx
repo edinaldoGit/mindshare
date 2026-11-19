@@ -24,8 +24,7 @@ export function PublicLayout() {
       </main>
       {isAuthPage ? (
         <footer className="auth-footer container">
-          Protótipo acadêmico · Pessoas e atividades fictícias. Não é um serviço
-          oficial da UFC.
+          MindShare · UFC Campus de Quixadá
         </footer>
       ) : (
         <Footer />

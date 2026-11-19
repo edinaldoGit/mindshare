@@ -23,15 +23,15 @@ export function Footer() {
           <div className="footer-context">
             <span className="eyebrow">FEITO PARA APRENDER JUNTOS</span>
             <p>
-              Projeto acadêmico
+              Aprendizagem colaborativa
               <br />
               UFC · Campus de Quixadá
             </p>
           </div>
         </div>
         <div className="footer-bottom">
-          <span>Protótipo acadêmico · Pessoas e atividades fictícias.</span>
-          <span>Não é um serviço oficial da UFC.</span>
+          <span>MindShare · Plataforma de aprendizagem colaborativa</span>
+          <span>UFC · Campus de Quixadá</span>
         </div>
         <p className="institution-note">
           A aprovação de atividades e a emissão de comprovantes não garantem o

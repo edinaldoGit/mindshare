@@ -104,7 +104,10 @@ export function FacultyList() {
         {state.applications.map((a) => (
           <article className="proposal-card" key={a.id}>
             <p className="eyebrow">
-              {a.method} · {a.status}
+              {a.method === "Institucional simulada"
+                ? "Verificação institucional"
+                : "Análise administrativa"}{" "}
+              · {a.status}
             </p>
             <h2>{a.name}</h2>
             <p>{a.department}</p>
@@ -144,13 +147,16 @@ export function FacultyDetail() {
         <h2>Dados da solicitação</h2>
         <p>{a.email}</p>
         <p>
-          {a.department} · {a.method}
+          {a.department} ·{" "}
+          {a.method === "Institucional simulada"
+            ? "Verificação institucional"
+            : "Análise administrativa"}
         </p>
-        <h3>Comprovação representada</h3>
+        <h3>Comprovação de vínculo</h3>
         <p>{a.evidence}</p>
         <p className="field-hint">
-          Este é um exemplo fictício. Não há armazenamento de documento pessoal
-          nem consulta institucional real.
+          Acesso restrito aos Administradores autorizados para fins de validação
+          docente.
         </p>
         {a.reason && <p>Motivo registrado: {a.reason}</p>}
         {a.decidedAt && (

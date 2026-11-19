@@ -31,11 +31,6 @@ export function HistoryPage() {
           oficiais da UFC para reconhecimento de atividades complementares.
         </p>
       </div>
-      <p className="seed-notice">
-        As conclusões iniciais são exemplos fictícios preparados para a
-        demonstração. Novas conclusões são confirmadas pelo Instrutor
-        responsável pela atividade.
-      </p>
       {completed.length ? (
         <section className="history-list" aria-label="Atividades concluídas">
           {completed.map(({ enrollment, activity, instructor }) => (

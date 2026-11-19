@@ -56,7 +56,7 @@ export function ProposalReviewPage() {
   const instructor = users.find((user) => user.id === activity.instructorId);
   const decision = activity.decisions.at(-1);
   const facts = [
-    ["Instrutor", instructor?.name ?? "Discente demonstrativo"],
+    ["Instrutor", instructor?.name ?? "Discente instrutor"],
     [
       "Data da submissão mais recente",
       activity.submittedAt ? formatDate(activity.submittedAt) : "Não informada",
@@ -159,8 +159,8 @@ export function ProposalReviewPage() {
                 </Button>
               </div>
               <p className="proposal-detail-note">
-                Justificativas e solicitações ficam visíveis ao Instrutor. As
-                decisões são locais e demonstrativas.
+                Justificativas e solicitações de ajustes ficam visíveis ao
+                Instrutor e registradas no histórico da proposta.
               </p>
             </>
           ) : (

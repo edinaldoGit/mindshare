@@ -66,7 +66,7 @@ export function Navbar() {
                 <button
                   type="button"
                   className="icon-button"
-                  aria-label="Sair da demonstração"
+                  aria-label="Sair"
                   onClick={() => {
                     signOut();
                     close();

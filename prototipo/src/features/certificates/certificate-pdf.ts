@@ -52,9 +52,9 @@ export async function generateCertificatePdf(
     );
   const pdf = await PDFDocument.create();
   pdf.setTitle(`${certificateLabel} - ${data.activityTitle}`);
-  pdf.setAuthor("MindShare - protótipo acadêmico");
+  pdf.setAuthor("MindShare · UFC Campus de Quixadá");
   pdf.setSubject(data.disclaimer);
-  pdf.setCreator("MindShare - geração local no navegador");
+  pdf.setCreator("MindShare");
   const regular = await pdf.embedFont(StandardFonts.Helvetica);
   const bold = await pdf.embedFont(StandardFonts.HelveticaBold);
   const page = pdf.addPage([595.28, 841.89]);
@@ -95,7 +95,7 @@ export async function generateCertificatePdf(
   }
   y -= 9;
   text(
-    "Concluiu a participação na atividade demonstrativa:",
+    "Concluiu a participação na atividade:",
     48,
     y,
     11,
@@ -142,18 +142,10 @@ export async function generateCertificatePdf(
   ).entries())
     text(line, 64, 135 - index * 18, 12.5);
   text(
-    "Documento de exemplo. Sem assinatura ou autenticação institucional.",
+    "MindShare · Plataforma de aprendizagem colaborativa · UFC Campus de Quixadá",
     48,
     55,
     9,
-    false,
-    muted,
-  );
-  text(
-    "UFC Quixadá: referência ao contexto acadêmico do protótipo.",
-    48,
-    39,
-    8,
     false,
     muted,
   );

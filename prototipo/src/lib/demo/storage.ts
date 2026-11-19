@@ -303,7 +303,7 @@ export function loadDemoState(storage: DemoStorage | null): {
     return {
       state: createInitialState(),
       notice:
-        "O armazenamento local está indisponível. A demonstração continuará nesta aba.",
+        "O armazenamento local está indisponível. Suas alterações valerão apenas nesta sessão.",
     };
   try {
     const current = storage.getItem(demoStorageKey);
@@ -353,7 +353,7 @@ export function loadDemoState(storage: DemoStorage | null): {
     return {
       state: createInitialState(),
       notice:
-        "Não foi possível ler ou atualizar os dados locais. A demonstração continuará nesta aba.",
+        "Não foi possível salvar os dados localmente. Suas alterações valerão apenas nesta sessão.",
     };
   }
 }

@@ -467,7 +467,7 @@ function VideoLessonPlayer({
           >
             CC BY 3.0
           </a>
-          . Trecho recortado e comprimido para demonstração educacional.
+          .
         </p>
       </div>
       <dialog

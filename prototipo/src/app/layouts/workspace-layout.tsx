@@ -24,9 +24,6 @@ export function WorkspaceLayout({ area }: { area: PlannedRoute["area"] }) {
               </NavLink>
             ))}
         </nav>
-        <p className="text-sm text-muted-foreground">
-          Área em preparação. Você está em uma sessão demonstrativa.
-        </p>
       </aside>
       <div>
         <Outlet />

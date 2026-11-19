@@ -42,13 +42,13 @@ export function CertificateDownload({
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
-      link.download = `mindshare-comprovante-${state.enrollments.find((item) => item.id === enrollmentId)?.activityId ?? "demonstrativo"}.pdf`;
+      link.download = `mindshare-comprovante-${state.enrollments.find((item) => item.id === enrollmentId)?.activityId ?? "atividade"}.pdf`;
       document.body.append(link);
       link.click();
       link.remove();
       window.setTimeout(() => URL.revokeObjectURL(url), 30000);
       setMessage(
-        "PDF demonstrativo preparado. O download foi solicitado ao navegador.",
+        "Comprovante em PDF preparado. O download foi solicitado ao navegador.",
       );
     } catch {
       setFailed(true);

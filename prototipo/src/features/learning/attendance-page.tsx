@@ -70,10 +70,7 @@ export function AttendancePage() {
         <FeedbackMessage error={!notice.ok}>{notice.message}</FeedbackMessage>
       )}
       {!d ? (
-        <p>
-          Esta atividade preserva os critérios da versão anterior, sem
-          frequência retroativa.
-        </p>
+        <p>Esta atividade não possui encontros registrados.</p>
       ) : a.format === "Remota assíncrona" ? (
         <section className="learning-card">
           <h2>Acompanhamento individual</h2>

@@ -18,8 +18,7 @@ export function HoursSummary({
         </p>
         <span>
           {completed}{" "}
-          {completed === 1 ? "atividade concluída" : "atividades concluídas"} na
-          demonstração
+          {completed === 1 ? "atividade concluída" : "atividades concluídas"}
         </span>
       </div>
     </div>

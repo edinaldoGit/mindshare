@@ -83,8 +83,8 @@ export function ParticipantActivityPage() {
         </h2>
         <p>
           {enrollment.status === "Concluída"
-            ? `Conclusão registrada em ${formatDate(enrollment.completedAt)}. As ${activity.hours} horas desta atividade já aparecem no seu histórico demonstrativo.`
-            : "Sua inscrição está confirmada na demonstração. A conclusão será registrada pelo Instrutor responsável após os critérios serem atendidos."}
+            ? `Conclusão registrada em ${formatDate(enrollment.completedAt)}. As ${activity.hours} horas desta atividade já aparecem no seu histórico.`
+            : "Sua inscrição está confirmada. A conclusão será registrada pelo Instrutor responsável após os critérios serem atendidos."}
         </p>
         {enrollment.status === "Concluída" ? (
           <CertificateDownload
@@ -106,7 +106,7 @@ export function ParticipantActivityPage() {
         <h2>O que aprendemos juntos</h2>
         <p>{activity.syllabus}</p>
         <p className="participant-instructor-note">
-          Com <strong>{instructor.name}</strong> · Instrutor fictício
+          Com <strong>{instructor.name}</strong> · Discente instrutor
         </p>
         <Link className="text-link" to={`/atividades/${activity.id}`}>
           Ver detalhes no catálogo

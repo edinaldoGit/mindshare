@@ -110,16 +110,14 @@ export function DeliveryFields({
             />
             <span className="field-hint">
               Referência configurável entre 5 e 10 minutos (prazo de resposta de
-              30 segundos). Vídeos curtos de demonstração ajustam a pausa
-              proporcionalmente.
+              30 segundos). Vídeos curtos ajustam a pausa proporcionalmente.
             </span>
           </label>
           <div className="learning-card">
             <h3>Playlist de videoaulas</h3>
             <p className="field-hint">
-              Adicione uma ou mais aulas (ao menos uma obrigatória). Na
-              demonstração, as aulas utilizam o vídeo local de 3 minutos (Big
-              Buck Bunny · Blender Foundation · CC BY 3.0).
+              Adicione uma ou mais aulas (ao menos uma obrigatória) para compor
+              a atividade assíncrona.
             </p>
             {d.lessons.map((lesson, i) => (
               <div className="meeting-editor" key={lesson.id}>
@@ -455,8 +453,7 @@ export function DeliveryInfo({
         </>
       ) : (
         <p>
-          Atividade legada: condições preservadas da versão anterior, sem
-          frequência retroativa inventada.
+          Consulte as orientações da atividade diretamente com o Instrutor.
         </p>
       )}
       {activity.assignments?.map((a, i) => (

@@ -21,7 +21,7 @@ export function RequireProfile({
     return (
       <section className="development-page">
         <ShieldCheck aria-hidden="true" />
-        <p className="eyebrow">PERFIS DA DEMONSTRAÇÃO</p>
+        <p className="eyebrow">ACESSO RESTRITO</p>
         <h1 tabIndex={-1}>Este espaço é de outro perfil.</h1>
         <p>
           {user.kind === "Discente"

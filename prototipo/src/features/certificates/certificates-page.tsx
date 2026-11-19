@@ -21,9 +21,8 @@ export function CertificatesPage() {
       <div className="institutional-notice">
         <Info size={19} aria-hidden="true" />
         <p>
-          Todos os arquivos são comprovantes demonstrativos do protótipo
-          MindShare. Sua emissão não garante o reconhecimento da carga horária
-          pela UFC.
+          A emissão dos comprovantes do MindShare não garante o reconhecimento
+          da carga horária pela UFC.
         </p>
       </div>
       <p className="result-note">
@@ -41,7 +40,7 @@ export function CertificatesPage() {
                 <span>
                   <FileText size={28} strokeWidth={1.4} aria-hidden="true" />
                 </span>
-                <span className="badge">PDF demonstrativo</span>
+                <span className="badge">Comprovante PDF</span>
               </div>
               <p className="eyebrow">{activity.thematicArea}</p>
               <h2>{activity.title}</h2>

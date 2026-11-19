@@ -77,7 +77,7 @@ export function EnrollmentAction({ activity }: { activity: Activity }) {
           </Link>
         </Button>
         <p className="enrollment-help">
-          Entre com um perfil fictício para confirmar sua inscrição.
+          Entre com sua conta institucional para confirmar sua inscrição.
         </p>
       </>
     );
@@ -95,9 +95,6 @@ export function EnrollmentAction({ activity }: { activity: Activity }) {
         Confirmar inscrição
         <ArrowUpRight size={16} aria-hidden="true" />
       </Button>
-      <p className="enrollment-help">
-        Inscrição somente no ambiente de demonstração.
-      </p>
     </>
   );
 }

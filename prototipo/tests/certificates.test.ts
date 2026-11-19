@@ -43,7 +43,7 @@ test("RF23: aviso obrigatório e identificação demonstrativa explícitos", () 
   );
   assert.equal(
     certificateLabel,
-    "Comprovante demonstrativo | Protótipo MindShare",
+    "Comprovante de Participação | MindShare",
   );
 });
 test("RF22: inscrição não concluída, inexistente, de outro usuário e Curador não emitem", async () => {

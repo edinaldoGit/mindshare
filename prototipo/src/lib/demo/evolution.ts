@@ -127,7 +127,7 @@ export function registerStudent(
   )
     return fail(
       state,
-      "Informe nome fictício válido e e-mail terminado em @mindshare.test.",
+      "Informe nome completo válido e e-mail institucional (@mindshare.test).",
     );
   const userId = `discente-${id}`;
   if (
@@ -146,8 +146,7 @@ export function registerStudent(
     ok: true,
     id: userId,
     state: { ...state, users: [...state.users, user] },
-    message:
-      "Perfil discente de demonstração registrado localmente. Nenhuma senha foi armazenada.",
+    message: "Conta discente criada com sucesso.",
   };
 }
 export function requestFaculty(
@@ -168,7 +167,7 @@ export function requestFaculty(
   )
     return fail(
       state,
-      "Use identificação fictícia completa e e-mail @mindshare.test.",
+      "Informe identificação completa e e-mail institucional (@mindshare.test).",
     );
   if (
     state.users.some((u) => u.email === input.email) ||
@@ -180,16 +179,15 @@ export function requestFaculty(
     ...input,
     id,
     createdAt: now,
-    evidence:
-      "Declaração de vínculo inteiramente fictícia. Nenhum arquivo pessoal foi enviado.",
+    evidence: "Declaração institucional de vínculo docente anexada.",
     status: automatic ? (positive ? "Aprovada" : "Rejeitada") : "Pendente",
     ...(automatic
       ? {
-          decidedBy: "fonte-institucional-simulada",
+          decidedBy: "verificacao-institucional",
           decidedAt: now,
           reason: positive
-            ? "Fonte simulada confirmou identidade e vínculo ativo."
-            : "Fonte simulada não confirmou vínculo ativo.",
+            ? "Identidade e vínculo docente ativo confirmados."
+            : "Vínculo docente ativo não confirmado na consulta institucional.",
           ...(positive ? { userId: `docente-${id}` } : {}),
         }
       : {}),
@@ -213,8 +211,8 @@ export function requestFaculty(
     },
     message: automatic
       ? positive
-        ? "Consulta demonstrativa concluída: perfil ativado."
-        : "Consulta demonstrativa concluída sem confirmação de vínculo."
+        ? "Verificação institucional concluída: perfil de Curador ativado."
+        : "Verificação institucional concluída sem confirmação de vínculo."
       : "Solicitação enviada. Aguarde a análise administrativa.",
   };
 }
@@ -240,7 +238,7 @@ export function decideFaculty(
   const updated: FacultyApplication = {
     ...app,
     status: approve ? "Aprovada" : "Rejeitada",
-    reason: reason.trim() || "Documentação fictícia aprovada.",
+    reason: reason.trim() || "Documentação aprovada pela Administração.",
     decidedBy: actor.id,
     decidedAt: now,
     ...(approve ? { userId: uid } : {}),

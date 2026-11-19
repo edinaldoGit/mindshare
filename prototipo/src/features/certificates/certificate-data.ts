@@ -3,8 +3,7 @@ import type {
   DemoState,
   User,
 } from "../../types/domain.ts";
-export const certificateLabel =
-  "Comprovante demonstrativo | Protótipo MindShare";
+export const certificateLabel = "Comprovante de Participação | MindShare";
 export const certificateDisclaimer =
   "A emissão deste comprovante não garante o reconhecimento da carga horária pela UFC.";
 export function certificateData(

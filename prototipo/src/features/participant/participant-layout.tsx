@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   NavLink,
   Outlet,
@@ -13,11 +12,8 @@ import {
   FileText,
   Compass,
   ArrowUpRight,
-  RotateCcw,
 } from "lucide-react";
 import { useDemo } from "@/app/providers/demo-context";
-import { ConfirmationDialog } from "@/components/feedback/confirmation-dialog";
-import { FeedbackMessage } from "@/components/feedback/feedback-message";
 import { brand } from "@/lib/brand";
 const navigation = [
   { path: "/participante", label: "Visão geral", icon: LayoutGrid },
@@ -39,11 +35,9 @@ const navigation = [
   },
 ];
 export function ParticipantLayout() {
-  const { user, resetDemo } = useDemo();
+  const { user } = useDemo();
   const navigate = useNavigate();
   const location = useLocation();
-  const [resetOpen, setResetOpen] = useState(false);
-  const [message, setMessage] = useState("");
   const current =
     navigation.find((item) => item.path === location.pathname)?.path ??
     "/participante/inscricoes";
@@ -55,7 +49,7 @@ export function ParticipantLayout() {
           <div>
             <span className="eyebrow">MEU ESPAÇO</span>
             <p>{user?.name}</p>
-            <small>Discente · Demonstração</small>
+            <small>Discente</small>
           </div>
         </div>
         <nav aria-label="Área do participante">
@@ -102,29 +96,8 @@ export function ParticipantLayout() {
             ))}
           </select>
         </div>
-        {message && <FeedbackMessage>{message}</FeedbackMessage>}
         <Outlet />
-        <div className="participant-demo-tools">
-          <p>
-            <strong>Ambiente de demonstração.</strong> Os dados desta
-            experiência são fictícios e ficam neste navegador.
-          </p>
-          <button type="button" onClick={() => setResetOpen(true)}>
-            <RotateCcw size={15} aria-hidden="true" />
-            Reiniciar demonstração
-          </button>
-        </div>
       </div>
-      <ConfirmationDialog
-        open={resetOpen}
-        onClose={() => setResetOpen(false)}
-        onConfirm={() => {
-          resetDemo();
-          setMessage(
-            "Exemplos iniciais restaurados. Propostas, inscrições, histórico e comprovantes foram atualizados.",
-          );
-        }}
-      />
     </div>
   );
 }

@@ -10,7 +10,7 @@ export type DecisionEntry = CurationEntry & {
   curator: string;
 };
 const nameFor = (users: User[], id: string) =>
-  users.find((user) => user.id === id)?.name ?? "Perfil demonstrativo";
+  users.find((user) => user.id === id)?.name ?? "Usuário MindShare";
 export function pendingProposals(
   state: DemoState,
   users: User[],

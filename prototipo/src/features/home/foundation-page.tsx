@@ -133,7 +133,7 @@ export function FoundationPage() {
           </div>
           <div className="composition-caption">
             <span>CONEXÕES QUE VIRAM POSSIBILIDADES</span>
-            <span>Atividade fictícia</span>
+            <span>UFC · Campus de Quixadá</span>
           </div>
         </div>
       </section>
@@ -176,8 +176,8 @@ export function FoundationPage() {
           </Link>
         </SectionHeading>
         <p className="section-description">
-          Uma seleção para despertar sua curiosidade. Todas as atividades abaixo
-          são demonstrativas.
+          Uma seleção de atividades abertas para despertar sua curiosidade no
+          campus.
         </p>
         <div className="activity-grid">
           {featured.map((activity) => (

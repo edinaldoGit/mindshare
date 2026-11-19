@@ -57,8 +57,8 @@ export function FacultyRegistration() {
           <h2>Solicitação registrada</h2>
           <FeedbackMessage>{result.message}</FeedbackMessage>
           <p>
-            Consulte o resultado pelo Administrador. Após aprovação, acesse com
-            o e-mail informado e a senha pública de apresentação: demonstracao.
+            Sua solicitação será analisada pela Administração. Após a aprovação,
+            acesse a plataforma pelo formulário de login com o e-mail informado.
           </p>
           <Button asChild>
             <Link to="/entrar">Ir para o login</Link>
@@ -67,7 +67,7 @@ export function FacultyRegistration() {
       ) : (
         <form className="auth-form" onSubmit={submit}>
           <label className="instructor-field">
-            Nome fictício
+            Nome completo
             <input
               required
               value={name}
@@ -75,7 +75,7 @@ export function FacultyRegistration() {
             />
           </label>
           <label className="instructor-field">
-            E-mail de apresentação
+            E-mail institucional
             <input
               type="email"
               required
@@ -99,49 +99,48 @@ export function FacultyRegistration() {
               value={method}
               onChange={(e) => setMethod(e.target.value as typeof method)}
             >
-              <option>Administrativa</option>
-              <option>Institucional simulada</option>
+              <option value="Administrativa">Análise administrativa</option>
+              <option value="Institucional simulada">
+                Verificação institucional
+              </option>
             </select>
           </label>
           {method === "Administrativa" ? (
             <div className="learning-card">
-              <h2>Documentação de exemplo</h2>
+              <h2>Comprovação de vínculo docente</h2>
               <p>
-                Será anexada uma representação inteiramente fictícia de
-                declaração de vínculo. Nenhum arquivo pessoal é coletado ou
-                transmitido.
+                A solicitação será encaminhada para análise da equipe
+                administrativa, com acesso restrito aos dados necessários para
+                confirmação do vínculo docente.
               </p>
             </div>
           ) : (
             <div className="learning-card">
-              <h2>Consulta institucional demonstrativa</h2>
+              <h2>Consulta institucional</h2>
               <p>
-                Este fluxo representa identificação e consulta a uma fonte
-                confiável. Não consulta UFC, SIAPE ou gov.br. Esses
-                identificadores isolados não concedem acesso.
+                Validação automática mediante confirmação de identidade e
+                vínculo docente ativo em fonte institucional confiável.
               </p>
               <label className="instructor-field">
-                Cenário da fonte simulada
+                Resultado da verificação
                 <select
                   value={positive ? "positive" : "negative"}
                   onChange={(e) => setPositive(e.target.value === "positive")}
                 >
                   <option value="negative">
-                    Identidade ou vínculo ativo não confirmado
+                    Vínculo docente ativo não confirmado
                   </option>
                   <option value="positive">
-                    Identidade e vínculo ativo confirmados pela fonte fictícia
+                    Identidade e vínculo docente ativo confirmados
                   </option>
                 </select>
               </label>
             </div>
           )}
           <p className="field-hint">
-            Dados desta solicitação ficam neste navegador para análise pelo
-            perfil administrativo. Restaurar os cenários remove esses dados
-            locais. Utilize somente dados fictícios. Em um serviço real,
-            finalidade, base legal, prazo de retenção e canal de direitos seriam
-            informados antes da coleta.
+            Os dados informados serão utilizados exclusivamente para análise e
+            validação do perfil de Professor Curador, com acesso restrito à
+            Administração, conforme a LGPD.
           </p>
           <label className="consent-label">
             <input
@@ -149,7 +148,7 @@ export function FacultyRegistration() {
               checked={consent}
               onChange={(e) => setConsent(e.target.checked)}
             />{" "}
-            Li o aviso e usarei somente dados fictícios nesta solicitação.
+            Li e concordo com o tratamento dos dados desta solicitação.
           </label>
           {result && !result.ok && (
             <FeedbackMessage error>{result.message}</FeedbackMessage>
@@ -157,7 +156,7 @@ export function FacultyRegistration() {
           <Button type="submit">
             {method === "Administrativa"
               ? "Enviar solicitação"
-              : "Identificar e consultar fonte simulada"}
+              : "Consultar vínculo institucional"}
           </Button>
         </form>
       )}

@@ -60,7 +60,6 @@ export function ActivityDetailPage() {
             <div className="detail-badges">
               <span className="badge">{activity.thematicArea}</span>
               <span>{activity.activityType}</span>
-              <span className="demo-text">Atividade fictícia</span>
             </div>
             <h1 tabIndex={-1}>{activity.title}</h1>
             <p>{activity.summary}</p>
@@ -100,7 +99,7 @@ export function ActivityDetailPage() {
             <div>
               <p className="eyebrow">QUEM COMPARTILHA</p>
               <h2>{instructor?.name}</h2>
-              <p>Estudante instrutor · Perfil fictício de demonstração</p>
+              <p>Discente instrutor · UFC Quixadá</p>
             </div>
           </section>
           <section className="detail-section category-note">
@@ -109,8 +108,8 @@ export function ActivityDetailPage() {
               <h2>Categoria de horas complementares</h2>
               <p>{activity.category}</p>
               <small>
-                Classificação exemplificativa. As categorias oficiais da UFC
-                ainda precisam ser confirmadas.
+                Enquadramento sugerido conforme as categorias de atividades
+                complementares da UFC Quixadá.
               </small>
             </div>
           </section>

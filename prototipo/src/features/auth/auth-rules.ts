@@ -80,15 +80,15 @@ export type RegistrationValues = {
 export function validateRegistration(values: RegistrationValues) {
   const errors: Partial<Record<keyof RegistrationValues, string>> = {};
   if (values.name.trim().length < 2)
-    errors.name = "Informe um nome fictício com pelo menos 2 caracteres.";
+    errors.name = "Informe seu nome completo (pelo menos 2 caracteres).";
   if (!isDemoEmail(values.email))
-    errors.email = "Use um endereço fictício terminado em @mindshare.test.";
+    errors.email = "Informe um e-mail institucional válido (@mindshare.test).";
   if (values.password.length < 8)
-    errors.password = "Crie uma senha de exemplo com pelo menos 8 caracteres.";
+    errors.password = "Crie uma senha com pelo menos 8 caracteres.";
   if (values.confirmation !== values.password || !values.confirmation)
     errors.confirmation = "As senhas precisam ser iguais.";
   if (!values.consent)
-    errors.consent = "Marque o consentimento para continuar a demonstração.";
+    errors.consent = "Marque o consentimento para concluir o cadastro.";
   return errors;
 }
 export type LoginAttempts = { failures: number; blockedUntil: number };
