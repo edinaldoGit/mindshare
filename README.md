@@ -44,13 +44,13 @@ mindshare/
 
 | Etapa | Artefato | Descrição |
 |---|---|---|
-| **00 · Documentos gerais** | [SRS (DOCX editável)](<docs/00-documentos-gerais/MindShare — Documento de Requisitos de Software (SRS).docx>) · [PDF](<docs/00-documentos-gerais/MindShare — Documento de Requisitos de Software (SRS).pdf>) | Documento de Requisitos no template ISO/IEC/IEEE 29148 da disciplina. Diagrama BPMN do processo principal: [draw.io editável](docs/00-documentos-gerais/MindShare_BPMN_Ofertar-Cursar-Comprovar.drawio) · [PDF](docs/00-documentos-gerais/MindShare_BPMN_Ofertar-Cursar-Comprovar.pdf). |
+| **00 · Documentos gerais** | [SRS (DOCX editável)](<docs/00-documentos-gerais/MindShare — Documento de Requisitos de Software (SRS).docx>) · [PDF](<docs/00-documentos-gerais/MindShare — Documento de Requisitos de Software (SRS).pdf>) · [Entrega do Protótipo (DOCX)](<docs/00-documentos-gerais/MindShare — Entrega do Protótipo Interativo.docx>) · [PDF](<docs/00-documentos-gerais/MindShare — Entrega do Protótipo Interativo.pdf>) | Documento de Requisitos (ISO/IEC/IEEE 29148), documento consolidado de entrega do protótipo (links, prompts, stack e matriz SRS × protótipo) e diagrama BPMN ([draw.io editável](docs/00-documentos-gerais/MindShare_BPMN_Ofertar-Cursar-Comprovar.drawio) · [PDF](docs/00-documentos-gerais/MindShare_BPMN_Ofertar-Cursar-Comprovar.pdf)). |
 | **01 · Visão** | [Visão e Escopo](docs/01-visao/README.md) | Espaço para o Documento de Visão (`10/09/2026`). |
 | **02 · Elicitação** | [Elicitação](docs/02-elicitacao/README.md) | Espaço para registro das técnicas de elicitação e personas. |
 | **03 · Análise** | [Jornadas integradas](docs/03-analise-e-modelagem/user-flows.md) | Fluxos ponta a ponta entre os perfis do sistema. |
 | **04 · Especificação** | [SRS v1.3 (Markdown)](docs/04-especificacao/MindShare_SRS_v1.3.md) · [PDF](docs/04-especificacao/MindShare_SRS_v1.3.pdf) | Especificação completa de RF, RNF, glossário e verificação. |
 | **04 · Rastreabilidade** | [Matriz de requisitos](docs/04-especificacao/requirements-matrix.md) | Mapeamento entre SRS v1.3, protótipo e limites acadêmicos. |
-| **05 · Validação** | [Roteiro de apresentação](docs/05-validacao/apresentacao.md) · [Verificações](docs/05-validacao/validation.md) · [Publicação](docs/05-validacao/publicacao.md) | Evidências de validação, PDFs gerados e guia de apresentação. |
+| **05 · Validação** | [Entrega do protótipo](docs/05-validacao/entrega-prototipo.md) · [Roteiro de apresentação](docs/05-validacao/apresentacao.md) · [Verificações](docs/05-validacao/validation.md) · [Publicação](docs/05-validacao/publicacao.md) | Documentação final do protótipo (prompts por fases, stack, links e matriz SRS × protótipo), evidências e guia de apresentação. |
 | **Protótipo** | [Documentação do protótipo](prototipo/README.md) | Instruções técnicas para executar e testar o protótipo localmente. |
 
 ## Protótipo interativo (alternativa ao Figma)
